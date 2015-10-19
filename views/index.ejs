@@ -4,10 +4,31 @@
     <title>My Website</title>
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/scripts/angularApp.js"></script>
+    <link rel="stylesheet" href="/styles/style.css">
+    
   </head>
 
-  <body>
-    <div ui-view></div>
+  <body class="bodyBackground">
+    <div id="navDiv">
+      <nav class="navbar navbar-fixed-top">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Milind Shah</a>
+        </div>
+
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Resume</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Articles</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+      </nav>
+    </div>
+    <!--<div ui-view></div>-->
 
     <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
   	<script src="/bower_components/jquery/dist/jquery.js"></script>

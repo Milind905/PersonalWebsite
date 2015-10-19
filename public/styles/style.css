@@ -1,8 +1,22 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.bodyBackground {
+	background: #1C1C1C no-repeat fixed;
+	/*background-size: 100% 100%;*/ 
 }
 
-a {
-  color: #00B7FF;
+.navbar-fixed-top {
+	background: black;
 }
+
+.navbar-collapse {
+	margin-right: 25px;
+}
+
+#navDiv li a {
+	color: #ffffff;
+}
+
+#navDiv .active a{
+	color: #00A1D6;
+}
+
+
