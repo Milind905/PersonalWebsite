@@ -11,7 +11,11 @@
 	margin-right: 25px;
 }
 
-#navDiv li a {
+#navDiv {
+	font-size: 16px;
+}
+
+#navDiv li a{
 	color: #ffffff;
 }
 
