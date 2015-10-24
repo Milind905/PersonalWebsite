@@ -10,13 +10,39 @@ function ($stateProvider, $urlRouterProvider) {
 			templateUrl: '/views/index.html',
 			controller: 'IndexCtrl',
 			controllerAs: 'index',
+			activeTab: 'index'
 		})
 
-		.state('bio', {
-			url : '/bio',
-			templateUrl: '/views/bio.html',
-			controller: 'BioCtrl',
-			controllerAs: 'bio'
+		.state('resume', {
+			url: '/resume',
+			templateUrl: '/views/resume.html',
+			controller: 'ResumeCtrl',
+			controllerAs: 'resume',
+			activeTab: 'resume'
+		})
+
+		.state('project', {
+			url: '/projects',
+			templateUrl: '/views/project.html',
+			controller: 'ProjectCtrl',
+			controllerAs: 'project',
+			activeTab: 'project'
+		})
+
+		.state('article', {
+			url: '/articles',
+			templateUrl: '/views/article.html',
+			controller: 'ArticleCtrl',
+			controllerAs: 'article',
+			activeTab: 'article'
+		})
+
+		.state('contact', {
+			url: '/contact',
+			templateUrl: '/views/contact.html',
+			controller: 'ContactCtrl',
+			controllerAs: 'contact',
+			activeTab: 'contact'
 		})
 		
 	$urlRouterProvider.otherwise('/');

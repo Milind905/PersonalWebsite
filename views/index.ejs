@@ -4,23 +4,30 @@
     <title>My Website</title>
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/scripts/angularApp.js"></script>
+    <link rel="stylesheet" href="/styles/style.css">
+    
   </head>
 
-  <body>
+  <body class="bodyBackground">
+    <ng-include src="'views/navbar.html'"></ng-include>
     <div ui-view></div>
 
     <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
   	<script src="/bower_components/jquery/dist/jquery.js"></script>
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
 
 
    	<!-- Routing Modules -->
    	<script src="/scripts/router.js"></script>
 
    	<!-- Controllers -->
+    <script src="/scripts/controllers/navController.js"></script>
    	<script src="/scripts/controllers/indexController.js"></script>
-	<script src="/scripts/controllers/bioController.js"></script>
-
+    <script src="/scripts/controllers/resumeController.js"></script>
+    <script src="/scripts/controllers/projectController.js"></script>
+    <script src="/scripts/controllers/articleController.js"></script>
+    <script src="/scripts/controllers/contactController.js"></script>
 
   </body>
 </html>
