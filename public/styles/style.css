@@ -3,23 +3,24 @@ colors{
 	blue: #0FA3FF;
 	orange: #FF6B0F;
 	white: #FFFFFF;
+	grey: #B5B5B5;
 }
 */
 
 @font-face {
-    font-family: "Helvetica Neue";
+    font-family: "Helvetica-Neue";
     src: url("../fonts/HelveticaNeue.ttf");
 }
 @font-face {
-    font-family: "Helvetica Neue Thin";
+    font-family: "Helvetica-Neue-Thin";
     src: url("../fonts/HelveticaNeue-Thin.otf");
 }
 @font-face {
-	font-family: "Lucida Grande Blah";
+	font-family: "Lucida-Grande";
 	src: url("../fonts/LucidaGrande-Regular.ttf");
 }
 @font-face {
-	font-family: "Roboto Thin";
+	font-family: "Roboto-Thin";
 	src: url("../fonts/Roboto-Thin.ttf");
 }
 @font-face {
@@ -27,26 +28,26 @@ colors{
 	src: url("../fonts/Roboto-Regular.ttf");
 }
 @font-face {
-	font-family: "Roboto Medium";
+	font-family: "Roboto-Medium";
 	src: url("../fonts/Roboto-Medium.ttf");
 }
 @font-face {
-	font-family: "Source Sans Pro Light";
+	font-family: "Source-Sans-Pro-Light";
 	src: url("../fonts/SourceSansPro-Light.otf");
 }
 @font-face {
-	font-family: "Source Sans Pro";
+	font-family: "Source-Sans-Pro";
 	src: url("../fonts/SourceSansPro-Regular.otf");
 }
 
 .bodyBackground {
 	background: #1C1C1C no-repeat fixed;
-	font: 14px "Lucida Grande Blah", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font: 14px "Lucida-Grande", "Helvetica-Neue", Helvetica, Arial, sans-serif;
 	/*background-size: 100% 100%;*/ 
 }
 
 .pageContainer {
-	margin-top: 100px;
+	margin: 100px 25px;
 }
 
 
@@ -64,7 +65,7 @@ colors{
 #navDiv li a{
 	text-decoration: none;
 	font-size: 16px;
-	font-family: "Helvetica Neue Thin";
+	font-family: "Helvetica-Neue-Thin";
 	color: #FFFFFF;
 }
 
@@ -93,6 +94,73 @@ colors{
 	position: absolute;
 	bottom: 0px;
 }
+
+
+
+
+/*** Home Page Styling ***/
+.left {
+	font-family: "Helvetica-Neue-Thin";
+	width: 40%;
+	margin-left: 50px;
+}
+
+.name h1{
+	font-size: 130px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	text-align: right;
+}
+
+.name .first {
+	color: #B5B5B5;
+}
+
+.name .last {
+	color: #0FA3FF;
+}
+
+.myHeading h1{
+	font-size: 40px;
+	color: #B5B5B5;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	text-align: right;
+}
+
+.myDescription {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.myDescription p{
+	font-size: 18px;
+	color: #B5B5B5;
+	text-align: justify;
+}
+
+.myDescription span{
+	color: #0FA3FF;
+}
+
+/* Media Query*/
+/*
+set right to go below the left div instead of floating left/right
+*/
+@media (max-width: 960px){
+	.left {
+		width: 100%;
+		margin-left: 0px;
+	}
+	.name h1,
+	.myHeading h1{
+		text-align: center;
+	}
+}
+
+
+
+
 
 
 
