@@ -2,16 +2,31 @@
   <nav class="navbar navbar-fixed-top">
     <div class="navbar-header">
       <!-- igonore all styling on this for now -->
-      <a class="navbar-brand" href="#">Milind Shah</a>
+      <a class="navbar-brand" href="#">Logo</a>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li ng-class="{'active': navigation.state.current.activeTab === 'index' }"><a href="#/">Home</a></li>
-        <li ng-class="{'active': navigation.state.current.activeTab === 'resume' }"><a href="#/resume">Resume</a></li>
-        <li ng-class="{'active': navigation.state.current.activeTab === 'project' }"><a href="#/projects">Projects</a></li>
-        <li ng-class="{'active': navigation.state.current.activeTab === 'article' }"><a href="#/articles">Articles</a></li>
-        <li ng-class="{'active': navigation.state.current.activeTab === 'contact' }"><a href="#/contact">Contact</a></li>
+        <li ng-class="{'active': navigation.state.current.activeTab === 'index' }">
+          <a href="#/">Home</a>
+          <div class="navUnderline"></div>
+        </li>
+        <li ng-class="{'active': navigation.state.current.activeTab === 'resume' }">
+          <a href="#/resume">Resume</a>
+          <div class="navUnderline"></div>
+        </li>
+        <li ng-class="{'active': navigation.state.current.activeTab === 'project' }">
+          <a href="#/projects">Projects</a>
+          <div class="navUnderline"></div>
+        </li>
+        <li ng-class="{'active': navigation.state.current.activeTab === 'article' }">
+          <a href="#/articles">Articles</a>
+          <div class="navUnderline"></div>
+        </li>
+        <li ng-class="{'active': navigation.state.current.activeTab === 'contact' }">
+          <a href="#/contact">Contact</a>
+          <div class="navUnderline"></div>
+        </li>
       </ul>
     </div>
 

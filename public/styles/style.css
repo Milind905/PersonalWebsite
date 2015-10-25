@@ -1,8 +1,58 @@
+/*
+colors{
+	blue: #0FA3FF;
+	orange: #FF6B0F;
+	white: #FFFFFF;
+}
+*/
+
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("../fonts/HelveticaNeue.ttf");
+}
+@font-face {
+    font-family: "Helvetica Neue Thin";
+    src: url("../fonts/HelveticaNeue-Thin.otf");
+}
+@font-face {
+	font-family: "Lucida Grande Blah";
+	src: url("../fonts/LucidaGrande-Regular.ttf");
+}
+@font-face {
+	font-family: "Roboto Thin";
+	src: url("../fonts/Roboto-Thin.ttf");
+}
+@font-face {
+	font-family: "Roboto";
+	src: url("../fonts/Roboto-Regular.ttf");
+}
+@font-face {
+	font-family: "Roboto Medium";
+	src: url("../fonts/Roboto-Medium.ttf");
+}
+@font-face {
+	font-family: "Source Sans Pro Light";
+	src: url("../fonts/SourceSansPro-Light.otf");
+}
+@font-face {
+	font-family: "Source Sans Pro";
+	src: url("../fonts/SourceSansPro-Regular.otf");
+}
+
 .bodyBackground {
 	background: #1C1C1C no-repeat fixed;
+	font: 14px "Lucida Grande Blah", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	/*background-size: 100% 100%;*/ 
 }
 
+.pageContainer {
+	margin-top: 100px;
+}
+
+
+
+
+/*** NavBar Styling ***/
 .navbar-fixed-top {
 	background: black;
 }
@@ -11,16 +61,39 @@
 	margin-right: 25px;
 }
 
-#navDiv {
-	font-size: 16px;
-}
-
 #navDiv li a{
-	color: #ffffff;
+	text-decoration: none;
+	font-size: 16px;
+	font-family: "Helvetica Neue Thin";
+	color: #FFFFFF;
 }
 
-#navDiv .active a{
-	color: #00A1D6;
+#navDiv li a:hover {
+	color: #0FA3FF;
+	background-color: transparent
 }
+
+#navDiv li a:focus {
+	color: #FFFFFF;
+	background-color: transparent
+}
+
+#navDiv .active {
+	background-color: #0FA3FF;
+}
+
+#navDiv .active a:hover{
+	color: #FFFFFF;
+}
+
+#navDiv .navUnderline {
+	width: 100%;
+	height: 3px;
+	background-color: #0FA3FF;
+	position: absolute;
+	bottom: 0px;
+}
+
+
 
 
