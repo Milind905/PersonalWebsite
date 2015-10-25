@@ -2,19 +2,18 @@
 <html ng-app="personalWebsite" ng-strict-di>
   <head>
     <title>My Website</title>
-    <script src="/bower_components/angular/angular.js"></script>
-    <script src="/scripts/angularApp.js"></script>
-    <link rel="stylesheet" href="/styles/style.css">
-    
   </head>
 
   <body class="bodyBackground">
     <ng-include src="'views/navbar.html'"></ng-include>
     <div class="pageContainer" ui-view></div>
 
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/scripts/angularApp.js"></script>
     <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
   	<script src="/bower_components/jquery/dist/jquery.js"></script>
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/styles/style.css">
     <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
 
    	<!-- Routing Modules -->
