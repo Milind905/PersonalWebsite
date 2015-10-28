@@ -46,9 +46,7 @@ colors{
 	/*background-size: 100% 100%;*/ 
 }
 
-.pageContainer {
-	margin: 100px 25px;
-}
+
 
 
 
@@ -99,6 +97,10 @@ colors{
 
 
 /*** Home Page Styling ***/
+.pageContainer {
+	margin: 100px 25px;
+}
+
 .left {
 	font-family: "Helvetica-Neue-Thin";
 	width: 40%;
@@ -164,4 +166,27 @@ set right to go below the left div instead of floating left/right
 
 
 
+/*** Resume Page Styling ***/
+.resumeNav {
+	background-color: black;
+	width: 35%;
+	margin-top: 100px;
+}
 
+.resumeTab {
+	height: 100px;
+}
+
+.resumeTab h1 {
+	font-family: "Helvetica-Neue-Thin";
+	font-size: 40px;
+	color: #B5B5B5;
+	padding-left: 40px;
+	padding-right: 40px;
+	line-height: 75px;
+}
+
+/* Add (>) icons to right side of each resumeTab */
+
+/* @media (max-width: 960px){
+}*/

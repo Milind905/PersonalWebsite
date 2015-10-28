@@ -6,13 +6,16 @@
 
   <body class="bodyBackground">
     <ng-include src="'views/navbar.html'"></ng-include>
-    <div class="pageContainer" ui-view></div>
+    <div ui-view></div>
 
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/scripts/angularApp.js"></script>
     <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
   	<script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/Chart.js/Chart.min.js"></script>
+    <script src="/bower_components/angular-chart.js/dist/angular-chart.js"></script>
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/bower_components/angular-chart.js/dist/angular-chart.css">
     <link rel="stylesheet" href="/styles/style.css">
     <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
 
@@ -26,6 +29,9 @@
     <script src="/scripts/controllers/projectController.js"></script>
     <script src="/scripts/controllers/articleController.js"></script>
     <script src="/scripts/controllers/contactController.js"></script>
+
+    <!-- Directives -->
+    <script src="/scripts/directives/tabDirective.js"></script>
 
   </body>
 </html>
