@@ -2,11 +2,16 @@ angular.module('personalWebsite')
 .controller('ResumeCtrl', function(){
 	var self = this;
 
-	self.addTab = function(){
-		console.log("Added");
-	}	
+	self.sections = [
+		{"title": "Experience",
+		 "color": "blue"}, 
+		{"title": "Skills",
+		"color": "red"}, 
+		{"title": "Education",
+		"color": "purple"}, 
+		{"title:": "Projects",
+		"color": "green"}
+		];
 
-	self.select = function(index){
-		console.log("Selected ", index);
-	}
+	self.selectedSection = 0;
 });
