@@ -1,23 +1,7 @@
 angular.module('personalWebsite')
 .controller('ResumeCtrl', function(){
 	var self = this;
-
-	// self.sections = [
-	// 	{"title": "Experience",
-	// 	 "color": "blue"}, 
-	// 	{"title": "Skills",
-	// 	"color": "red"}, 
-	// 	{"title": "Education",
-	// 	"color": "purple"}, 
-	// 	{"title:": "Projects",
-	// 	"color": "green"}
-	// 	];
-
-	// self.selectedSection = 0;
-
-	// self.clicked = function(){
-	// 	console.log("clicked");
-	// }
+	self.notSupportedMessage = "Sorry, it seems that this browser doesn't support canvases. Please try a different browser."
 
 	self.myNewChart;
 	self.colors = {

@@ -165,5 +165,11 @@ set rightDiv to go below the left div instead of floating left/right
 	margin-top: 100px;
 }
 
+.resumeNavContainer {
+	position: relative; 
+	width:400px; 
+	height:400px;
+}
+
 /* @media (max-width: 960px){
 }*/
