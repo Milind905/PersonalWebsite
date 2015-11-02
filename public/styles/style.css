@@ -4,6 +4,7 @@ colors{
 	orange: #FF6B0F;
 	white: #FFFFFF;
 	grey: #B5B5B5;
+	background-grey: #1C1C1C;
 }
 */
 
@@ -44,10 +45,6 @@ colors{
 	background: #1C1C1C no-repeat fixed;
 	font: 14px "Lucida-Grande", "Helvetica-Neue", Helvetica, Arial, sans-serif;
 	/*background-size: 100% 100%;*/ 
-}
-
-.pageContainer {
-	margin: 100px 25px;
 }
 
 
@@ -99,6 +96,10 @@ colors{
 
 
 /*** Home Page Styling ***/
+.pageContainer {
+	margin: 100px 25px;
+}
+
 .left {
 	font-family: "Helvetica-Neue-Thin";
 	width: 40%;
@@ -145,7 +146,7 @@ colors{
 
 /* Media Query*/
 /*
-set right to go below the left div instead of floating left/right
+set rightDiv to go below the left div instead of floating left/right
 */
 @media (max-width: 960px){
 	.left {
@@ -159,9 +160,10 @@ set right to go below the left div instead of floating left/right
 }
 
 
+/*** Resume Page Styling ***/
+.resumeNav {
+	margin-top: 100px;
+}
 
-
-
-
-
-
+/* @media (max-width: 960px){
+}*/
