@@ -1,9 +1,22 @@
 <div class="resumeNav pull-left">
-	<!-- <canvas id="resumeNavCanvas" width="400" height="400">  
+	 <!-- <canvas id="resumeNavCanvas" width="400" height="400">  
 		<outer-nav-circle></outer-nav-circle>
-		<inner-nav-circle></inner-nav-circle>
-	</canvas>
- 	-->
+		<inner-nav-circle ng-click="resume.clicked()"></inner-nav-circle>
+	</canvas> -->
 
- 	
+	<div style="position: relative; width:400px; height:400px;">
+		<canvas id="textCanvas" width="400" height="400" 
+			 style="z-index: 1; 
+                   position: absolute;
+                   left: 0px; 
+                   top: 0px;" >
+        </canvas>
+		<canvas id="resumeNavCanvas" width="400" height="400" 
+			 style="z-index: 2; 
+                   position: absolute;
+                   left: 0px; 
+                   top: 0px;" >
+        </canvas>
+	</div>
+
 </div>

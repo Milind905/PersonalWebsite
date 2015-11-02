@@ -160,21 +160,10 @@ set rightDiv to go below the left div instead of floating left/right
 }
 
 
-
-
-
-
-
 /*** Resume Page Styling ***/
 .resumeNav {
 	margin-top: 100px;
 }
-
-canvas {
-	/*background-color: #1C1C1C;*/
-	background-color: black;
-}
-
 
 /* @media (max-width: 960px){
 }*/
