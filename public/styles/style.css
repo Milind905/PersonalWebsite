@@ -163,6 +163,7 @@ set rightDiv to go below the left div instead of floating left/right
 /*** Resume Page Styling ***/
 .resumeNav {
 	margin-top: 100px;
+	margin-left: 50px;
 }
 
 .resumeNavContainer {
@@ -171,5 +172,37 @@ set rightDiv to go below the left div instead of floating left/right
 	height:400px;
 }
 
-/* @media (max-width: 960px){
-}*/
+.resumeDownload {
+	width: 100%;
+	margin-top: 80px;
+}
+
+.resumeDownloadButton {
+	width: 250px;
+	text-align: center;
+	margin: 0 auto;
+	border: 2px solid #FF6B0F;
+	padding-bottom: 20px;
+	padding-top: 20px;
+}
+
+.resumeDownloadButton:hover {
+	background-color: #FF6B0F;
+}
+
+.resumeDownload a{
+	color: #FFFFFF;
+	font-family: "Helvetica-Neue-Thin";
+	font-size: 18px;
+	text-decoration: none;
+}
+
+@media (max-width: 960px){
+	.resumeNav{
+		width: 100%;
+		margin-left: 0px;
+	}
+	.resumeNavContainer{
+		margin: 0 auto;
+	}
+}
