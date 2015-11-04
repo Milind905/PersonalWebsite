@@ -2,6 +2,7 @@
 colors{
 	blue: #0FA3FF;
 	orange: #FF6B0F;
+	red: ;
 	white: #FFFFFF;
 	grey: #B5B5B5;
 	background-grey: #1C1C1C;
@@ -160,6 +161,63 @@ set rightDiv to go below the left div instead of floating left/right
 }
 
 
+
+/*** About Page Styling ***/
+.main-about-container{
+	height: 100vh;
+	width: 70vw;
+	border: 1px solid green;
+	/* contain overflow */
+}
+
+.command-prompt-container{
+	position: relative;
+	width: 650px;
+	height: 400px;
+	margin: 0 auto;
+	margin-top: 25vh;
+	background-color: #000;
+	opacity: 0.8;
+	/* scroll contain overflow */
+}
+
+.input-command-container {
+	border: 1px solid green;
+	width: 100%;
+	max-height: 50px;
+	position: absolute;
+	bottom: 0;
+	color: #fff;
+}
+
+.command-input {
+	/* change width to rest of div */
+	width: 95%; 
+	max-height: 50px;
+	background-color: #000;
+	border: none;
+	color: #fff;
+	/* change text font, size, weight */
+}
+
+.command-prompt-help {
+	width: 30vw;
+	height: 100vh;
+	bottom: 0;
+}
+
+@media (max-width: 960px){
+	.main-about-container {
+		width: 90vw;
+	}
+	/*Make it an icon with pull out menu*/
+	.command-prompt-help {
+		width: 10vw;
+	}
+}
+
+/* @media < 500px? */
+
 /*** Resume Page Styling ***/
 .resumeNav {
 	margin-top: 100px;
@@ -197,6 +255,17 @@ set rightDiv to go below the left div instead of floating left/right
 	text-decoration: none;
 }
 
+.resumeContainer {
+	border: 1px solid red;
+	margin-top: 100px;
+	margin-right: 50px;
+	/* 100% - 400px */
+	width: 60%;
+	/* 100% - 200px or fill contents*/
+	height: 500px;	
+}
+
+
 @media (max-width: 960px){
 	.resumeNav{
 		width: 100%;
@@ -205,4 +274,15 @@ set rightDiv to go below the left div instead of floating left/right
 	.resumeNavContainer{
 		margin: 0 auto;
 	}
+	.resumeContainer{
+		width: 100%;
+		margin-left: 0px;
+		margin-right: 0px;
+	}
 }
+
+
+
+
+
+

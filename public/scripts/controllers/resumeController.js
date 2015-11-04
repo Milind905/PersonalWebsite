@@ -44,14 +44,17 @@ angular.module('personalWebsite')
 	    segmentStrokeColor : "#1C1C1C",
 	    scaleBeginAtZero: false,
 	    segmentStrokeWidth : 2,
+	    showTooltips: true,
 	    tooltipFontFamily: "'Helvetica-Neue-Thin', 'Source-Sans-Pro', 'Helvetica', sans-serif",
 	    tooltipFontSize: 18,
 	    tooltipTemplate: "<%if (label){%><%=label%><%}%>",
 	    percentageInnerCutout : 75,
 
 	    onAnimationComplete: function () {
-	    	self.changeNavLabel(this.segments[0].label)
-	    },
+	    	self.changeNavLabel(this.segments[0].label);
+	    	//Either this or show curved text
+	    	this.showTooltip(this.segments, true);
+	    }
 	};
 
     self.changeNavLabel = function(labelValue){
@@ -113,8 +116,6 @@ angular.module('personalWebsite')
 
 	        $("#resumeNavCanvas").click( 
 	            function(evt){
-
-	            	
 	        		var activePoints = self.myNewChart.getSegmentsAtEvent(evt);
 	        		var toShift = 0;
 	        		var section;
@@ -147,6 +148,7 @@ angular.module('personalWebsite')
 	        			} 
 	        		}
 
+	        		//Change to update (remove element, add it to end, make it look like graph is shifting)
 	        		if(toShift !=0){
 	        			self.myNewChart.destroy();
 	        			var ctx = $("#resumeNavCanvas").get(0).getContext("2d");
