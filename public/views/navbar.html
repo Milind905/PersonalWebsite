@@ -11,6 +11,10 @@
           <a href="#/">Home</a>
           <div class="navUnderline"></div>
         </li>
+        <li ng-class="{'active': navigation.state.current.activeTab === 'about' }">
+          <a href="#/about">About</a>
+          <div class="navUnderline"></div>
+        </li>
         <li ng-class="{'active': navigation.state.current.activeTab === 'resume' }">
           <a href="#/resume">Resume</a>
           <div class="navUnderline"></div>

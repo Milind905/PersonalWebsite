@@ -13,6 +13,14 @@ function ($stateProvider, $urlRouterProvider) {
 			activeTab: 'index'
 		})
 
+		.state('about', {
+			url: '/about',
+			templateUrl: '/views/about.html',
+			controller: 'AboutCtrl',
+			controllerAs: 'about',
+			activeTab: 'about'
+		})
+
 		.state('resume', {
 			url: '/resume',
 			templateUrl: '/views/resume.html',
