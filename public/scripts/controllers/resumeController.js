@@ -127,7 +127,6 @@ angular.module('personalWebsite')
 	        		for(var i=0; i<self.sections.length; i++)
 	        		{
 	        			if(self.sections[i].label === activePoints[0].label){
-	        				console.log("selected: ",i);
 	        				toShift = i;
 	        			}
 	        		}
