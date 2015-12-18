@@ -116,7 +116,7 @@ angular.module('personalWebsite')
 
 	        $("#resumeNavCanvas").click( 
 	            function(evt){
-	        		var activePoints = self.myNewChart.getSegmentsAtEvent(evt);
+	         		var activePoints = self.myNewChart.getSegmentsAtEvent(evt);
 	        		var toShift = 0;
 	        		var section;
 
@@ -152,12 +152,18 @@ angular.module('personalWebsite')
 	        			self.myNewChart.destroy();
 	        			var ctx = $("#resumeNavCanvas").get(0).getContext("2d");
 	       				self.myNewChart = new Chart(ctx).Doughnut(self.sections, self.options);
+	       				self.changeSelectedSection();
 	        		}
         			
 	            }
 	        );
 	    }
     );
+
+	self.changeSelectedSection = function(){
+		self.sectionSelected = self.sections[0].label;
+		console.log(self.sectionSelected);
+	}
 
     
 	

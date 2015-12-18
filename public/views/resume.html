@@ -28,5 +28,14 @@
 </div>
 
 <div class="resumeContainer pull-right">
-  
+
+  <ul>
+    <li ng-show="resume.sectionSelected === 'Experience'">Experience</li>
+    <li ng-show="resume.sectionSelected === 'Skills'">Skills</li>
+    <li ng-show="resume.sectionSelected === 'Education'">Education</li>
+    <li ng-show="resume.sectionSelected === 'Projects'">Projects</li>
+   
+  </ul>
 </div>
+
+
