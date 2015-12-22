@@ -48,6 +48,10 @@ colors{
 	/*background-size: 100% 100%;*/ 
 }
 
+.bodyContainer {
+	margin-top: 50px;
+}
+
 
 
 
@@ -218,10 +222,10 @@ set rightDiv to go below the left div instead of floating left/right
 
 /* @media < 500px? */
 
+
 /*** Resume Page Styling ***/
 .resumeNav {
-	margin-top: 100px;
-	margin-left: 50px;
+	
 }
 
 .resumeNavContainer {

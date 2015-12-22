@@ -159,7 +159,9 @@ angular.module('personalWebsite')
 	    }
     );
 
-    
-	
+	self.changeSelectedSection = function(){
+		self.sectionSelected = self.sections[0].label;
+		console.log(self.sectionSelected);
+	}
 
 });
