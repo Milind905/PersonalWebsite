@@ -165,7 +165,7 @@ angular.module('personalWebsite')
 		console.log(self.sectionSelected);
 	}
 
-    
+    //changed something
 	
 
 });
