@@ -63,7 +63,7 @@ angular.module('personalWebsite')
     	textCtx.clearRect(0, 0, textCanvas.width, textCanvas.height);
 		textCtx.textAlign="center";
 		textCtx.textBaseline = 'middle';
-		textCtx.font="normal 40px HelveticaNeue-Thin";		
+		textCtx.font="normal 40px Helvetica-Neue-Thin";		
 		textCtx.fillStyle = '#0FA3FF';
 		textCtx.fillText(labelValue, textCanvas.width/2, textCanvas.height/2);
     }
