@@ -63,7 +63,7 @@ angular.module('personalWebsite')
     	textCtx.clearRect(0, 0, textCanvas.width, textCanvas.height);
 		textCtx.textAlign="center";
 		textCtx.textBaseline = 'middle';
-		textCtx.font="normal 40px HelveticaNeue-Thin";		
+		textCtx.font="normal 40px Helvetica-Neue-Thin";		
 		textCtx.fillStyle = '#0FA3FF';
 		textCtx.fillText(labelValue, textCanvas.width/2, textCanvas.height/2);
     }
@@ -116,7 +116,7 @@ angular.module('personalWebsite')
 
 	        $("#resumeNavCanvas").click( 
 	            function(evt){
-	        		var activePoints = self.myNewChart.getSegmentsAtEvent(evt);
+	         		var activePoints = self.myNewChart.getSegmentsAtEvent(evt);
 	        		var toShift = 0;
 	        		var section;
 
@@ -152,6 +152,7 @@ angular.module('personalWebsite')
 	        			self.myNewChart.destroy();
 	        			var ctx = $("#resumeNavCanvas").get(0).getContext("2d");
 	       				self.myNewChart = new Chart(ctx).Doughnut(self.sections, self.options);
+	       				self.changeSelectedSection();
 	        		}
         			
 	            }
@@ -159,7 +160,12 @@ angular.module('personalWebsite')
 	    }
     );
 
-    
+	self.changeSelectedSection = function(){
+		self.sectionSelected = self.sections[0].label;
+		console.log(self.sectionSelected);
+	}
+
+    //changed something
 	
 
 });
