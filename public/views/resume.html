@@ -1,41 +1,35 @@
 <div class="resumeNav pull-left">
 
 	<div class="resumeNavContainer">
-		<canvas id="textCanvas" width="400" height="400" 
-			 style="z-index: 1; 
-                   position: absolute;
-                   left: 0px; 
-                   top: 0px;" 
-        >
-        <p>{{resume.notSupportedMessage}}</p>
+		<canvas id="textCanvas" width="300" height="300" 
+			style="z-index: 1; 
+            position: absolute;
+            left: 0px; 
+            top: 0px;" >
+            <p>{{resume.notSupportedMessage}}</p>
         </canvas>
-		<canvas id="resumeNavCanvas" width="400" height="400" 
-			 style="z-index: 2; 
-                   position: absolute;
-                   left: 0px; 
-                   top: 0px;" 
-        >
-        <p>{{resume.notSupportedMessage}}</p>
+    	<canvas id="resumeNavCanvas" width="300" height="300" 
+    		style="z-index: 2; 
+                position: absolute;
+                left: 0px; 
+                top: 0px;" >
+            <p>{{resume.notSupportedMessage}}</p>
         </canvas>
 	</div>
 
-  <div class="resumeDownload">
-    <div class="resumeDownloadButton">
-      <a href="#">Download Resume</a>
+    <div class="resumeDownload">
+        <a href="#">Download Resume</a>
     </div>
-  </div>
-
 </div>
 
 <div class="resumeContainer pull-right">
-
-  <ul>
-    <li ng-show="resume.sectionSelected === 'Experience'">Experience</li>
-    <li ng-show="resume.sectionSelected === 'Skills'">Skills</li>
-    <li ng-show="resume.sectionSelected === 'Education'">Education</li>
-    <li ng-show="resume.sectionSelected === 'Projects'">Projects</li>
-   
-  </ul>
+    <div class="experienceContainer">
+        <div id="redHexagon" class="hexagon">
+            <h3>ScotiaBank</h3>
+        </div>
+        <div id="greenHexagon" class="hexagon"><h3>Department of National Defense</h3></div>
+        <div id="blueHexagon" class="hexagon"><h3>FlashStock</h3></div>
+    </div>
 </div>
 
 

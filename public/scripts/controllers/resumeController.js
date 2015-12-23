@@ -1,5 +1,7 @@
 angular.module('personalWebsite')
-.controller('ResumeCtrl', function(){
+.controller('ResumeCtrl', ['$scope', function($scope){
+	'use strict'
+
 	var self = this;
 	self.notSupportedMessage = "Sorry, it seems that this browser doesn't support canvases. Please try a different browser."
 
@@ -10,6 +12,7 @@ angular.module('personalWebsite')
 		grey: "#B5B5B5",
 		greyHighlight: "#0D62FF"
 	}
+	self.sectionSelected = "None";
 	
 	self.sections = [
 	    {
@@ -152,16 +155,16 @@ angular.module('personalWebsite')
 	        			self.myNewChart.destroy();
 	        			var ctx = $("#resumeNavCanvas").get(0).getContext("2d");
 	       				self.myNewChart = new Chart(ctx).Doughnut(self.sections, self.options);
-	       				self.changeSelectedSection();
 	        		}
+	        		changeSelectedSection();
         			
 	            }
 	        );
 	    }
     );
 
-	self.changeSelectedSection = function(){
+	function changeSelectedSection (){
 		self.sectionSelected = self.sections[0].label;
 		console.log(self.sectionSelected);
 	}
-});
+}]);
