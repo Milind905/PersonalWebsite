@@ -280,6 +280,35 @@ set rightDiv to go below the left div instead of floating left/right
 	height: 275px;
 	position: absolute;
 	text-align: center;
+	perspective: 1000;
+}
+
+.hexagon:hover .flipper {
+	transform: rotateY(180deg);
+}
+
+.front, .back {
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+.front {
+	z-index: 2;
+	transform: rotateY(0deg);
+}
+
+.back {
+	transform: rotateY(180deg);
 }
 
 #scotiabank {

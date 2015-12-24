@@ -169,7 +169,8 @@ angular.module('personalWebsite')
 	}
 
 	self.jobExperience = [{
-		frontSide: true,
+		frontSide: "front",
+		backSide: "back",
 		id: "scotiabank",
 		textDown: true,
 		title: "Scotiabank",
@@ -182,7 +183,8 @@ angular.module('personalWebsite')
 			"Modified MSAccess databases to work with upgraded server and redesigned website"
 		] 
 	}, {
-		frontSide: true,
+		frontSide: "front",
+		backSide: "back",
 		id: "dond",
 		textDown: false,
 		title: "Department of National Defence",
@@ -195,7 +197,8 @@ angular.module('personalWebsite')
 			"Revised designs for 6 related applications"
 		] 
 	}, {
-		frontSide: true,
+		frontSide: "front",
+		backSide: "back",
 		id: "flashstock",
 		textDown: true,
 		title: "Flashstock",
@@ -209,8 +212,10 @@ angular.module('personalWebsite')
 		]
 	}];
 
-	self.flipCard = function(index){
-		self.jobExperience[index].frontSide = !self.jobExperience[index].frontSide;
-	}
+	/*self.flipCard = function(index){
+		var tempClass = self.jobExperience[index].frontSide;
+		self.jobExperience[index].frontSide = self.jobExperience[index].backSide;
+		self.jobExperience[index].backSide = tempClass;
+	}*/
 
 }]);
