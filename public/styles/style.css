@@ -240,7 +240,7 @@ set rightDiv to go below the left div instead of floating left/right
 .resumeDownload {
 	width: 100%;
 	position: absolute;
-	bottom: 10px;
+	bottom: 50px;
 	text-align: center;
 }
 
@@ -272,7 +272,6 @@ set rightDiv to go below the left div instead of floating left/right
 	width: 100%;
 	height: 100%;
 	position: relative;
-	border:1px solid green;
 }
 
 .hexagon {
