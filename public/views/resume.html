@@ -12,7 +12,8 @@
     		style="z-index: 2; 
                 position: absolute;
                 left: 0px; 
-                top: 0px;" >
+                top: 0px;" 
+            ng-click="resume.rebuildCanvas($event)">
             <p>{{resume.notSupportedMessage}}</p>
         </canvas>
 	</div>
@@ -23,7 +24,7 @@
 </div>
 
 <div class="resumeContainer pull-right">
-    <div class="experienceContainer">
+    <div ng-show="resume.sectionSelected === 'Experience'" class="experienceContainer">
         <div ng-repeat="job in resume.jobExperience" id="{{job.id}}" class="hexagon">
             <div class="flipper">
                 <div class="{{job.frontSide}}">
@@ -40,6 +41,10 @@
                 </div>
             </div>
         </div>         
+    </div>
+
+    <div ng-show="resume.sectionSelected === 'Skills'">
+        
     </div>
 </div>
 

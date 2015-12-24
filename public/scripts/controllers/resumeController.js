@@ -6,13 +6,13 @@ angular.module('personalWebsite')
 	self.notSupportedMessage = "Sorry, it seems that this browser doesn't support canvases. Please try a different browser."
 
 	self.myNewChart;
+	self.sectionSelected;
 	self.colors = {
 		blue: "#0FA3FF",
 		blueHighlight: "#004BD6",
 		grey: "#B5B5B5",
 		greyHighlight: "#0D62FF"
 	}
-	self.sectionSelected = "None";
 	
 	self.sections = [
 	    {
@@ -71,6 +71,12 @@ angular.module('personalWebsite')
 		textCtx.fillText(labelValue, textCanvas.width/2, textCanvas.height/2);
     }
 
+    self.generateCanvas = function(){
+		self.calculateSections();
+        var ctx = $("#resumeNavCanvas").get(0).getContext("2d");
+        self.myNewChart = new Chart(ctx).Doughnut(self.sections, self.options);
+        self.sectionSelected = self.sections[0].label;
+	}
 
     self.calculateSections = function(){
 
@@ -111,62 +117,49 @@ angular.module('personalWebsite')
 	  return Math.floor(Math.random() * (max - min + 1)) + min;
 	}
 
-    $(document).ready( 
-	    function () {
-	    	self.calculateSections();
-	        var ctx = $("#resumeNavCanvas").get(0).getContext("2d");
-	        self.myNewChart = new Chart(ctx).Doughnut(self.sections, self.options);
+	//Some kind of animation? Maybe cube rotating?
+	self.rebuildCanvas = function(event){
+		var activePoints = self.myNewChart.getSegmentsAtEvent(event);
+		var toShift = 0;
+		var section;
 
-	        $("#resumeNavCanvas").click( 
-	            function(evt){
-	         		var activePoints = self.myNewChart.getSegmentsAtEvent(evt);
-	        		var toShift = 0;
-	        		var section;
+		if(!(activePoints[0])) {
+    		return;
+    	}
 
-	        		if(!(activePoints[0])) {
-	            		return;
-	            	}
+		for(var i=0; i<self.sections.length; i++)
+		{
+			if(self.sections[i].label === activePoints[0].label){
+				toShift = i;
+			}
+		}
 
-	        		for(var i=0; i<self.sections.length; i++)
-	        		{
-	        			if(self.sections[i].label === activePoints[0].label){
-	        				toShift = i;
-	        			}
-	        		}
+		for(var i=0; i<toShift; i++){
+			section = self.sections.shift();
+			self.sections.push(section);
+		}
 
-	        		for(var i=0; i<toShift; i++){
-	        			section = self.sections.shift();
-	        			self.sections.push(section);
-	        		}
+		for(var i=0; i<self.sections.length; i++){
+			if(i == 0){
+				self.sections[i].color = self.colors.blue;
+				self.sections[i].highlight = self.colors.blueHighlight;
+			}
+			else {
+				self.sections[i].color = self.colors.grey;
+				self.sections[i].highlight = self.colors.greyHighlight;
+			} 
+		}
 
-	        		for(var i=0; i<self.sections.length; i++){
-	        			if(i == 0){
-	        				self.sections[i].color = self.colors.blue;
-	        				self.sections[i].highlight = self.colors.blueHighlight;
-	        			}
-	        			else {
-	        				self.sections[i].color = self.colors.grey;
-	        				self.sections[i].highlight = self.colors.greyHighlight;
-	        			} 
-	        		}
-
-	        		//Change to update (remove element, add it to end, make it look like graph is shifting)
-	        		if(toShift !=0){
-	        			self.myNewChart.destroy();
-	        			var ctx = $("#resumeNavCanvas").get(0).getContext("2d");
-	       				self.myNewChart = new Chart(ctx).Doughnut(self.sections, self.options);
-	        		}
-	        		changeSelectedSection();
-        			
-	            }
-	        );
-	    }
-    );
-
-	function changeSelectedSection (){
+		//Change to update (remove element, add it to end, make it look like graph is shifting)
+		if(toShift !=0){
+			self.myNewChart.destroy();
+			var ctx = $("#resumeNavCanvas").get(0).getContext("2d");
+				self.myNewChart = new Chart(ctx).Doughnut(self.sections, self.options);
+		}
 		self.sectionSelected = self.sections[0].label;
-		console.log(self.sectionSelected);
 	}
+
+	self.generateCanvas();
 
 	self.jobExperience = [{
 		frontSide: "front",
