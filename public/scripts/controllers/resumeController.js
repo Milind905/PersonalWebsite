@@ -1,5 +1,7 @@
 angular.module('personalWebsite')
-.controller('ResumeCtrl', function(){
+.controller('ResumeCtrl', ['$scope', function($scope){
+	'use strict'
+
 	var self = this;
 	self.notSupportedMessage = "Sorry, it seems that this browser doesn't support canvases. Please try a different browser."
 
@@ -10,6 +12,7 @@ angular.module('personalWebsite')
 		grey: "#B5B5B5",
 		greyHighlight: "#0D62FF"
 	}
+	self.sectionSelected = "None";
 	
 	self.sections = [
 	    {
@@ -152,20 +155,67 @@ angular.module('personalWebsite')
 	        			self.myNewChart.destroy();
 	        			var ctx = $("#resumeNavCanvas").get(0).getContext("2d");
 	       				self.myNewChart = new Chart(ctx).Doughnut(self.sections, self.options);
-	       				self.changeSelectedSection();
 	        		}
+	        		changeSelectedSection();
         			
 	            }
 	        );
 	    }
     );
 
-	self.changeSelectedSection = function(){
+	function changeSelectedSection (){
 		self.sectionSelected = self.sections[0].label;
 		console.log(self.sectionSelected);
 	}
 
-    //changed something
-	
+	self.jobExperience = [{
+		frontSide: "front",
+		backSide: "back",
+		id: "scotiabank",
+		textDown: true,
+		title: "Scotiabank",
+		date: "May 2014 - August 2014",
+		position: "Database Analyst",
+		logo: "../images/scotiabankLogo.png",
+		info: [
+			"Redesigned entire backend of internal website",
+			"Upgraded server to be compatible with windows 7",
+			"Modified MSAccess databases to work with upgraded server and redesigned website"
+		] 
+	}, {
+		frontSide: "front",
+		backSide: "back",
+		id: "dond",
+		textDown: false,
+		title: "Department of National Defence",
+		date: "January 2015 - April 2015",
+		position: "Mobile Developer",
+		logo: "../images/dondLogo.png",
+		info: [
+			"Fully developed an Android and iOS memory game app",
+			"Designed gamified version of Dual-N-Back memory task",
+			"Revised designs for 6 related applications"
+		] 
+	}, {
+		frontSide: "front",
+		backSide: "back",
+		id: "flashstock",
+		textDown: true,
+		title: "Flashstock",
+		date: "September 2015 - December 2015",
+		position: "Web Developer",
+		logo: "../images/flashstockLogo.png",
+		info: [
+			"Add items here",
+			"Add items here 2",
+			"Add items here 3"
+		]
+	}];
 
-});
+	/*self.flipCard = function(index){
+		var tempClass = self.jobExperience[index].frontSide;
+		self.jobExperience[index].frontSide = self.jobExperience[index].backSide;
+		self.jobExperience[index].backSide = tempClass;
+	}*/
+
+}]);

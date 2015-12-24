@@ -1,41 +1,46 @@
 <div class="resumeNav pull-left">
 
 	<div class="resumeNavContainer">
-		<canvas id="textCanvas" width="400" height="400" 
-			 style="z-index: 1; 
-                   position: absolute;
-                   left: 0px; 
-                   top: 0px;" 
-        >
-        <p>{{resume.notSupportedMessage}}</p>
+		<canvas id="textCanvas" width="300" height="300" 
+			style="z-index: 1; 
+            position: absolute;
+            left: 0px; 
+            top: 0px;" >
+            <p>{{resume.notSupportedMessage}}</p>
         </canvas>
-		<canvas id="resumeNavCanvas" width="400" height="400" 
-			 style="z-index: 2; 
-                   position: absolute;
-                   left: 0px; 
-                   top: 0px;" 
-        >
-        <p>{{resume.notSupportedMessage}}</p>
+    	<canvas id="resumeNavCanvas" width="300" height="300" 
+    		style="z-index: 2; 
+                position: absolute;
+                left: 0px; 
+                top: 0px;" >
+            <p>{{resume.notSupportedMessage}}</p>
         </canvas>
 	</div>
 
-  <div class="resumeDownload">
-    <div class="resumeDownloadButton">
-      <a href="#">Download Resume</a>
+    <div class="resumeDownload">
+        <a href="../downloads/Milind_Shah_Resume.pdf" download>Download Resume</a>
     </div>
-  </div>
-
 </div>
 
 <div class="resumeContainer pull-right">
-
-  <ul>
-    <li ng-show="resume.sectionSelected === 'Experience'">Experience</li>
-    <li ng-show="resume.sectionSelected === 'Skills'">Skills</li>
-    <li ng-show="resume.sectionSelected === 'Education'">Education</li>
-    <li ng-show="resume.sectionSelected === 'Projects'">Projects</li>
-   
-  </ul>
+    <div class="experienceContainer">
+        <div ng-repeat="job in resume.jobExperience" id="{{job.id}}" class="hexagon">
+            <div class="flipper">
+                <div class="{{job.frontSide}}">
+                    <div ng-if="job.textDown" class="hexTextDown"></div>
+                    <h4 class="jobTitle">{{job.title}}</h4>
+                    <p class="jobDate">{{job.date}}</p>
+                    <h4 class="jobPosition">{{job.position}}</h4>
+                </div>
+                <div class="{{job.backSide}}">
+                    <img class="jobLogo" src="{{job.logo}}"></img>
+                    <ul class="jobInfo">
+                        <li ng-repeat="info in job.info">{{info}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>         
+    </div>
 </div>
 
 
