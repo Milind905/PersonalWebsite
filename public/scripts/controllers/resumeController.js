@@ -167,4 +167,50 @@ angular.module('personalWebsite')
 		self.sectionSelected = self.sections[0].label;
 		console.log(self.sectionSelected);
 	}
+
+	self.jobExperience = [{
+		frontSide: true,
+		id: "scotiabank",
+		textDown: true,
+		title: "Scotiabank",
+		date: "May 2014 - August 2014",
+		position: "Database Analyst",
+		logo: "../images/scotiabankLogo.png",
+		info: [
+			"Redesigned entire backend of internal website",
+			"Upgraded server to be compatible with windows 7",
+			"Modified MSAccess databases to work with upgraded server and redesigned website"
+		] 
+	}, {
+		frontSide: true,
+		id: "dond",
+		textDown: false,
+		title: "Department of National Defence",
+		date: "January 2015 - April 2015",
+		position: "Mobile Developer",
+		logo: "../images/dondLogo.png",
+		info: [
+			"Fully developed an Android and iOS memory game app",
+			"Designed gamified version of Dual-N-Back memory task",
+			"Revised designs for 6 related applications"
+		] 
+	}, {
+		frontSide: true,
+		id: "flashstock",
+		textDown: true,
+		title: "Flashstock",
+		date: "September 2015 - December 2015",
+		position: "Web Developer",
+		logo: "../images/flashstockLogo.png",
+		info: [
+			"Add items here",
+			"Add items here 2",
+			"Add items here 3"
+		]
+	}];
+
+	self.flipCard = function(index){
+		self.jobExperience[index].frontSide = !self.jobExperience[index].frontSide;
+	}
+
 }]);

@@ -279,28 +279,74 @@ set rightDiv to go below the left div instead of floating left/right
 	width: 325px;
 	height: 275px;
 	position: absolute;
+	text-align: center;
 }
 
-#redHexagon {
-	background: url("../images/redhexagon.png") no-repeat;
+#scotiabank {
+	background: url("../images/orangehexagon.png") no-repeat;
 	background-size: 100%;
 	top: 35px;
 	left: 20px;
 }
 
-#greenHexagon {
+#dond {
 	background: url("../images/greenhexagon.png") no-repeat;
 	background-size: 100%;
 	top: 195px;
 	left: 290px;
 }
 
-#blueHexagon {
+#flashstock {
 	background: url("../images/bluehexagon.png") no-repeat;
 	background-size: 100%;
 	top: 35px;
 	left: 560px;
 }
+
+.hexTextDown {
+	height: 20px;
+	width: 75%;
+}
+
+.jobTitle {
+	width: 75%;
+	margin: 0 auto;
+	font-size: 26px;
+	font-family: "Helvetica-Neue-Thin";
+	margin-top: 65px;
+}
+
+.jobDate {
+	width: 75%;
+	margin: 0 auto;
+	font-size: 14px;
+	font-family: "Helvetica-Neue";
+	margin-top: 5px;
+}
+
+.jobPosition {
+	width: 60%;
+	margin: 0 auto;
+	font-size: 26px;
+	font-family: "Helvetica-Neue-Thin";
+	margin-top: 30px;
+}
+
+.jobInfo {
+	width: 75%;
+	font-size: 14px;
+	text-align: left;
+	position: absolute;
+	top: 85px;
+	left: 30px;
+}
+
+.jobLogo {
+	margin: 0 auto;
+	margin-top: 25px;
+	max-height: 40px;
+}
+
 
 @media (max-width: 1310px){
 	.resumeNav{

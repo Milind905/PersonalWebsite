@@ -24,11 +24,20 @@
 
 <div class="resumeContainer pull-right">
     <div class="experienceContainer">
-        <div id="redHexagon" class="hexagon">
-            <h3>ScotiaBank</h3>
-        </div>
-        <div id="greenHexagon" class="hexagon"><h3>Department of National Defense</h3></div>
-        <div id="blueHexagon" class="hexagon"><h3>FlashStock</h3></div>
+        <div ng-repeat="job in resume.jobExperience" id="{{job.id}}" class="hexagon" ng-click="resume.flipCard($index)">
+            <div ng-if="job.frontSide">
+                <div ng-if="job.textDown" class="hexTextDown"></div>
+                <h4 class="jobTitle">{{job.title}}</h4>
+                <p class="jobDate">{{job.date}}</p>
+                <h4 class="jobPosition">{{job.position}}</h4>
+            </div>
+            <div ng-if="!job.frontSide">
+                <img class="jobLogo" src="{{job.logo}}"></img>
+                <ul class="jobInfo">
+                    <li ng-repeat="info in job.info">{{info}}</li>
+                </ul>
+            </div>
+        </div>         
     </div>
 </div>
 
