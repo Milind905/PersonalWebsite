@@ -20,7 +20,8 @@
     "angular": "~1.4.7",
     "angular-ui-router": "~0.2.15",
     "bootstrap": "~3.3.5",
-    "Chart.js": "~1.0.2"
+    "Chart.js": "~1.0.2",
+    "flip": "~1.0.18"
   },
   "main": "angularApp.js",
   "homepage": "index.ejs"
