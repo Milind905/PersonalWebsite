@@ -212,6 +212,6 @@ angular.module('personalWebsite')
 	}*/
 
 	self.environments = ["Git", "Android Studio", "XCode", "Titanium Studio", 
-		"Ubuntu", "Terminal", "Amazon S3", "SQL Developer", "Photoshop"];
+		"Ubuntu", "Amazon S3", "SQL Developer", "Photoshop"];
 
 }]);
