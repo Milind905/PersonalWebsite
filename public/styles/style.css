@@ -53,6 +53,7 @@ colors{
 }
 
 
+
 /*** NavBar Styling ***/
 .navbar-fixed-top {
 	background: black;
@@ -229,6 +230,17 @@ set rightDiv to go below the left div instead of floating left/right
 	width: 300px;
 	height: 500px;
 	position: relative; 
+	float: left;
+}
+
+.resumeContainer {
+	margin-top: 30px;
+	margin-left: 30px;
+	margin-right: 30px;
+	margin-bottom: 30px;
+	width: 900px;
+	height: 500px;
+	float: right;	
 }
 
 .resumeNavContainer {
@@ -259,17 +271,8 @@ set rightDiv to go below the left div instead of floating left/right
 	background-color: #FF6B0F;
 }
 
-.resumeContainer {
-	margin-top: 30px;
-	margin-left: 30px;
-	margin-right: 30px;
-	margin-bottom: 30px;
-	width: 900px;
-	height: 500px;	
-}
-
 .sectionContainer {
-	width: 100%;
+	width: 900px;
 	height: 100%;
 	position: relative;
 }
@@ -388,9 +391,11 @@ set rightDiv to go below the left div instead of floating left/right
 	width: 450px;
 	float:right;
 	border: 1px solid green;
+	color: #B5B5B5;
+	font-family: "Helvetica-Neue-Thin";
 }
 
-.computerLanguages h4{
+.computerLanguages h4, .environments h4{
 	margin-left: 10px;
 	margin-bottom: 10px;
 }
@@ -435,10 +440,12 @@ set rightDiv to go below the left div instead of floating left/right
 		margin-top: 100px;
 	}
 	.resumeContainer{
-		width: 900px;
+		width: 100%;
 		margin: 0;
-		margin-right: calc((100% - 900px) / 2);
 		margin-bottom: 50px;
+	}
+	.sectionContainer{
+		margin: 0 auto;
 	}
 }
 

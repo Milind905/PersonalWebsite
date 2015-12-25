@@ -1,4 +1,4 @@
-<div class="resumeNav pull-left">
+<div class="resumeNav">
 
 	<div class="resumeNavContainer">
 		<canvas id="textCanvas" width="300" height="300" 
@@ -23,7 +23,7 @@
     </div>
 </div>
 
-<div class="resumeContainer pull-right">
+<div class="resumeContainer">
     <div ng-show="resume.sectionSelected === 'Experience'" class="sectionContainer">
         <div ng-repeat="job in resume.jobExperience" id="{{job.id}}" class="hexagon">            
             <div class="flipper">
@@ -106,9 +106,14 @@
                 <span>SQL</span>
                 <div class="languageCircles"><pictograph-row filled="3"></pictograph-row></div>
              </div>
+             <div class="languageRow">
+                <span>Mongoose</span>
+                <div class="languageCircles"><pictograph-row filled="9"></pictograph-row></div>
+             </div>
         </div>
+
         <div class="environments">
- 
+            <h4>Environments & Tools</h4>
         </div>
     </div>
 </div>
