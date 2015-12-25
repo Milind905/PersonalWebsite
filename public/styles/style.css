@@ -390,7 +390,7 @@ set rightDiv to go below the left div instead of floating left/right
 	height: 100%;
 	width: 450px;
 	float:right;
-	border: 1px solid green;
+
 	color: #B5B5B5;
 	font-family: "Helvetica-Neue-Thin";
 }
@@ -422,6 +422,14 @@ set rightDiv to go below the left div instead of floating left/right
 
 .languageRow .unfilled {
 	color: #B5B5B5;
+}
+
+.envCircle {
+	width: 120px;
+	height: 120px;
+	margin: 0px 15px 15px;
+	border:1px solid red;
+	float: left;
 }
 
 @media (max-width: 1310px){
