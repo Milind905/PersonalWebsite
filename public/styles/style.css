@@ -268,7 +268,7 @@ set rightDiv to go below the left div instead of floating left/right
 	height: 500px;	
 }
 
-.experienceContainer {
+.sectionContainer {
 	width: 100%;
 	height: 100%;
 	position: relative;
@@ -375,6 +375,49 @@ set rightDiv to go below the left div instead of floating left/right
 	max-height: 40px;
 }
 
+.computerLanguages {
+	height: 100%;
+	width: 450px;
+	float: left;
+	color: #B5B5B5;
+	font-family: "Helvetica-Neue-Thin";
+}
+
+.environments{
+	height: 100%;
+	width: 450px;
+	float:right;
+	border: 1px solid green;
+}
+
+.computerLanguages h4{
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
+
+.languageRow {
+	width: 400px;
+	font-size: 14px;
+	margin: 1px auto;
+}
+
+.languageRow span{
+	width: 100px;
+}
+
+.languageCircles {
+	width: 300px;
+	float: right;
+}
+
+.languageRow i{
+	margin: 0 2px;
+	color: #0FA3FF;
+}
+
+.languageRow .unfilled {
+	color: #B5B5B5;
+}
 
 @media (max-width: 1310px){
 	.resumeNav{
@@ -395,6 +438,7 @@ set rightDiv to go below the left div instead of floating left/right
 		width: 900px;
 		margin: 0;
 		margin-right: calc((100% - 900px) / 2);
+		margin-bottom: 50px;
 	}
 }
 

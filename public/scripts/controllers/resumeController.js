@@ -211,4 +211,23 @@ angular.module('personalWebsite')
 		self.jobExperience[index].backSide = tempClass;
 	}*/
 
+	self.languages = [
+		{name: "Javascript", filled: 10},
+		{name: "NodeJS", filled: 10},
+		{name: "AngularJS", filled: 8},
+		{name: "Python", filled: 6},
+		{name: "PHP", filled: 4},
+		{name: "Java", filled: 6},
+		{name: "C#", filled: 5},
+		{name: "C++", filled: 4},
+		{name: "C", filled: 3},
+		{name: "Assembly", filled: 2},
+		{name: "Matlab"},
+		{name: "HTML", filled: 10},
+		{name: "CSS", filled: 9},
+		{name: "VBA", filled: 5},
+		{name: "SQL", filled: 3},
+		{name: "Matlab", filled: 4}
+	]
+
 }]);
