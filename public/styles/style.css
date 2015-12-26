@@ -176,20 +176,23 @@ colors{
 
 /*** About Page Styling ***/
 .main-about-container{
-	height: 100vh;
-	width: 70vw;
-	border: 1px solid green;
-	/* contain overflow */
+	width: 700px;
+	margin-left: 100px;
+	float: left;
+}
+
+.command-prompt-help {
+	width: 300px;
+	float: right;
 }
 
 .command-prompt-container{
 	position: relative;
-	width: 650px;
+	width: 700px;
 	height: 400px;
 	margin: 0 auto;
-	margin-top: 25vh;
+	margin-top: 50px;
 	background-color: #000;
-	opacity: 0.8;
 	/* scroll contain overflow */
 }
 
@@ -202,33 +205,32 @@ colors{
 	color: #fff;
 }
 
-.command-input {
-	/* change width to rest of div */
-	width: 95%; 
+.input-command-container input[type="text"] {
+	/* change width to fill rest of div */
+	width: 95%;
 	max-height: 50px;
 	background-color: #000;
 	border: none;
 	color: #fff;
-	/* change text font, size, weight */
+	font-family: Arial;
+	font-size: 14px;
+	font-weight: lighter;
 }
 
-.command-prompt-help {
-	width: 30vw;
-	height: 100vh;
-	bottom: 0;
-}
 
-@media (max-width: 960px){
+
+@media (max-width: 1110px){
 	.main-about-container {
-		width: 90vw;
+		width: 100%;
+		margin: 0 auto;
+		text-align: center;
 	}
-	/*Make it an icon with pull out menu*/
 	.command-prompt-help {
-		width: 10vw;
+		width: 100%;
+		margin: 0 auto;
 	}
 }
 
-/* @media < 500px? */
 
 
 /*** Resume Page Styling ***/
