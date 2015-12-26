@@ -1,4 +1,4 @@
-<div class="resumeNav pull-left">
+<div class="resumeNav">
 
 	<div class="resumeNavContainer">
 		<canvas id="textCanvas" width="300" height="300" 
@@ -12,7 +12,8 @@
     		style="z-index: 2; 
                 position: absolute;
                 left: 0px; 
-                top: 0px;" >
+                top: 0px;" 
+            ng-click="resume.rebuildCanvas($event)">
             <p>{{resume.notSupportedMessage}}</p>
         </canvas>
 	</div>
@@ -22,9 +23,9 @@
     </div>
 </div>
 
-<div class="resumeContainer pull-right">
-    <div class="experienceContainer">
-        <div ng-repeat="job in resume.jobExperience" id="{{job.id}}" class="hexagon">
+<div class="resumeContainer">
+    <div ng-show="resume.sectionSelected === 'Experience'" class="sectionContainer">
+        <div ng-repeat="job in resume.jobExperience" id="{{job.id}}" class="hexagon">            
             <div class="flipper">
                 <div class="{{job.frontSide}}">
                     <div ng-if="job.textDown" class="hexTextDown"></div>
@@ -40,6 +41,84 @@
                 </div>
             </div>
         </div>         
+    </div>
+
+    <div ng-show="resume.sectionSelected === 'Skills'" class="sectionContainer">
+        <div class="computerLanguages">
+            <h4>Languages & Frameworks</h4>
+             <div class="languageRow">
+                <span>Javascript</span>
+                <div class="languageCircles"><pictograph-row filled="10"></pictograph-row></div>
+             </div>
+              <div class="languageRow">
+                <span>AngularJS</span>
+                <div class="languageCircles"><pictograph-row filled="8"></pictograph-row></div>
+             </div>
+             <div class="languageRow">
+                <span>NodeJS</span>
+                <div class="languageCircles"><pictograph-row filled="10"></pictograph-row></div>
+             </div>
+             <div class="languageRow">
+                <span>Python</span>
+                <div class="languageCircles"><pictograph-row filled="6"></pictograph-row></div>
+             </div>
+             <div class="languageRow">
+                <span>PHP</span>
+                <div class="languageCircles"><pictograph-row filled="4"></pictograph-row></div>
+             </div>
+             <div class="languageRow">
+                <span>Java</span>
+                <div class="languageCircles"><pictograph-row filled="7"></pictograph-row></div>
+             </div>
+            <div class="languageRow">
+                <span>Swift</span>
+                <div class="languageCircles"><pictograph-row filled="3"></pictograph-row></div>
+             </div>
+             <div class="languageRow">
+                <span>HTML</span>
+                <div class="languageCircles"><pictograph-row filled="10"></pictograph-row></div>
+             </div>
+              <div class="languageRow">
+                <span>CSS</span>
+                <div class="languageCircles"><pictograph-row filled="9"></pictograph-row></div>
+             </div>
+             <div class="languageRow">
+                <span>C++</span>
+                <div class="languageCircles"><pictograph-row filled="4"></pictograph-row></div>
+             </div>
+             <div class="languageRow">
+                <span>C</span>
+                <div class="languageCircles"><pictograph-row filled="3"></pictograph-row></div>
+             </div>
+             <div class="languageRow">
+                <span>Assembly</span>
+                <div class="languageCircles"><pictograph-row filled="2"></pictograph-row></div>
+             </div>
+             <div class="languageRow">
+                <span>Matlab</span>
+                <div class="languageCircles"><pictograph-row filled="3"></pictograph-row></div>
+             </div>
+             <div class="languageRow">
+                <span>VBA</span>
+                <div class="languageCircles"><pictograph-row filled="5"></pictograph-row></div>
+             </div>
+             <div class="languageRow">
+                <span>SQL</span>
+                <div class="languageCircles"><pictograph-row filled="3"></pictograph-row></div>
+             </div>
+             <div class="languageRow">
+                <span>Mongoose</span>
+                <div class="languageCircles"><pictograph-row filled="9"></pictograph-row></div>
+             </div>
+        </div>
+
+        <div class="environments">
+            <h4>Environments & Tools</h4>
+            <div ng-repeat="env in resume.environments" class="envCircle">
+                <img src="../images/{{env.file}}"></img>
+                <span class="">{{env.name}}</span>
+            </div>
+        </div>
     </div>
 </div>
 
