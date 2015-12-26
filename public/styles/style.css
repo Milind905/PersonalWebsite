@@ -100,14 +100,19 @@ colors{
 
 
 /*** Home Page Styling ***/
-.pageContainer {
-	margin: 100px 25px;
-}
-
 .left {
 	font-family: "Helvetica-Neue-Thin";
-	width: 40%;
-	margin-left: 50px;
+	width: 50%;
+	padding-left: 50px;
+	padding-top: 25px;
+	float: left;
+}
+
+.right {
+	width: 50%;
+	float: right;
+	/* remove this after */
+	height: 100px;
 }
 
 .name h1{
@@ -117,11 +122,11 @@ colors{
 	text-align: right;
 }
 
-.name .first {
+.name #first {
 	color: #B5B5B5;
 }
 
-.name .last {
+.name #last {
 	color: #0FA3FF;
 }
 
@@ -148,17 +153,21 @@ colors{
 	color: #0FA3FF;
 }
 
-/* Media Query*/
-/*
-set rightDiv to go below the left div instead of floating left/right
-*/
-@media (max-width: 960px){
+@media (max-width: 1110px){
 	.left {
 		width: 100%;
-		margin-left: 0px;
+		padding-left: 0px;
+		margin-bottom: 30px;
+	}
+	.right {
+		width: 100%;
 	}
 	.name h1,
 	.myHeading h1{
+		text-align: center;
+	}
+	.myDescription p{
+		padding: 0 50px;
 		text-align: center;
 	}
 }
