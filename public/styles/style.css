@@ -398,10 +398,12 @@ set rightDiv to go below the left div instead of floating left/right
 .computerLanguages h4 {
 	margin-bottom: 25px;
 	margin-left: 15px;
+	color: #0FA3FF;
 }
 
 .environments h4{
 	margin-bottom: 10px;
+	color: #0FA3FF;
 }
 
 .languageRow {
@@ -429,11 +431,20 @@ set rightDiv to go below the left div instead of floating left/right
 }
 
 .envCircle {
-	width: 92.5px;
-	height: 92.5px;
-	margin: 15px 10px;
-	border:1px solid red;
+	width: 87.5px;
+	margin: 15px 12.5px 30px 12.5px;
 	float: left;
+	text-align: center;
+}
+
+.envCircle img{
+	width: 87.5px;
+	height: 87.5px;
+	margin-bottom: 15px;
+}
+
+.envCircle span{
+	color: #0FA3FF;
 }
 
 @media (max-width: 1310px){

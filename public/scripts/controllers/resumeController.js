@@ -211,7 +211,15 @@ angular.module('personalWebsite')
 		self.jobExperience[index].backSide = tempClass;
 	}*/
 
-	self.environments = ["Git", "Android Studio", "XCode", "Titanium Studio", 
-		"Ubuntu", "Amazon S3", "SQL Developer", "Photoshop"];
+	self.environments = [
+		{name: "Amazon S3", file: "amazonIcon.png"}, 
+		{name: "Android Studio", file: "androidStudioIcon.png"},
+		{name: "XCode", file: "xcodeIcon.png"},
+		{name: "Titanium Studio", file: "titaniumStudioIcon.png"}, 
+		{name: "Ubuntu", file: "ubuntuIcon.png"}, 
+		{name: "Photoshop", file: "photoshopIcon.png"},
+		{name: "SQL Developer", file: "sqldevIcon.png"}, 
+		{name: "Git", file: "gitIcon.png"}
+	];
 
 }]);
