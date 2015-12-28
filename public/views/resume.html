@@ -116,8 +116,24 @@
             <h4>Environments & Tools</h4>
             <div ng-repeat="env in resume.environments" class="envCircle">
                 <img src="../images/{{env.file}}"></img>
-                <span class="">{{env.name}}</span>
+                <span>{{env.name}}</span>
             </div>
+        </div>
+    </div>
+
+    <div ng-show="resume.sectionSelected === 'Education'" class="sectionContainer">
+        <div class="universityContainer">
+        </div>
+
+        <div class="coursesContainer">
+            <h4>Relevant Courses</h4>
+            <div ng-repeat="course in resume.courses" class="courseBox">
+                <i class="fa {{course.iconClass}}"></i>
+                <span>{{course.name}}</span>
+            </div>
+        </div>
+
+        <div class="languagesContainer">
         </div>
     </div>
 </div>

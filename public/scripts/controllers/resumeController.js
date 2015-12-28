@@ -222,4 +222,15 @@ angular.module('personalWebsite')
 		{name: "Git", file: "gitIcon.png"}
 	];
 
+	self.courses = [
+		{name: 'Digital Computers', iconClass: 'fa-desktop'},
+		{name: 'Embedded Microprocessors', iconClass: 'fa-usb'},
+		{name: 'Algorithms & Data Structures', iconClass: 'fa-tree'},
+		{name: 'Operating Systems', iconClass: 'fa-stack-overflow' },
+		{name: 'Advanced Calculus', iconClass: 'fa-calculator'},
+		{name: 'Linear Algebra', iconClass: 'fa-th'},
+		{name: 'Discrete Mathematics', iconClass: 'fa-plus-square'},
+		{name: 'Digital Circuits', iconClass: 'fa-bolt'}
+	]
+
 }]);
