@@ -52,6 +52,7 @@ angular.module('personalWebsite')
 	    tooltipFontSize: 18,
 	    tooltipTemplate: "<%if (label){%><%=label%><%}%>",
 	    percentageInnerCutout : 75,
+	    responsive: true,
 
 	    onAnimationComplete: function () {
 	    	self.changeNavLabel(this.segments[0].label);
@@ -159,7 +160,7 @@ angular.module('personalWebsite')
 		self.sectionSelected = self.sections[0].label;
 	}
 
-	self.generateCanvas();
+	
 
 	self.jobExperience = [{
 		frontSide: "front",
@@ -205,12 +206,6 @@ angular.module('personalWebsite')
 		]
 	}];
 
-	/*self.flipCard = function(index){
-		var tempClass = self.jobExperience[index].frontSide;
-		self.jobExperience[index].frontSide = self.jobExperience[index].backSide;
-		self.jobExperience[index].backSide = tempClass;
-	}*/
-
 	self.environments = [
 		{name: "Amazon S3", file: "amazonIcon.png"}, 
 		{name: "Android Studio", file: "androidStudioIcon.png"},
@@ -231,6 +226,57 @@ angular.module('personalWebsite')
 		{name: 'Linear Algebra', iconClass: 'fa-th'},
 		{name: 'Discrete Mathematics', iconClass: 'fa-plus-square'},
 		{name: 'Digital Circuits', iconClass: 'fa-bolt'}
-	]
+	];
+
+	/*self.flipCard = function(index){
+	var tempClass = self.jobExperience[index].frontSide;
+	self.jobExperience[index].frontSide = self.jobExperience[index].backSide;
+	self.jobExperience[index].backSide = tempClass;
+	}*/
+
+	self.english = [{
+		value: 100,
+		color: "#0FA3FF",
+		highlight: "#0FA3FF",
+	}];
+
+	self.gujarati = [{
+		value: 75,
+		color: "#0FA3FF",
+		highlight: "#0FA3FF",
+	}, {
+		value: 25,
+		color: "#B5B5B5",
+		highlight: "#B5B5B5"
+	}];
+
+	self.french = [{
+		value: 25,
+		color: "#0FA3FF",
+		highlight: "#0FA3FF",
+	}, {
+		value: 75,
+		color: "#B5B5B5",
+		highlight: "#B5B5B5"
+	}];
+
+	self.languageChartOptions = {
+		animation: false,
+		showTooltips: false,
+		percentageInnerCutout: 80,
+		segmentStrokeColor : "#1C1C1C",
+	}
+
+	self.generateLanguageCharts = function(){
+        var englishCtx = document.getElementById("englishChart").getContext("2d");
+		new Chart(englishCtx).Doughnut(self.english, self.languageChartOptions);
+		var	gujaratiCtx = document.getElementById("gujaratiChart").getContext("2d");
+		new Chart(gujaratiCtx).Doughnut(self.gujarati, self.languageChartOptions);
+		var	frenchCtx = document.getElementById("frenchChart").getContext("2d");
+		new Chart(frenchCtx).Doughnut(self.french, self.languageChartOptions);
+	}
+
+	self.generateCanvas();
+	self.generateLanguageCharts();
 
 }]);

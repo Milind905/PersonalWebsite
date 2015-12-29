@@ -122,18 +122,33 @@
     </div>
 
     <div ng-show="resume.sectionSelected === 'Education'" class="sectionContainer">
-        <div class="universityContainer">
-        </div>
+        <div class="row">
+            <div class="universityContainer">
+            </div>
 
-        <div class="coursesContainer">
-            <h4>Relevant Courses</h4>
-            <div ng-repeat="course in resume.courses" class="courseBox">
-                <i class="fa {{course.iconClass}}"></i>
-                <span>{{course.name}}</span>
+            <div class="coursesContainer">
+                <h4>Relevant Courses</h4>
+                <div ng-repeat="course in resume.courses" class="courseBox">
+                    <i class="fa {{course.iconClass}}"></i>
+                    <span>{{course.name}}</span>
+                </div>
             </div>
         </div>
 
         <div class="languagesContainer">
+            <div class="languageChart"><h4>Languages</h4></div>
+            <div class="languageChart">
+                <canvas id="englishChart" width="130" height="130"></canvas>
+                <span>English</span>
+            </div>
+            <div class="languageChart">
+                <canvas id="gujaratiChart" width="130" height="130"></canvas>
+                <span>Gujarati</span>
+            </div>
+            <div class="languageChart">
+                <canvas id="frenchChart" width="130" height="130"></canvas>
+                <span>French</span>
+            </div>
         </div>
     </div>
 </div>
