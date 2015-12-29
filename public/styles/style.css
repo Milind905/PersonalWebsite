@@ -478,9 +478,10 @@ colors{
 }
 
 .languagesContainer {
-	width: 580px;
+	width: 900px;
 	height: 150px;
 	margin: 0 auto;
+	float: left;
 	padding-top: 20px;
 	color: #B5B5B5;
 	font-family: "Helvetica-Neue-Thin";
