@@ -19,25 +19,29 @@ angular.module('personalWebsite')
 	        value: 1,
 	        color: self.colors.blue,
 	        highlight: self.colors.blueHighlight,
-	        label: "Experience"
+	        label: "Experience",
+	        value: 35
 	    },
 	    {
 	        value: 1,
 	        color: self.colors.grey,
 	        highlight: self.colors.greyHighlight,
-	        label: "Skills"
+	        label: "Skills",
+	        value: 30
 	    },
 	    {
 	        value: 1,
 	        color: self.colors.grey,
 	        highlight: self.colors.greyHighlight,
-	        label: "Education"
+	        label: "Education",
+	        value: 15
 	    },
 	    {
 	    	value: 1,
 	    	color: self.colors.grey,
 	    	highlight: self.colors.greyHighlight,
-	    	label: "Projects"
+	    	label: "Projects",
+	    	value: 20
 	    }
 	];
 
@@ -55,7 +59,7 @@ angular.module('personalWebsite')
 	    onAnimationComplete: function () {
 	    	self.changeNavLabel(self.sectionSelected);
 	    	//Either this or show curved text
-	    	this.showTooltip(this.segments, true);
+	    	//this.showTooltip(this.segments, true);
 	    }
 	};
 
@@ -63,7 +67,6 @@ angular.module('personalWebsite')
     	if(labelValue === null){
     		labelValue = self.sections[0].label;
     	}
-		console.log("LabelValue: ", labelValue);
     	var textCanvas = document.getElementById("textCanvas");
     	var textCtx = $("#textCanvas").get(0).getContext("2d");
     	textCtx.clearRect(0, 0, textCanvas.width, textCanvas.height);
@@ -75,7 +78,6 @@ angular.module('personalWebsite')
     }
 
     self.generateCanvas = function(){
-		self.calculateSections();
         var ctx = $("#resumeNavCanvas").get(0).getContext("2d");
         self.myNewChart = new Chart(ctx).Doughnut(self.sections, self.options);
         self.sectionSelected = self.sections[0].label;
@@ -137,7 +139,6 @@ angular.module('personalWebsite')
 			}
 		}
 
-		console.log(segmentClicked);
 		for(var i=0; i<self.sections.length; i++){
 			if(i === segmentClicked){
 				self.sections[i].color = self.colors.blue;
