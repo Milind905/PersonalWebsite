@@ -172,9 +172,9 @@ angular.module('personalWebsite')
 		position: "Database Analyst",
 		logo: "../images/scotiabankLogo.png",
 		info: [
-			"Redesigned entire backend of internal website",
-			"Upgraded server to be compatible with windows 7",
-			"Modified MSAccess databases to work with upgraded server and redesigned website"
+			"Refactored backend of internal website",
+			"Upgraded server and database to be compatible with windows 7",
+			"Automated process of generating reports"
 		] 
 	}, {
 		frontSide: "front",
@@ -186,9 +186,9 @@ angular.module('personalWebsite')
 		position: "Mobile Developer",
 		logo: "../images/dondLogo.png",
 		info: [
-			"Fully developed an Android and iOS memory game app",
-			"Designed gamified version of Dual-N-Back memory task",
-			"Revised designs for 6 related applications"
+			"Developed gamified version of Dual-N-Back memory task",
+			"Game was built for both Android and iOS",
+			"Created designs for 6 related applications"
 		] 
 	}, {
 		frontSide: "front",
@@ -200,9 +200,9 @@ angular.module('personalWebsite')
 		position: "Web Developer",
 		logo: "../images/flashstockLogo.png",
 		info: [
-			"Add items here",
-			"Add items here 2",
-			"Add items here 3"
+			"Implemented new features for three web apps",
+			"Built grid of re-arrangeable and downloadable images",
+			"Created an algorithm to compare images"
 		]
 	}];
 
