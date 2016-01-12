@@ -6,7 +6,7 @@ angular.module('personalWebsite')
 	self.notSupportedMessage = "Sorry, it seems that this browser doesn't support canvases. Please try a different browser."
 
 	self.myNewChart;
-	self.sectionSelected;
+	self.sectionSelected = null;
 	self.colors = {
 		blue: "#0FA3FF",
 		blueHighlight: "#004BD6",
@@ -45,23 +45,25 @@ angular.module('personalWebsite')
 	    animationEasing: "easeInOutCirc",
 	    animationSteps: 30,
 	    segmentStrokeColor : "#1C1C1C",
-	    scaleBeginAtZero: false,
 	    segmentStrokeWidth : 2,
 	    showTooltips: true,
 	    tooltipFontFamily: "'Helvetica-Neue-Thin', 'Source-Sans-Pro', 'Helvetica', sans-serif",
 	    tooltipFontSize: 18,
 	    tooltipTemplate: "<%if (label){%><%=label%><%}%>",
 	    percentageInnerCutout : 75,
-	    responsive: true,
 
 	    onAnimationComplete: function () {
-	    	self.changeNavLabel(this.segments[0].label);
+	    	self.changeNavLabel(self.sectionSelected);
 	    	//Either this or show curved text
 	    	this.showTooltip(this.segments, true);
 	    }
 	};
 
     self.changeNavLabel = function(labelValue){
+    	if(labelValue === null){
+    		labelValue = self.sections[0].label;
+    	}
+		console.log("LabelValue: ", labelValue);
     	var textCanvas = document.getElementById("textCanvas");
     	var textCtx = $("#textCanvas").get(0).getContext("2d");
     	textCtx.clearRect(0, 0, textCanvas.width, textCanvas.height);
@@ -121,7 +123,7 @@ angular.module('personalWebsite')
 	//Some kind of animation? Maybe cube rotating?
 	self.rebuildCanvas = function(event){
 		var activePoints = self.myNewChart.getSegmentsAtEvent(event);
-		var toShift = 0;
+		var segmentClicked = 0;
 		var section;
 
 		if(!(activePoints[0])) {
@@ -131,33 +133,25 @@ angular.module('personalWebsite')
 		for(var i=0; i<self.sections.length; i++)
 		{
 			if(self.sections[i].label === activePoints[0].label){
-				toShift = i;
+				segmentClicked = i;
 			}
 		}
 
-		for(var i=0; i<toShift; i++){
-			section = self.sections.shift();
-			self.sections.push(section);
-		}
-
+		console.log(segmentClicked);
 		for(var i=0; i<self.sections.length; i++){
-			if(i == 0){
+			if(i === segmentClicked){
 				self.sections[i].color = self.colors.blue;
 				self.sections[i].highlight = self.colors.blueHighlight;
 			}
 			else {
 				self.sections[i].color = self.colors.grey;
 				self.sections[i].highlight = self.colors.greyHighlight;
-			} 
+			}
 		}
-
-		//Change to update (remove element, add it to end, make it look like graph is shifting)
-		if(toShift !=0){
-			self.myNewChart.destroy();
-			var ctx = $("#resumeNavCanvas").get(0).getContext("2d");
-				self.myNewChart = new Chart(ctx).Doughnut(self.sections, self.options);
-		}
-		self.sectionSelected = self.sections[0].label;
+		self.myNewChart.destroy();
+		var ctx = $("#resumeNavCanvas").get(0).getContext("2d");
+		self.myNewChart = new Chart(ctx).Doughnut(self.sections, self.options);
+		self.sectionSelected = self.sections[segmentClicked].label;
 	}
 
 	
