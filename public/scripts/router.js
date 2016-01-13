@@ -29,14 +29,6 @@ function ($stateProvider, $urlRouterProvider) {
 			activeTab: 'resume'
 		})
 
-		.state('article', {
-			url: '/articles',
-			templateUrl: '/views/article.html',
-			controller: 'ArticleCtrl',
-			controllerAs: 'article',
-			activeTab: 'article'
-		})
-
 		.state('contact', {
 			url: '/contact',
 			templateUrl: '/views/contact.html',

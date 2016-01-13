@@ -7,6 +7,7 @@ angular.module('personalWebsite')
 
 	self.myNewChart;
 	self.sectionSelected = null;
+	self.currentlySelected = 0;
 	self.colors = {
 		blue: "#0FA3FF",
 		blueHighlight: "#004BD6",
@@ -19,29 +20,25 @@ angular.module('personalWebsite')
 	        value: 1,
 	        color: self.colors.blue,
 	        highlight: self.colors.blueHighlight,
-	        label: "Experience",
-	        value: 35
+	        label: "Experience"
 	    },
 	    {
 	        value: 1,
 	        color: self.colors.grey,
 	        highlight: self.colors.greyHighlight,
-	        label: "Skills",
-	        value: 30
+	        label: "Skills"
 	    },
 	    {
 	        value: 1,
 	        color: self.colors.grey,
 	        highlight: self.colors.greyHighlight,
-	        label: "Education",
-	        value: 15
+	        label: "Education"
 	    },
 	    {
 	    	value: 1,
 	    	color: self.colors.grey,
 	    	highlight: self.colors.greyHighlight,
-	    	label: "Projects",
-	    	value: 20
+	    	label: "Projects"
 	    }
 	];
 
@@ -139,6 +136,10 @@ angular.module('personalWebsite')
 			}
 		}
 
+		if(segmentClicked === self.currentlySelected){
+			return;
+		}
+
 		for(var i=0; i<self.sections.length; i++){
 			if(i === segmentClicked){
 				self.sections[i].color = self.colors.blue;
@@ -149,10 +150,11 @@ angular.module('personalWebsite')
 				self.sections[i].highlight = self.colors.greyHighlight;
 			}
 		}
+		self.sectionSelected = self.sections[segmentClicked].label;
+		self.currentlySelected = segmentClicked;
 		self.myNewChart.destroy();
 		var ctx = $("#resumeNavCanvas").get(0).getContext("2d");
 		self.myNewChart = new Chart(ctx).Doughnut(self.sections, self.options);
-		self.sectionSelected = self.sections[segmentClicked].label;
 	}
 	
 
