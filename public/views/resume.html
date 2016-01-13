@@ -116,9 +116,33 @@
             <h4>Environments & Tools</h4>
             <div ng-repeat="env in resume.environments" class="envCircle">
                 <img src="../images/{{env.file}}"></img>
-                <span class="">{{env.name}}</span>
+                <span>{{env.name}}</span>
             </div>
         </div>
+    </div>
+
+    <div ng-show="resume.sectionSelected === 'Education'" class="sectionContainer">
+        <div class="row">
+            <div class="universityContainer">
+                <div>
+                    <h1>University of Waterloo</h1>
+                    <h4>Computer Engineering</h4>
+                    <h4>Class of 2018</h4>
+                </div>
+            </div>
+
+            <div class="coursesContainer">
+                <h4>Relevant Courses</h4>
+                <div ng-repeat="course in resume.courses" class="courseBox">
+                    <i class="fa {{course.iconClass}}"></i>
+                    <span>{{course.name}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div ng-show="resume.sectionSelected === 'Projects'" class="sectionContainer">
+        
     </div>
 </div>
 

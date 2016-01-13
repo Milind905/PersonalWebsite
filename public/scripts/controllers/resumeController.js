@@ -6,7 +6,7 @@ angular.module('personalWebsite')
 	self.notSupportedMessage = "Sorry, it seems that this browser doesn't support canvases. Please try a different browser."
 
 	self.myNewChart;
-	self.sectionSelected;
+	self.sectionSelected = null;
 	self.colors = {
 		blue: "#0FA3FF",
 		blueHighlight: "#004BD6",
@@ -19,25 +19,29 @@ angular.module('personalWebsite')
 	        value: 1,
 	        color: self.colors.blue,
 	        highlight: self.colors.blueHighlight,
-	        label: "Experience"
+	        label: "Experience",
+	        value: 35
 	    },
 	    {
 	        value: 1,
 	        color: self.colors.grey,
 	        highlight: self.colors.greyHighlight,
-	        label: "Skills"
+	        label: "Skills",
+	        value: 30
 	    },
 	    {
 	        value: 1,
 	        color: self.colors.grey,
 	        highlight: self.colors.greyHighlight,
-	        label: "Education"
+	        label: "Education",
+	        value: 15
 	    },
 	    {
 	    	value: 1,
 	    	color: self.colors.grey,
 	    	highlight: self.colors.greyHighlight,
-	    	label: "Projects"
+	    	label: "Projects",
+	    	value: 20
 	    }
 	];
 
@@ -45,7 +49,6 @@ angular.module('personalWebsite')
 	    animationEasing: "easeInOutCirc",
 	    animationSteps: 30,
 	    segmentStrokeColor : "#1C1C1C",
-	    scaleBeginAtZero: false,
 	    segmentStrokeWidth : 2,
 	    showTooltips: true,
 	    tooltipFontFamily: "'Helvetica-Neue-Thin', 'Source-Sans-Pro', 'Helvetica', sans-serif",
@@ -54,13 +57,16 @@ angular.module('personalWebsite')
 	    percentageInnerCutout : 75,
 
 	    onAnimationComplete: function () {
-	    	self.changeNavLabel(this.segments[0].label);
+	    	self.changeNavLabel(self.sectionSelected);
 	    	//Either this or show curved text
-	    	this.showTooltip(this.segments, true);
+	    	//this.showTooltip(this.segments, true);
 	    }
 	};
 
     self.changeNavLabel = function(labelValue){
+    	if(labelValue === null){
+    		labelValue = self.sections[0].label;
+    	}
     	var textCanvas = document.getElementById("textCanvas");
     	var textCtx = $("#textCanvas").get(0).getContext("2d");
     	textCtx.clearRect(0, 0, textCanvas.width, textCanvas.height);
@@ -72,14 +78,13 @@ angular.module('personalWebsite')
     }
 
     self.generateCanvas = function(){
-		self.calculateSections();
+        self.calculateSections();
         var ctx = $("#resumeNavCanvas").get(0).getContext("2d");
         self.myNewChart = new Chart(ctx).Doughnut(self.sections, self.options);
         self.sectionSelected = self.sections[0].label;
 	}
 
     self.calculateSections = function(){
-
     	var numSections = self.sections.length;
 		var percentLeft = 100 - 10*numSections;
 		var sectionMax, sectionMin, sectionAvg;
@@ -120,7 +125,7 @@ angular.module('personalWebsite')
 	//Some kind of animation? Maybe cube rotating?
 	self.rebuildCanvas = function(event){
 		var activePoints = self.myNewChart.getSegmentsAtEvent(event);
-		var toShift = 0;
+		var segmentClicked = 0;
 		var section;
 
 		if(!(activePoints[0])) {
@@ -130,36 +135,26 @@ angular.module('personalWebsite')
 		for(var i=0; i<self.sections.length; i++)
 		{
 			if(self.sections[i].label === activePoints[0].label){
-				toShift = i;
+				segmentClicked = i;
 			}
 		}
 
-		for(var i=0; i<toShift; i++){
-			section = self.sections.shift();
-			self.sections.push(section);
-		}
-
 		for(var i=0; i<self.sections.length; i++){
-			if(i == 0){
+			if(i === segmentClicked){
 				self.sections[i].color = self.colors.blue;
 				self.sections[i].highlight = self.colors.blueHighlight;
 			}
 			else {
 				self.sections[i].color = self.colors.grey;
 				self.sections[i].highlight = self.colors.greyHighlight;
-			} 
+			}
 		}
-
-		//Change to update (remove element, add it to end, make it look like graph is shifting)
-		if(toShift !=0){
-			self.myNewChart.destroy();
-			var ctx = $("#resumeNavCanvas").get(0).getContext("2d");
-				self.myNewChart = new Chart(ctx).Doughnut(self.sections, self.options);
-		}
-		self.sectionSelected = self.sections[0].label;
+		self.myNewChart.destroy();
+		var ctx = $("#resumeNavCanvas").get(0).getContext("2d");
+		self.myNewChart = new Chart(ctx).Doughnut(self.sections, self.options);
+		self.sectionSelected = self.sections[segmentClicked].label;
 	}
-
-	self.generateCanvas();
+	
 
 	self.jobExperience = [{
 		frontSide: "front",
@@ -171,9 +166,9 @@ angular.module('personalWebsite')
 		position: "Database Analyst",
 		logo: "../images/scotiabankLogo.png",
 		info: [
-			"Redesigned entire backend of internal website",
-			"Upgraded server to be compatible with windows 7",
-			"Modified MSAccess databases to work with upgraded server and redesigned website"
+			"Refactored backend of internal website",
+			"Upgraded server and database to be compatible with windows 7",
+			"Automated process of generating reports"
 		] 
 	}, {
 		frontSide: "front",
@@ -185,9 +180,9 @@ angular.module('personalWebsite')
 		position: "Mobile Developer",
 		logo: "../images/dondLogo.png",
 		info: [
-			"Fully developed an Android and iOS memory game app",
-			"Designed gamified version of Dual-N-Back memory task",
-			"Revised designs for 6 related applications"
+			"Developed gamified version of Dual-N-Back memory task",
+			"Game was built for both Android and iOS",
+			"Created designs for 6 related applications"
 		] 
 	}, {
 		frontSide: "front",
@@ -199,17 +194,11 @@ angular.module('personalWebsite')
 		position: "Web Developer",
 		logo: "../images/flashstockLogo.png",
 		info: [
-			"Add items here",
-			"Add items here 2",
-			"Add items here 3"
+			"Implemented new features for three web apps",
+			"Built grid of re-arrangeable and downloadable images",
+			"Created an algorithm to compare images"
 		]
 	}];
-
-	/*self.flipCard = function(index){
-		var tempClass = self.jobExperience[index].frontSide;
-		self.jobExperience[index].frontSide = self.jobExperience[index].backSide;
-		self.jobExperience[index].backSide = tempClass;
-	}*/
 
 	self.environments = [
 		{name: "Amazon S3", file: "amazonIcon.png"}, 
@@ -221,5 +210,24 @@ angular.module('personalWebsite')
 		{name: "SQL Developer", file: "sqldevIcon.png"}, 
 		{name: "Git", file: "gitIcon.png"}
 	];
+
+	self.courses = [
+		{name: 'Digital Computers', iconClass: 'fa-desktop'},
+		{name: 'Embedded Microprocessors', iconClass: 'fa-usb'},
+		{name: 'Algorithms & Data Structures', iconClass: 'fa-tree'},
+		{name: 'Operating Systems', iconClass: 'fa-stack-overflow' },
+		{name: 'Advanced Calculus', iconClass: 'fa-calculator'},
+		{name: 'Linear Algebra', iconClass: 'fa-th'},
+		{name: 'Discrete Mathematics', iconClass: 'fa-plus-square'},
+		{name: 'Digital Circuits', iconClass: 'fa-bolt'}
+	];
+
+	/*self.flipCard = function(index){
+	var tempClass = self.jobExperience[index].frontSide;
+	self.jobExperience[index].frontSide = self.jobExperience[index].backSide;
+	self.jobExperience[index].backSide = tempClass;
+	}*/
+
+	self.generateCanvas();
 
 }]);
