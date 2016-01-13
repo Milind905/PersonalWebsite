@@ -78,13 +78,13 @@ angular.module('personalWebsite')
     }
 
     self.generateCanvas = function(){
+        self.calculateSections();
         var ctx = $("#resumeNavCanvas").get(0).getContext("2d");
         self.myNewChart = new Chart(ctx).Doughnut(self.sections, self.options);
         self.sectionSelected = self.sections[0].label;
 	}
 
     self.calculateSections = function(){
-
     	var numSections = self.sections.length;
 		var percentLeft = 100 - 10*numSections;
 		var sectionMax, sectionMin, sectionAvg;
@@ -154,7 +154,6 @@ angular.module('personalWebsite')
 		self.myNewChart = new Chart(ctx).Doughnut(self.sections, self.options);
 		self.sectionSelected = self.sections[segmentClicked].label;
 	}
-
 	
 
 	self.jobExperience = [{
@@ -229,49 +228,6 @@ angular.module('personalWebsite')
 	self.jobExperience[index].backSide = tempClass;
 	}*/
 
-	self.english = [{
-		value: 100,
-		color: "#0FA3FF",
-		highlight: "#0FA3FF",
-	}];
-
-	self.gujarati = [{
-		value: 75,
-		color: "#0FA3FF",
-		highlight: "#0FA3FF",
-	}, {
-		value: 25,
-		color: "#B5B5B5",
-		highlight: "#B5B5B5"
-	}];
-
-	self.french = [{
-		value: 25,
-		color: "#0FA3FF",
-		highlight: "#0FA3FF",
-	}, {
-		value: 75,
-		color: "#B5B5B5",
-		highlight: "#B5B5B5"
-	}];
-
-	self.languageChartOptions = {
-		animation: false,
-		showTooltips: false,
-		percentageInnerCutout: 80,
-		segmentStrokeColor : "#1C1C1C",
-	}
-
-	self.generateLanguageCharts = function(){
-        var englishCtx = document.getElementById("englishChart").getContext("2d");
-		new Chart(englishCtx).Doughnut(self.english, self.languageChartOptions);
-		var	gujaratiCtx = document.getElementById("gujaratiChart").getContext("2d");
-		new Chart(gujaratiCtx).Doughnut(self.gujarati, self.languageChartOptions);
-		var	frenchCtx = document.getElementById("frenchChart").getContext("2d");
-		new Chart(frenchCtx).Doughnut(self.french, self.languageChartOptions);
-	}
-
 	self.generateCanvas();
-	self.generateLanguageCharts();
 
 }]);
