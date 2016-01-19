@@ -7,7 +7,7 @@ function ($stateProvider, $urlRouterProvider) {
 	$stateProvider
 		.state('index', {
 			url: '/',
-			templateUrl: '/views/index.html',
+			templateUrl: '/app/views/index.html',
 			controller: 'IndexCtrl',
 			controllerAs: 'index',
 			activeTab: 'index'
@@ -15,7 +15,7 @@ function ($stateProvider, $urlRouterProvider) {
 
 		.state('about', {
 			url: '/about',
-			templateUrl: '/views/about.html',
+			templateUrl: '/app/views/about.html',
 			controller: 'AboutCtrl',
 			controllerAs: 'about',
 			activeTab: 'about'
@@ -23,7 +23,7 @@ function ($stateProvider, $urlRouterProvider) {
 
 		.state('resume', {
 			url: '/resume',
-			templateUrl: '/views/resume.html',
+			templateUrl: '/app/views/resume.html',
 			controller: 'ResumeCtrl',
 			controllerAs: 'resume',
 			activeTab: 'resume'
@@ -31,7 +31,7 @@ function ($stateProvider, $urlRouterProvider) {
 
 		.state('contact', {
 			url: '/contact',
-			templateUrl: '/views/contact.html',
+			templateUrl: '/app/views/contact.html',
 			controller: 'ContactCtrl',
 			controllerAs: 'contact',
 			activeTab: 'contact'

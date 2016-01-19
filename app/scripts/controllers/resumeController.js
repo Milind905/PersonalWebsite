@@ -166,7 +166,7 @@ angular.module('personalWebsite')
 		title: "Scotiabank",
 		date: "May 2014 - August 2014",
 		position: "Database Analyst",
-		logo: "../images/scotiabankLogo.png",
+		logo: "/app/images/scotiabankLogo.png",
 		info: [
 			"Refactored backend of internal website",
 			"Upgraded server and database to be compatible with windows 7",
@@ -180,7 +180,7 @@ angular.module('personalWebsite')
 		title: "Department of National Defence",
 		date: "January 2015 - April 2015",
 		position: "Mobile Developer",
-		logo: "../images/dondLogo.png",
+		logo: "/app/images/dondLogo.png",
 		info: [
 			"Developed gamified version of Dual-N-Back memory task",
 			"Game was built for both Android and iOS",
@@ -194,7 +194,7 @@ angular.module('personalWebsite')
 		title: "Flashstock",
 		date: "September 2015 - December 2015",
 		position: "Web Developer",
-		logo: "../images/flashstockLogo.png",
+		logo: "/app/images/flashstockLogo.png",
 		info: [
 			"Implemented new features for three web apps",
 			"Built grid of re-arrangeable and downloadable images",
