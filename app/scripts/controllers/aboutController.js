@@ -3,7 +3,7 @@ angular.module('personalWebsite')
 	var self = this;
 
 	self.test = 'Hello About!';
-	self.keys.ENTER = 16;
+	//self.keys.ENTER = 16;
 
 	self.keyDown = function($event){
 		console.log("here: ",$event);
