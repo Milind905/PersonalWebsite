@@ -41,6 +41,10 @@ colors{
 	font-family: "Source-Sans-Pro";
 	src: url("../fonts/SourceSansPro-Regular.otf");
 }
+@font-face {
+	font-family: "Audiowide";
+	src: url("../fonts/Audiowide-Regular.ttf");
+}
 
 .bodyBackground {
 	background: #1C1C1C no-repeat fixed;
@@ -534,6 +538,55 @@ colors{
 	}
 }
 
+
+
+
+/** Contact Page Styling**/
+.contactHeader {
+	text-align: center;
+	margin-top: 100px;
+}
+
+.contactHeader h1 {
+	font-size: 100px;
+	font-family: "Audiowide", "Helvetica-Neue-Thin";
+	color: #0FA3FF;
+}
+
+.contactHeader p{
+	font-size: 40px;
+	font-family: "Helvetica-Neue-Thin";
+	color: #B5B5B5;
+}
+
+.contactRow {
+	margin: 0 auto;
+	margin-top: 20vh;
+	margin-bottom: 50px;
+	width: 76vw;
+	height: 15vw;
+}
+
+.contactIcon {
+	width: 15vw;
+	height: 15vw;
+	margin-left: 2vw;
+	margin-right: 2vw;
+	border-radius: 50%;
+	background-color: #B5B5B5;
+	color: black;
+	float: left;
+	text-align: center;
+}
+
+.contactIcon i {
+	font-size: 7vw;
+	margin-top: 4vw;
+}
+
+.contactIcon:hover {
+	color: #0FA3FF;
+}
 
 
 .tempContainer {

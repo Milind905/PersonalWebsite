@@ -1,4 +1,12 @@
-<div class="page-header">
-  <h1>Personal Website!</h1>
-  {{contact.test}}
+<div class="contactHeader">
+	<h1>Say Hey!</h1>
+	<p>Get in touch by email or through any of the social sites below</p>
+</div>
+
+<div class="contactRow">
+	<a class="contactIcon" ng-repeat="icon in contact.connections" href="{{icon.link}}">
+		<div class="contactText">
+			<i class="fa {{icon.iconClass}}"></i>
+		</div>
+	</a>
 </div>
