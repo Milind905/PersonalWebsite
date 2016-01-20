@@ -485,6 +485,10 @@ colors{
 	color: #B5B5B5;
 }
 
+.coursesContainer h4{
+	padding-top: 30px;
+}
+
 .courseBox {
 	width: 105px;
 	height: 120px;
@@ -532,21 +536,25 @@ colors{
 
 
 
-#tempContainer {
+.tempContainer {
 	margin-top: 100px;
 	margin-left: 100px;
 	margin-right: 50px;
 	margin-bottom: 50px;
 }
 
-#tempContainer h1 {
+.tempProjects {
+	margin-top: 50px !important;
+}
+
+.tempContainer h1 {
 	color: #0FA3FF;
 	font-size: 80px;
 	font-family: "Helvetica-Neue-Thin";
 	margin-bottom: 40px;
 }
 
-#tempContainer h2 {
+.tempContainer h2 {
 	color: #B5B5B5;
 	font-size: 30px;
 	font-family: "Helvetica-Neue-Thin";
@@ -555,7 +563,7 @@ colors{
 }
 
 @media (max-width: 600px){
-	#tempContainer {
+	.tempContainer {
 		margin-left: 30px;
 		margin-right: 30px;
 	}

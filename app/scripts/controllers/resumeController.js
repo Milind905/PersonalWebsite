@@ -214,14 +214,14 @@ angular.module('personalWebsite')
 	];
 
 	self.courses = [
-		{name: 'Digital Computers', iconClass: 'fa-desktop'},
+		{name: 'Compilers', iconClass: 'fa-list'},
 		{name: 'Embedded Microprocessors', iconClass: 'fa-usb'},
 		{name: 'Algorithms & Data Structures', iconClass: 'fa-tree'},
 		{name: 'Operating Systems', iconClass: 'fa-stack-overflow' },
-		{name: 'Advanced Calculus', iconClass: 'fa-calculator'},
+		{name: 'Probability & Statistics', iconClass: 'fa-calculator'},
 		{name: 'Linear Algebra', iconClass: 'fa-th'},
 		{name: 'Discrete Mathematics', iconClass: 'fa-plus-square'},
-		{name: 'Digital Circuits', iconClass: 'fa-bolt'}
+		{name: 'Digital Computers', iconClass: 'fa-desktop'}
 	];
 
 	/*self.flipCard = function(index){
