@@ -4,9 +4,12 @@
 </div>
 
 <div class="contactRow">
-	<a class="contactIcon" ng-repeat="icon in contact.connections" href="{{icon.link}}">
-		<div class="contactText">
-			<i class="fa {{icon.iconClass}}"></i>
-		</div>
-	</a>
+	<div class="contactBox" ng-repeat="contact in contact.connections">
+		<h4>{{contact.subtitle}}</h4>
+		<a href="{{contact.link}}">
+			<div class="contactBackground">
+				<i class="fa {{contact.iconClass}}"></i>
+			</div>
+		</a>
+	</div>
 </div>

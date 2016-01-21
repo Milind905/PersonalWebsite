@@ -561,32 +561,53 @@ colors{
 
 .contactRow {
 	margin: 0 auto;
-	margin-top: 20vh;
+	margin-top: 10vh;
 	margin-bottom: 50px;
 	width: 76vw;
-	height: 15vw;
+	height: 20vw;
 }
 
-.contactIcon {
+.contactBox {
 	width: 15vw;
-	height: 15vw;
 	margin-left: 2vw;
 	margin-right: 2vw;
-	border-radius: 50%;
-	background-color: #B5B5B5;
-	color: black;
 	float: left;
 	text-align: center;
+	color: #0FA3FF;
 }
 
-.contactIcon i {
+.contactBackground{
+	width: 15vw;
+	height: 15vw;
+	background-color: #B5B5B5;
+	border-radius: 50%;
+}
+
+.contactBackground i{
+	color: black;
 	font-size: 7vw;
 	margin-top: 4vw;
 }
 
-.contactIcon:hover {
+.contactBackground:hover i{
 	color: #0FA3FF;
 }
+
+
+@media (max-width: 850px){
+	.contactBox h4{
+		font-size: 14px;
+	}
+}
+
+
+
+
+
+
+
+
+
 
 
 .tempContainer {

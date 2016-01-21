@@ -15,12 +15,12 @@ angular.module('personalWebsite')
 	}, {
 		title: 'Github',
 		iconClass: 'fa-github-square',
-		subtitle: 'Commit',
+		subtitle: 'Checkout',
 		link: "https://github.com/Milind905"
 	}, {
 		title: 'Email',
 		iconClass: 'fa-envelope',
 		subtitle: 'mnshah@uwaterloo.ca',
-		link: "/#/contact"
+		link: "mailto:mnshah@uwaterloo.ca"
 	}];
 });
