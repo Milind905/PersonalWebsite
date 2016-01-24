@@ -1,163 +1,24 @@
 angular.module('personalWebsite')
-.controller('ResumeCtrl', ['$scope', function($scope){
-	'use strict'
-
+.controller('ResumeCtrl', ['circularNav','$q', function(circularNav, $q){
 	var self = this;
 	self.notSupportedMessage = "Sorry, it seems that this browser doesn't support canvases. Please try a different browser."
-
-	self.myNewChart;
-	self.sectionSelected = null;
-	self.currentlySelected = 0;
-	self.colors = {
-		blue: "#0FA3FF",
-		blueHighlight: "#004BD6",
-		grey: "#B5B5B5",
-		greyHighlight: "#0D62FF"
-	}
+	self.sectionSelected = circularNav.sectionSelected;
 	
-	self.sections = [
-	    {
-	        value: 1,
-	        color: self.colors.blue,
-	        highlight: self.colors.blueHighlight,
-	        label: "Experience"
-	    },
-	    {
-	        value: 1,
-	        color: self.colors.grey,
-	        highlight: self.colors.greyHighlight,
-	        label: "Skills"
-	    },
-	    {
-	        value: 1,
-	        color: self.colors.grey,
-	        highlight: self.colors.greyHighlight,
-	        label: "Education"
-	    },
-	    {
-	    	value: 1,
-	    	color: self.colors.grey,
-	    	highlight: self.colors.greyHighlight,
-	    	label: "Projects"
-	    }
-	];
-
-	self.options = {
-	    animationEasing: "easeInOutCirc",
-	    animationSteps: 30,
-	    segmentStrokeColor : "#1C1C1C",
-	    segmentStrokeWidth : 2,
-	    showTooltips: true,
-	    tooltipFontFamily: "'Helvetica-Neue-Thin', 'Source-Sans-Pro', 'Helvetica', sans-serif",
-	    tooltipFontSize: 18,
-	    tooltipTemplate: "<%if (label){%><%=label%><%}%>",
-	    percentageInnerCutout : 75,
-
-	    onAnimationComplete: function () {
-	    	self.changeNavLabel(self.sectionSelected);
-	    	//Either this or show curved text
-	    	//this.showTooltip(this.segments, true);
-	    }
-	};
-
-    self.changeNavLabel = function(labelValue){
-    	if(labelValue === null){
-    		labelValue = self.sections[0].label;
-    	}
-    	var textCanvas = document.getElementById("textCanvas");
-    	var textCtx = $("#textCanvas").get(0).getContext("2d");
-    	textCtx.clearRect(0, 0, textCanvas.width, textCanvas.height);
-		textCtx.textAlign="center";
-		textCtx.textBaseline = 'middle';
-		textCtx.font="normal 40px Helvetica-Neue-Thin";		
-		textCtx.fillStyle = '#0FA3FF';
-		textCtx.fillText(labelValue, textCanvas.width/2, textCanvas.height/2);
-    }
-
-    self.generateCanvas = function(){
-        self.calculateSections();
-        var ctx = $("#resumeNavCanvas").get(0).getContext("2d");
-        self.myNewChart = new Chart(ctx).Doughnut(self.sections, self.options);
-        self.sectionSelected = self.sections[0].label;
-	}
-
-    self.calculateSections = function(){
-    	var numSections = self.sections.length;
-		var percentLeft = 100 - 10*numSections;
-		var sectionMax, sectionMin, sectionAvg;
-		var sectionValues = [];
-
-		for(var i=0; i<numSections; i++){
-			sectionAvg = Math.round(percentLeft/(numSections-i));
-			sectionMax = sectionAvg + 10;
-			sectionMin = sectionAvg - 10;
-			
-			if(sectionMin < 0){
-				sectionMin = 0;
-			}
-
-			if(percentLeft - sectionMax < 0){
-				sectionMax = sectionAvg;
-			}
-
-			if(i === numSections-1){
-				sectionValues[i] = percentLeft;
-				percentLeft -= sectionValues[i];
-			}
-			else {
-				sectionValues[i] = self.getRandomIntInclusive(sectionMin, sectionMax);
-				percentLeft -= sectionValues[i];
-			}
-		}
-
-		for(var i=0; i<sectionValues.length; i++){
-			self.sections[i].value = sectionValues[i]+10;
-		}
-    }
-
-    self.getRandomIntInclusive = function(min, max) {
-	  return Math.floor(Math.random() * (max - min + 1)) + min;
-	}
-
 	//Some kind of animation? Maybe cube rotating?
+	self.generateCanvas = function(){
+		circularNav.calculateSections().then(function(){
+			return circularNav.generateCanvas();
+		}).then(function(){
+			self.sectionSelected = circularNav.sectionSelected;
+		});
+	}
+
 	self.rebuildCanvas = function(event){
-		var activePoints = self.myNewChart.getSegmentsAtEvent(event);
-		var segmentClicked = 0;
-		var section;
-
-		if(!(activePoints[0])) {
-    		return;
-    	}
-
-		for(var i=0; i<self.sections.length; i++)
-		{
-			if(self.sections[i].label === activePoints[0].label){
-				segmentClicked = i;
-			}
-		}
-
-		if(segmentClicked === self.currentlySelected){
-			return;
-		}
-
-		for(var i=0; i<self.sections.length; i++){
-			if(i === segmentClicked){
-				self.sections[i].color = self.colors.blue;
-				self.sections[i].highlight = self.colors.blueHighlight;
-			}
-			else {
-				self.sections[i].color = self.colors.grey;
-				self.sections[i].highlight = self.colors.greyHighlight;
-			}
-		}
-		self.sectionSelected = self.sections[segmentClicked].label;
-		self.currentlySelected = segmentClicked;
-		self.myNewChart.destroy();
-		var ctx = $("#resumeNavCanvas").get(0).getContext("2d");
-		self.myNewChart = new Chart(ctx).Doughnut(self.sections, self.options);
+		circularNav.rebuildCanvas(event).then(function(){
+			self.sectionSelected = circularNav.sectionSelected;
+		});
 	}
 	
-
 	self.jobExperience = [{
 		frontSide: "front",
 		backSide: "back",
@@ -224,12 +85,7 @@ angular.module('personalWebsite')
 		{name: 'Digital Computers', iconClass: 'fa-desktop'}
 	];
 
-	/*self.flipCard = function(index){
-	var tempClass = self.jobExperience[index].frontSide;
-	self.jobExperience[index].frontSide = self.jobExperience[index].backSide;
-	self.jobExperience[index].backSide = tempClass;
-	}*/
-
 	self.generateCanvas();
 
+	
 }]);

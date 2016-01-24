@@ -1,12 +1,11 @@
 <div class="resumeNav">
-
 	<div class="resumeNavContainer">
 		<canvas id="textCanvas" width="300" height="300" 
 			style="z-index: 1; 
             position: absolute;
             left: 0px; 
             top: 0px;" >
-            <p>{{resume.notSupportedMessage}}</p>
+            <p style="font-family: 'Helvetica-Neue-Thin';">{{resume.notSupportedMessage}}</p>
         </canvas>
     	<canvas id="resumeNavCanvas" width="300" height="300" 
     		style="z-index: 2; 
@@ -14,7 +13,7 @@
                 left: 0px; 
                 top: 0px;" 
             ng-click="resume.rebuildCanvas($event)">
-            <p>{{resume.notSupportedMessage}}</p>
+            <p style="font-family: 'Helvetica-Neue-Thin';">{{resume.notSupportedMessage}}</p>
         </canvas>
 	</div>
 
