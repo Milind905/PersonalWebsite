@@ -170,6 +170,9 @@ colors{
 	.myHeading h1{
 		text-align: center;
 	}
+	.myDescription {
+		margin-top: 60px;
+	}
 	.myDescription p{
 		padding: 0 50px;
 	}
