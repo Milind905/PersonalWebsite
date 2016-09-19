@@ -5,11 +5,16 @@
   </head>
 
   <body class="bodyBackground">
-    <ng-include src="'/app/views/navbar.html'"></ng-include>
-    <div class="bodyContainer">
+    <div class="firstContainer">
+      <ng-include src="'/app/views/navbar.html'"></ng-include>
       <ng-include src="'/app/views/index.html'"></ng-include>
-<!--       <ng-include src="'/app/views/contact.html'"></ng-include> -->
     </div>
+    <div class="bodyContainer">
+      <ng-include src="'/app/views/about.html'"></ng-include>
+      <ng-include src="'/app/views/resume.html'"></ng-include>
+    </div>
+<!--       <ng-include src="'/app/views/contact.html'"></ng-include> -->
+
 
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/app/scripts/angularApp.js"></script>
