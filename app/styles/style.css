@@ -60,7 +60,9 @@ colors{
 
 /*** NavBar Styling ***/
 .navbar-fixed-top {
-	background: black;
+	/* potentially delete after image added */
+	/*background: black;*/
+	float: right;
 }
 
 .navbar-collapse {
@@ -104,26 +106,28 @@ colors{
 
 
 /*** Home Page Styling ***/
-.left {
+#home {
 	font-family: "Helvetica-Neue-Thin";
-	width: 50%;
 	padding-left: 50px;
-	padding-top: 25px;
-	float: left;
+	padding-right: 50px;
+	height: calc(100vh - 50px); /* Good temp solution */
+	display: flex;
+	flex-direction: column;
+	align-items: center; 
+	justify-content: center;
+
+	background: url("../images/bodyBackground.jpg") no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
-.right {
-	width: 50%;
-	float: right;
-	/* remove this after */
-	height: 100px;
-}
-
-.name h1{
-	font-size: 130px;
-	margin-top: 0px;
-	margin-bottom: 0px;
-	text-align: right;
+.name h1 {
+	font-size: 100px;
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 .name #first {
@@ -134,12 +138,12 @@ colors{
 	color: #0FA3FF;
 }
 
-.myHeading h1{
+.myHeading h1 {
 	font-size: 40px;
 	color: #B5B5B5;
 	margin-top: 0px;
 	margin-bottom: 0px;
-	text-align: right;
+	text-align: center;
 }
 
 .myDescription {
@@ -147,29 +151,17 @@ colors{
 	margin-bottom: 30px;
 }
 
-.myDescription p{
+.myDescription p {
 	font-size: 18px;
 	color: #B5B5B5;
 	text-align: justify;
 }
 
-.myDescription span{
+.myDescription span {
 	color: #0FA3FF;
 }
 
-@media (max-width: 1110px){
-	.left {
-		width: 100%;
-		padding-left: 0px;
-		margin-bottom: 30px;
-	}
-	.right {
-		width: 100%;
-	}
-	.name h1,
-	.myHeading h1{
-		text-align: center;
-	}
+@media (max-width: 1110px) {
 	.myDescription {
 		margin-top: 60px;
 	}
@@ -181,7 +173,7 @@ colors{
 
 
 /*** About Page Styling ***/
-.main-about-container{
+.main-about-container {
 	width: 700px;
 	margin-left: 100px;
 	float: left;
@@ -192,7 +184,7 @@ colors{
 	float: right;
 }
 
-.command-prompt-container{
+.command-prompt-container {
 	position: relative;
 	width: 700px;
 	height: 400px;

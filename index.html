@@ -6,7 +6,10 @@
 
   <body class="bodyBackground">
     <ng-include src="'/app/views/navbar.html'"></ng-include>
-    <div class="bodyContainer" ui-view></div>
+    <div class="bodyContainer">
+      <ng-include src="'/app/views/index.html'"></ng-include>
+<!--       <ng-include src="'/app/views/contact.html'"></ng-include> -->
+    </div>
 
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/app/scripts/angularApp.js"></script>
@@ -17,9 +20,6 @@
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="/app/font-awesome/css/font-awesome.min.css">
     <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
-
-    <!-- Routing Modules -->
-    <script src="/app/scripts/router.js"></script>
 
    	<!-- Controllers -->
     <script src="/app/scripts/controllers/navController.js"></script>

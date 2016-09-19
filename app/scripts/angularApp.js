@@ -1,1 +1,1 @@
-var app = angular.module('personalWebsite', ['mainRoutes']);
+var app = angular.module('personalWebsite', ['ui.router']);
