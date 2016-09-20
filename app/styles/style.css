@@ -256,7 +256,9 @@ colors{
 	margin: 0;
 	margin-bottom: 50px;
 	width: 100%;
-	height: 500px;
+	height: auto;
+
+	border: 1px solid red; /* TODO: Do something about this */
 }
 
 #resumeNavContainer {
@@ -288,10 +290,12 @@ colors{
 }
 
 .sectionContainer {
-	width: 900px;
-	height: 100%;
-	position: relative;
+	width: 1230px;
+	height: 500px; 
 	margin: 0 auto;
+	position: relative;
+
+	border: 1px solid blue;
 }
 
 .sectionContainer .row{
@@ -300,30 +304,28 @@ colors{
 }
 
 .hexagon {
-	width: 325px;
-	height: 275px;
-	position: absolute;
 	text-align: center;
 	perspective: 1000;
+	position: absolute;
+	width: 300px;
+	height: 400px;
 }
 
 .hexagon:hover .flipper {
 	transform: rotateY(180deg);
 }
 
-.front, .back {
-	width: 100%;
-	height: 100%;
-	backface-visibility: hidden;
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-
 .flipper {
 	transition: 0.6s;
 	transform-style: preserve-3d;
 	position: relative;
+}
+
+.front, .back {
+	width: 300px;
+	height: 400px;
+	backface-visibility: hidden;
+	position: absolute;
 }
 
 .front {
@@ -336,68 +338,67 @@ colors{
 }
 
 #scotiabank {
-	background: url("../images/greenhexagon.png") no-repeat;
-	background-size: 100%;
-	top: 35px;
-	left: 20px;
+	background: #67D941;
+	top: 0px;
+	left: 0px;
 }
 
 #dond {
-	background: url("../images/yellowhexagon.png") no-repeat;
-	background-size: 100%;
-	top: 195px;
-	left: 290px;
+	background: #FAD543;
+	top: 100px;
+	left: 310px;
 }
 
 #flashstock {
-	background: url("../images/bluehexagon.png") no-repeat;
-	background-size: 100%;
-	top: 35px;
-	left: 560px;
+	background: #0FA3FF;
+	top: 0px;
+	left: 620px;
+}
+
+#intentional {
+	background: #F46600;
+	top: 100px;
+	left: 930px;
 }
 
 .hexTextDown {
-	height: 20px;
-	width: 75%;
+	margin: 15px auto;
+	width: 225px;
 }
 
 .jobTitle {
-	width: 75%;
+	width: 225px;
 	margin: 0 auto;
-	font-size: 26px;
+	font-size: 28px;
 	font-family: "Helvetica-Neue-Thin";
-	margin-top: 65px;
+	margin-top: 100px;
 }
 
 .jobDate {
-	width: 75%;
+	width: 225px;
 	margin: 0 auto;
 	font-size: 14px;
 	font-family: "Helvetica-Neue";
-	margin-top: 5px;
+	margin-top: 15px;
 }
 
 .jobPosition {
-	width: 60%;
+	width: 225px;
 	margin: 0 auto;
-	font-size: 26px;
+	font-size: 24px;
 	font-family: "Helvetica-Neue-Thin";
-	margin-top: 30px;
+	margin-top: 80px;
 }
 
 .jobInfo {
-	width: 75%;
+	width: 270px;
 	font-size: 14px;
 	text-align: left;
-	position: absolute;
-	top: 85px;
-	left: 40px;
+	margin: 50px 15px;
 }
 
-.jobLogo {
-	margin: 0 auto;
-	margin-top: 25px;
-	max-height: 40px;
+@media (max-width: 1300px){
+	
 }
 
 .computerLanguages {

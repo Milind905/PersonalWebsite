@@ -1,0 +1,17 @@
+ <div ng-show="resume.sectionSelected === 'Experience'" class="sectionContainer">
+    <div ng-repeat="job in resume.jobExperience" id="{{job.id}}" class="hexagon">            
+        <div class="flipper">
+            <div class="front">
+                <div ng-if="job.textDown" class="hexTextDown"></div>
+                <h4 class="jobTitle">{{job.title}}</h4>
+                <p class="jobDate">{{job.date}}</p>
+                <h4 class="jobPosition">{{job.position}}</h4>
+            </div>
+            <div class="back">
+                <ul class="jobInfo">
+                    <li ng-repeat="info in job.info">{{info}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>         
+</div>

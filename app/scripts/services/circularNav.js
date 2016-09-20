@@ -1,5 +1,5 @@
 angular.module('personalWebsite')
-.factory('circularNav', ['$q', '$window', function($q, $window){
+.factory('circularNav', ['$q', function($q){
 	var circularNav = {};
 
 	circularNav.sectionSelected = null;
@@ -106,11 +106,11 @@ angular.module('personalWebsite')
 		return deferred.promise;
 	}
 
-	circularNav.resizeCanvas = function() {
+	circularNav.resizeCanvas = function(windowWidth) {
 		if(circularNav.myNewChart)
 			circularNav.myNewChart.destroy();
 
-		circularNav.calculateCanvasCSS().then(function(){
+		circularNav.calculateCanvasCSS(windowWidth).then(function(){
 			circularNav.generateCanvas();
 		});
 	}
@@ -154,10 +154,10 @@ angular.module('personalWebsite')
 		return deferred.promise;
     }
 
-    circularNav.calculateCanvasCSS = function() {
+    circularNav.calculateCanvasCSS = function(windowWidth) {
     	var deferred = $q.defer();
 		
-		self.canvasSize = $window.innerWidth*7/24;
+		self.canvasSize = windowWidth*7/24;
 		var textCanvas = document.getElementById("textCanvas");
 		textCanvas.getContext('2d').clearRect(0, 0, textCanvas.width, textCanvas.height);
 		textCanvas.style.position = "absolute";
