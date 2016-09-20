@@ -1,19 +1,10 @@
 <div id="resume" ng-controller="ResumeCtrl as resume">
     <div class="resumeNav">
-    	<div class="resumeNavContainer">
-    		<canvas id="textCanvas" width="400" height="400" 
-    			style="z-index: 1; 
-                position: absolute;
-                left: 0px; 
-                top: 0px;" >
+    	<div id="resumeNavContainer">
+    		<canvas id="textCanvas" width="400" height="400">
                 <p style="font-family: 'Helvetica-Neue-Thin';">{{resume.notSupportedMessage}}</p>
             </canvas>
-        	<canvas id="resumeNavCanvas" width="400" height="400" 
-        		style="z-index: 2; 
-                    position: absolute;
-                    left: 0px; 
-                    top: 0px;" 
-                ng-click="resume.rebuildCanvas($event)">
+        	<canvas id="resumeNavCanvas" width="400" height="400" ng-click="resume.rebuildCanvas($event)">
                 <p style="font-family: 'Helvetica-Neue-Thin';">{{resume.notSupportedMessage}}</p>
             </canvas>
     	</div>

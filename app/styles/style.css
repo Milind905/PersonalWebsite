@@ -243,13 +243,13 @@ colors{
 /*** Resume Page Styling ***/
 #resume {
 	padding-top: 50px;
-	border: 1px solid blue;
 }
 
 .resumeNav {
 	margin: 0px;
 	width: 100%;
 	height: auto;
+	text-align: center;
 }
 
 .resumeContainer {
@@ -257,12 +257,9 @@ colors{
 	margin-bottom: 50px;
 	width: 100%;
 	height: 500px;
-	border: 1px solid red;
 }
 
-.resumeNavContainer {
-	width:400px; 
-	height:400px;
+#resumeNavContainer {
 	margin: 0 auto;
 	position: relative;
 }
@@ -518,32 +515,6 @@ colors{
 .courseBox span{
 	color: #0FA3FF;
 }
-
-@media (max-width: 1310px){
-	.resumeNav{
-		width: 100%;
-		height: auto;
-		margin-left: 0px;
-		margin-right: 0px;
-		margin-bottom: 50px;
-	}
-	.resumeNavContainer{
-		margin: 0 auto;
-	}
-	.resumeDownload{
-		position: relative;
-		margin-top: 100px;
-	}
-	.resumeContainer{
-		width: 100%;
-		margin: 0;
-		margin-bottom: 50px;
-	}
-	.sectionContainer{
-		margin: 0 auto;
-	}
-}
-
 
 
 

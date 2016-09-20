@@ -1,12 +1,14 @@
 angular.module('personalWebsite')
-	.controller('ResumeCtrl', ['circularNav', '$q', function(circularNav, $q) {
+	.controller('ResumeCtrl', ['circularNav', '$q', '$window', function(circularNav, $q, $window) {
 		var self = this;
 		self.notSupportedMessage = "Sorry, it seems that this browser doesn't support canvases. Please try a different browser.";
 		self.sectionSelected = circularNav.sectionSelected;
 
-		//Some kind of animation? Maybe cube rotating?
+		//TODO: Some kind of animation? Maybe cube rotating?
 		self.generateCanvas = function() {
-			circularNav.calculateSections().then(function() {
+			circularNav.calculateCanvasCSS().then(function() {
+				return circularNav.calculateSections();
+			}).then(function() {
 				return circularNav.generateCanvas();
 			}).then(function() {
 				self.sectionSelected = circularNav.sectionSelected;
@@ -115,7 +117,6 @@ angular.module('personalWebsite')
 			iconClass: 'fa-desktop'
 		}];
 
+		$window.addEventListener('resize', circularNav.resizeCanvas);
 		self.generateCanvas();
-
-
 	}]);

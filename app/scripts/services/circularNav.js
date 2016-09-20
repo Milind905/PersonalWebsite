@@ -1,10 +1,11 @@
 angular.module('personalWebsite')
-.factory('circularNav', ['$q', function($q){
+.factory('circularNav', ['$q', '$window', function($q, $window){
 	var circularNav = {};
 
 	circularNav.sectionSelected = null;
 	circularNav.currentlySelected = 0;
 	circularNav.myNewChart;
+	circularNav.canvasSize;
 
 	circularNav.colors = {
 		blue: "#0FA3FF",
@@ -105,6 +106,15 @@ angular.module('personalWebsite')
 		return deferred.promise;
 	}
 
+	circularNav.resizeCanvas = function() {
+		if(circularNav.myNewChart)
+			circularNav.myNewChart.destroy();
+
+		circularNav.calculateCanvasCSS().then(function(){
+			circularNav.generateCanvas();
+		});
+	}
+
 	circularNav.calculateSections = function(){
 		var deferred = $q.defer();
 
@@ -144,6 +154,36 @@ angular.module('personalWebsite')
 		return deferred.promise;
     }
 
+    circularNav.calculateCanvasCSS = function() {
+    	var deferred = $q.defer();
+		
+		self.canvasSize = $window.innerWidth*7/24;
+		var textCanvas = document.getElementById("textCanvas");
+		textCanvas.getContext('2d').clearRect(0, 0, textCanvas.width, textCanvas.height);
+		textCanvas.style.position = "absolute";
+		textCanvas.style.left = 0;
+		textCanvas.style.right = 0;
+		textCanvas.style.zIndex = 1;
+		textCanvas.width = self.canvasSize;
+		textCanvas.height = self.canvasSize;		
+
+		var resumeNavCanvas = document.getElementById("resumeNavCanvas");
+		resumeNavCanvas.getContext('2d').clearRect(0, 0, resumeNavCanvas.width, resumeNavCanvas.height);
+		resumeNavCanvas.style.position = "absolute";
+		resumeNavCanvas.style.left = 0;
+		resumeNavCanvas.style.right = 0;
+		resumeNavCanvas.style.zIndex = 2;
+		resumeNavCanvas.width = self.canvasSize;
+		resumeNavCanvas.height = self.canvasSize;		
+
+		var resumeNavContainer = document.getElementById("resumeNavContainer");
+		resumeNavContainer.style.width = self.canvasSize+"px";    		
+		resumeNavContainer.style.height = self.canvasSize+"px";
+
+		deferred.resolve();
+		return deferred.promise;
+	}
+
     function getRandomIntInclusive(min, max) {
 	  return Math.floor(Math.random() * (max - min + 1)) + min;
 	}
@@ -154,11 +194,12 @@ angular.module('personalWebsite')
     	}
     	var textCanvas = document.getElementById("textCanvas");
     	var textCtx = document.getElementById('textCanvas').getContext('2d');
-
+    	var textSize = self.canvasSize * 5/40;
+    	
     	textCtx.clearRect(0, 0, textCanvas.width, textCanvas.height);
 		textCtx.textAlign="center";
 		textCtx.textBaseline = 'middle';
-		textCtx.font="normal 40px Helvetica-Neue-Thin";		
+		textCtx.font="normal "+textSize+"px Helvetica-Neue-Thin";		
 		textCtx.fillStyle = '#0FA3FF';
 		textCtx.fillText(labelValue, textCanvas.width/2, textCanvas.height/2);
 	}
