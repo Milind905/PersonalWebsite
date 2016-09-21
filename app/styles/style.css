@@ -258,7 +258,7 @@ colors{
 	width: 100%;
 	height: auto;
 
-	border: 1px solid red; /* TODO: Do something about this */
+	border: 1px solid red;
 }
 
 #resumeNavContainer {
@@ -290,12 +290,16 @@ colors{
 }
 
 .sectionContainer {
-	width: 1230px;
-	height: 500px; 
+	width: auto;
+	height: auto; 
 	margin: 0 auto;
-	position: relative;
+}
 
-	border: 1px solid blue;
+.hexagonContainer {
+	width: 1230px;
+	height: 500px;
+	position: relative;
+	margin: 0 auto;
 }
 
 .sectionContainer .row{
@@ -341,35 +345,34 @@ colors{
 	background: #67D941;
 	top: 0px;
 	left: 0px;
+	padding-top: 15px;
 }
 
 #dond {
 	background: #FAD543;
 	top: 100px;
 	left: 310px;
+	padding-top: 0px;
 }
 
 #flashstock {
 	background: #0FA3FF;
 	top: 0px;
 	left: 620px;
+	padding-top: 15px;
 }
 
 #intentional {
 	background: #F46600;
 	top: 100px;
 	left: 930px;
-}
-
-.hexTextDown {
-	margin: 15px auto;
-	width: 225px;
+	padding-top: 0px;
 }
 
 .jobTitle {
 	width: 225px;
 	margin: 0 auto;
-	font-size: 28px;
+	font-size: 30px;
 	font-family: "Helvetica-Neue-Thin";
 	margin-top: 100px;
 }
@@ -377,7 +380,7 @@ colors{
 .jobDate {
 	width: 225px;
 	margin: 0 auto;
-	font-size: 14px;
+	font-size: 15px;
 	font-family: "Helvetica-Neue";
 	margin-top: 15px;
 }
@@ -385,7 +388,7 @@ colors{
 .jobPosition {
 	width: 225px;
 	margin: 0 auto;
-	font-size: 24px;
+	font-size: 26px;
 	font-family: "Helvetica-Neue-Thin";
 	margin-top: 80px;
 }
@@ -394,12 +397,212 @@ colors{
 	width: 270px;
 	font-size: 14px;
 	text-align: left;
-	margin: 50px 15px;
+	margin: 30px 10px;
 }
 
-@media (max-width: 1300px){
-	
+@media (min-width: 1600px) {
+	.hexagonContainer {
+		width: 1530px;
+		height: 600px;
+	}
+	.hexagon, .front, .back {
+		width: 375px;
+		height: 500px;
+	}
+	#scotiabank {
+		left: 0px;
+		padding-top: 30px;
+	}
+	#dond {
+		left: 385px;
+		padding-top: 0px;
+	}
+	#flashstock {
+		left: 770px;
+		padding-top: 30px;
+	}
+	#intentional {
+		left: 1155px;
+		padding-top: 0px;
+	}
+	.jobTitle {
+		width: 280px;
+		margin-top: 120px;
+		font-size: 36px;
+	}
+	.jobDate {
+		width: 280px;
+		margin-top: 30px;
+		font-size: 18px;
+	}
+	.jobPosition {
+		width: 280px;
+		margin-top: 80px;
+		font-size: 32px;
+	}
+	.jobInfo {
+		width: 330px;
+		font-size: 18px;
+		margin: 30px 22.5px;
+	}
 }
+
+@media (max-width: 1300px) {
+	.hexagonContainer {
+		width: 970px;
+	}
+	.hexagon, .front, .back {
+		width: 235px;
+	}
+	#scotiabank {
+		left: 0px;
+		padding-top: 20px;
+	}
+	#dond {
+		left: 245px;
+		padding-top: 0px;
+	}
+	#flashstock {
+		left: 490px;
+		padding-top: 20px;
+	}
+	#intentional {
+		left: 735px;
+		padding-top: 0px;
+	}
+	.jobTitle {
+		width: 190px;
+		font-size: 26px;
+		margin-top: 100px;
+	}
+	.jobDate {
+		width: 190px;
+		font-size: 13px;
+		margin-top: 15px;
+	}
+	.jobPosition {
+		width: 190px;
+		font-size: 22px;
+		margin-top: 80px;
+	}
+	.jobInfo {
+		width: 215px;
+		font-size: 12px;
+		margin: 25px 10px;
+	}
+}
+
+@media (max-width: 1000px) {
+	.hexagonContainer {
+		width: 100%;
+		height: 400px;
+	}
+	.hexagon{
+		width: calc((100%/2));
+		height: 200px;
+	}
+	.front, .back{
+		width: 100%;
+		height: 200px;
+	}
+	#scotiabank {
+		top: 0px;
+		left: 0px;
+		padding-top: 20px;
+	}
+	#dond {
+		top: 0px;
+		left: calc(100%/2);
+		padding-top: 0px;
+	}
+	#flashstock {
+		top: 200px;
+		left: 0px;
+		padding-top: 20px; /* This padding causes extra padding on back side too*/
+	}
+	#intentional {
+		top: 200px;
+		left: calc(100%/2);
+		padding-top: 20px;
+	}
+	.jobTitle {
+		width: 70%;
+		margin-top: 40px;
+		font-size: 28px;
+	}
+	.jobDate {
+		width: 70%;
+		margin-top: 10px;
+		font-size: 14px;
+	}
+	.jobPosition {
+		width: 70%;
+		margin-top: 20px;
+		font-size: 24px;
+	}
+	.jobInfo {
+		width: 90%;
+		margin-top: 10px;
+		font-size: 12px;
+		margin: 5% 0;
+	}
+}
+
+@media (max-width: 700px) {
+	.hexagonContainer {
+		width: 100%;
+		height: 400px;
+	}
+	.hexagon{
+		width: calc((100%/2));
+		height: 200px;
+	}
+	.front, .back{
+		width: 100%;
+		height: 200px;
+	}
+	#scotiabank {
+		top: 0px;
+		left: 0px;
+		padding-top: 20px;
+	}
+	#dond {
+		top: 0px;
+		left: calc(100%/2);
+		padding-top: 0px;
+	}
+	#flashstock {
+		top: 200px;
+		left: 0px;
+		padding-top: 20px;
+	}
+	#intentional {
+		top: 200px;
+		left: calc(100%/2);
+		padding-top: 20px;
+	}
+	.jobTitle {
+		width: 90%;
+		margin-top: 30px;
+		font-size: 24px;
+	}
+	.jobDate {
+		width: 90%;
+		margin-top: 20px;
+		font-size: 12px;
+	}
+	.jobPosition {
+		width: 90%;
+		margin-top: 30px;
+		font-size: 20px;
+	}
+	.jobInfo {
+		width: 90%;
+		margin: 10px;
+		font-size: 10px;
+	}
+}
+
 
 .computerLanguages {
 	height: 100%;

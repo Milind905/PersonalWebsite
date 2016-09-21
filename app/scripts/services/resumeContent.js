@@ -4,8 +4,17 @@ angular.module('personalWebsite')
 
 	resumeContent.resizeContent = function(windowWidth) {
 		var marginSide = 50;
-		var flipCardWidth = windowWidth - marginSide;
-	}
+		var sectionWidth = windowWidth - marginSide*2;
+		var flipCardWidth = sectionWidth/4;
+/*
+		console.log("windowWidth: "+windowWidth);
+		console.log("sectionWidth: "+sectionWidth);
+
+		var sectionContainers = document.getElementsByClassName("hexagon");
+		for (var i = 0; i < sectionContainers.length; i++) {
+		    sectionContainers[i].style.width = flipCardWidth+"px";
+		}
+*/	}
 
 	resumeContent.jobExperience = [{
 		frontSide: "front",
