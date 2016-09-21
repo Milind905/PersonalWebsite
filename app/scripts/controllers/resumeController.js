@@ -11,7 +11,6 @@ angular.module('personalWebsite')
 
 		//TODO: Some kind of animation? Maybe cube rotating?
 		self.generateCanvas = function() {
-			resumeContent.resizeContent($window.innerWidth);
 			circularNav.calculateCanvasCSS($window.innerWidth).then(function() {
 				return circularNav.calculateSections();
 			}).then(function() {
@@ -27,10 +26,8 @@ angular.module('personalWebsite')
 			});
 		};
 
-		// $window.addEventListener('resize', circularNav.resizeCanvas);
 		$window.addEventListener('resize', function(){
 			circularNav.resizeCanvas($window.innerWidth);
-			resumeContent.resizeContent($window.innerWidth);
 		});
 
 		self.generateCanvas();

@@ -603,43 +603,46 @@ colors{
 	}
 }
 
+/* Potential Solution: Create new div class, set text-align: center on skillContainer, set display: inline-block on new div*/
+
+.skillContainer {
+	width: 960px;
+	height: 500px; /*TODO: May not actually be true*/
+	position: relative;
+
+	border: 2px solid green;
+}
 
 .computerLanguages {
-	height: 100%;
+	height: auto;
 	width: 450px;
 	float: left;
 	color: #B5B5B5;
 	font-family: "Helvetica-Neue-Thin";
+
+	border: 1px solid blue;
 }
 
-.environments{
-	height: 100%;
-	width: 450px;
-	float:right;
-
+.environments {
+	height: auto;
+	width: 505px;
+	float: right;
 	color: #B5B5B5;
 	font-family: "Helvetica-Neue-Thin";
+
+	border: 1px solid blue;
 }
 
-.computerLanguages h4 {
-	margin-bottom: 25px;
-	margin-left: 15px;
+.computerLanguages h4, .environments h4 {
+	margin: 25px 15px;
 	color: #0FA3FF;
-}
-
-.environments h4{
-	margin-bottom: 10px;
-	color: #0FA3FF;
+	font-size: 28px;
 }
 
 .languageRow {
 	width: 400px;
-	font-size: 14px;
+	font-size: 18px;
 	margin: 3px auto;
-}
-
-.languageRow span{
-	width: 100px;
 }
 
 .languageCircles {
@@ -657,21 +660,67 @@ colors{
 }
 
 .envCircle {
-	width: 87.5px;
+	width: 100px;
 	margin: 15px 12.5px 30px 12.5px;
 	float: left;
 	text-align: center;
 }
 
 .envCircle img{
-	width: 87.5px;
-	height: 87.5px;
+	width: 100px;
+	height: 100px;
 	margin-bottom: 15px;
 }
 
 .envCircle span{
+	font-size: 18px;
 	color: #0FA3FF;
 }
+
+@media (max-width: 950px) {
+	.skillContainer{
+		width: auto;
+		height: auto;
+		text-align: center;
+	}
+	.computerLanguages {
+		width: auto;
+		float: none;
+		display: inline-block;
+		text-align: left;
+	}
+	.environments {
+		width: auto;
+		float: none;
+	}
+	.computerLanguages h4, .environments h4 {
+		font-size: 24px;
+	}
+	.languageRow {
+		width: auto;
+		font-size: 14px;
+	}
+	.languageCircles {
+		width: auto;
+		float: right;
+	}
+	.envCircle {
+		width: 50px;
+		margin: 15px 12.5px 30px 12.5px;
+		float: none;
+		display:inline-block;
+	}
+	.envCircle img{
+		width: 50px;
+		height: 50px;
+	}
+	.envCircle span{
+		font-size: 12px;
+	}
+}
+
+
+
 
 .universityContainer {
 	width: 350px;
