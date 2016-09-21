@@ -302,11 +302,6 @@ colors{
 	margin: 0 auto;
 }
 
-.sectionContainer .row{
-	margin-left: 0;
-	margin-right: 0;
-}
-
 .hexagon {
 	text-align: center;
 	perspective: 1000;
@@ -603,34 +598,30 @@ colors{
 	}
 }
 
-/* Potential Solution: Create new div class, set text-align: center on skillContainer, set display: inline-block on new div*/
-
 .skillContainer {
-	width: 960px;
-	height: 500px; /*TODO: May not actually be true*/
-	position: relative;
-
-	border: 2px solid green;
+	width: auto;
+	height: auto;
+	text-align: center;
 }
 
 .computerLanguages {
 	height: auto;
-	width: 450px;
-	float: left;
+	width: auto;
+	display: inline-block;
 	color: #B5B5B5;
 	font-family: "Helvetica-Neue-Thin";
-
-	border: 1px solid blue;
+	text-align: left;
+	vertical-align: top;
+	margin-right: 50px;
 }
 
 .environments {
 	height: auto;
-	width: 505px;
-	float: right;
+	width: 500px;
+	display: inline-block;
 	color: #B5B5B5;
 	font-family: "Helvetica-Neue-Thin";
-
-	border: 1px solid blue;
+	vertical-align: top;
 }
 
 .computerLanguages h4, .environments h4 {
@@ -640,13 +631,13 @@ colors{
 }
 
 .languageRow {
-	width: 400px;
+	width: auto;
 	font-size: 18px;
 	margin: 3px auto;
 }
 
 .languageCircles {
-	width: 300px;
+	width: auto;
 	float: right;
 }
 
@@ -662,7 +653,8 @@ colors{
 .envCircle {
 	width: 100px;
 	margin: 15px 12.5px 30px 12.5px;
-	float: left;
+	float: none;
+	display:inline-block;
 	text-align: center;
 }
 
@@ -678,37 +670,21 @@ colors{
 }
 
 @media (max-width: 950px) {
-	.skillContainer{
-		width: auto;
-		height: auto;
-		text-align: center;
-	}
 	.computerLanguages {
 		width: auto;
-		float: none;
-		display: inline-block;
-		text-align: left;
+		margin-right: 0px;
 	}
 	.environments {
 		width: auto;
-		float: none;
 	}
 	.computerLanguages h4, .environments h4 {
 		font-size: 24px;
 	}
 	.languageRow {
-		width: auto;
 		font-size: 14px;
-	}
-	.languageCircles {
-		width: auto;
-		float: right;
 	}
 	.envCircle {
 		width: 50px;
-		margin: 15px 12.5px 30px 12.5px;
-		float: none;
-		display:inline-block;
 	}
 	.envCircle img{
 		width: 50px;
@@ -719,28 +695,34 @@ colors{
 	}
 }
 
-
-
+.eduContainer {
+	width: auto;
+	height: auto;
+	text-align: center;
+	position: relative;
+}
 
 .universityContainer {
 	width: 350px;
-	height: 350px;
-	float: left;
+	height: auto;
+	display: inline-block;
 	color: #0FA3FF;
 	font-family: "Helvetica-Neue-Thin";
-	padding-top: 70px;
-	padding-left: 35px;
+	text-align: left;
+	vertical-align: middle; /* TODO: This doesn't work, temp solution below */
+	margin-top: 125px;
 }
 
 .coursesContainer {
-	width: 550px;
-	height: 350px;
-	float: right;
+	width: 600px;
+	height: auto;
+	display: inline-block;
 	color: #B5B5B5;
 	font-family: "Helvetica-Neue-Thin";
+	vertical-align: top;
 }
 
-.universityContainer h1{
+.universityContainer h1, .coursesContainer h1{
 	font-size: 50px;
 	color: #B5B5B5;
 }
@@ -750,23 +732,47 @@ colors{
 }
 
 .courseBox {
-	width: 105px;
-	height: 120px;
-	margin: 20px 15px 20px 15px;
+	width: 120px;
+	height: 150px;
+	margin: 20px 15px;
 	text-align: center;
 	float: left;
-	overflow: hidden;
 }
 
-.courseBox i{
+.courseBox i {
 	color: #B5B5B5;
 	margin-bottom: 5px;
-	font-size: 80px;
-	width: 100%;
+	font-size: 100px;
 }
 
-.courseBox span{
+.courseBox span {
 	color: #0FA3FF;
+	font-size: 18px;
+}
+
+@media (max-width: 950px) {
+	.universityContainer {
+		width: auto;
+		margin-top: 0px;
+		text-align: center;
+	}
+	.coursesContainer {
+		width: auto;
+	}
+	.universityContainer h1, .coursesContainer h1 {
+		font-size: 30px;
+	}
+	.courseBox {
+		width: 75px;
+		height: 130px;
+		margin: 10px 15px;
+	}
+	.courseBox i {
+		font-size: 60px;
+	}
+	.courseBox span {
+		font-size: 14px;
+	}	
 }
 
 

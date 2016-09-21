@@ -3,7 +3,7 @@ angular.module('personalWebsite')
 	var circularNav = {};
 
 	circularNav.sectionSelected = null;
-	circularNav.currentlySelected = 1; //TODO: CHange this back to 0
+	circularNav.currentlySelected = 0;
 	circularNav.myNewChart;
 	circularNav.canvasSize;
 

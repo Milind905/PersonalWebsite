@@ -1,5 +1,5 @@
 <div ng-show="resume.sectionSelected === 'Education'" class="sectionContainer">
-    <div class="row">
+    <div class="eduContainer">
         <div class="universityContainer">
             <div>
                 <h1>University of Waterloo</h1>
@@ -10,7 +10,7 @@
         </div>
 
         <div class="coursesContainer">
-            <h4>Relevant Courses</h4>
+            <h1>Relevant Courses</h1>
             <div ng-repeat="course in resume.courses" class="courseBox">
                 <i class="fa {{course.iconClass}}"></i>
                 <span>{{course.name}}</span>
