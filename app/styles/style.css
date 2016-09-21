@@ -165,6 +165,7 @@ colors{
 	font-family: "Helvetica-Neue-Thin";
 	margin-left: 20%;
 	margin-right: 20%;
+	text-align: justify;
 }
 
 .aboutDescription h1 {
@@ -177,7 +178,6 @@ colors{
 .aboutDescription p {
 	font-size: 18px;
 	color: #B5B5B5;
-	text-align: center;
 }
 
 .aboutDescription span {
@@ -188,6 +188,13 @@ colors{
 	width: 700px;
 	margin-left: 100px;
 	float: left;
+}
+
+@media (max-width: 500px) {
+	.aboutDescription {
+		margin-left: 10%;
+		margin-right: 10%;
+	}
 }
 
 .command-prompt-help {
@@ -268,18 +275,18 @@ colors{
 
 .resumeDownload {
 	width: 100%;
-	margin-top: 50px;
-	margin-bottom: 50px;
+	margin-top: 5vw;
+	margin-bottom: 5vw;
 	text-align: center;
 }
 
 .resumeDownload a{
 	color: #FFFFFF;
 	border: 2px solid #FF6B0F;
-	padding: 15px 30px;
+	padding: 1.5vw 3vw;
 	border-radius: 0px;
 	font-family: "Helvetica-Neue-Thin";
-	font-size: 18px;
+	font-size: 1.5vw;
 	font-weight: lighter;
 	text-decoration: none;
 }
@@ -287,6 +294,18 @@ colors{
 .resumeDownload a:hover {
 	background-color: #FF6B0F;
 	color: #FFFFFF;
+}
+
+@media (max-width: 750px) {
+	.resumeDownload {
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
+
+	.resumeDownload a{
+		padding: 10px 15px;
+		font-size: 14px;
+	}
 }
 
 .sectionContainer {
@@ -395,6 +414,7 @@ colors{
 	margin: 30px 10px;
 }
 
+/* TODO: Replace with JavaScript */
 @media (min-width: 1600px) {
 	.hexagonContainer {
 		width: 1530px;
