@@ -11,4 +11,4 @@ angular.module('personalWebsite')
 			self.keyDown = function($event){
 				console.log("here: ",$event);
 			}*/
-	});
+});
