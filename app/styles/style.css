@@ -795,6 +795,172 @@ colors{
 
 
 
+/** Recommendation Page Styling **/
+.recContainer {
+	height: auto;
+	width: 100%;
+	margin-bottom: 50px;
+	font-family: "Helvetica-Neue-Thin";
+	background: url("../images/mountRainer.jpg") no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.opacityContainer {
+	background: rgba(0, 0, 0, 0.4);
+}
+
+.carouselContainer {
+	width: 80%;
+	height: auto;
+	margin: 0 10%;
+}
+
+.titleContainer {
+	width: auto;
+	height: auto;
+	text-align: center;
+}
+
+.titleContainer h1 {
+	font-size: 36px;
+	text-align: center;
+	color: #0FA3FF;
+	display: inline-block;
+}
+
+.titleContainer div { 
+	margin: 0px 50px;
+	background: rgba(163, 163, 163, 0.5);
+	display: inline-block;
+	padding: 30px 35px;
+}
+
+.titleContainer a {
+	color: #1C1C1C;
+	font-family: "Helvetica-Neue-Thin";
+	font-size: 24px;
+	text-decoration: none;
+}
+
+.titleContainer div:hover a{
+	color: #0FA3FF;
+	text-decoration: none;
+}
+
+.carousel .item {
+	height: 250px;
+    width: 100%;
+    padding: 10px 30px;
+    font-family: "Helvetica-Neue-Thin";
+}
+
+.quoteContainer h3 {
+	color: #B5B5B5;
+	font-size: 20px;
+	font-style: italic;
+	text-align: center;
+	padding-right: 20px;
+}
+
+.quoteContainer p {
+	color: #0FA3FF;
+	font-size: 20px;
+	text-align: right;
+	margin-bottom: 50px;
+	font-style: italic;
+}
+
+@media(min-width: 1800px) {
+	.quoteContainer h3 {
+		font-size: 22px;
+	}
+	.quoteContainer p {
+		font-size: 30px;
+	}
+	.titleContainer h1 {
+		font-size: 48px;
+	}
+	.titleContainer a {
+		font-size: 36px;
+	}
+}
+
+@media (max-width: 950px) {
+	.quoteContainer h3 {
+		font-size: 16px;
+	}
+	.quoteContainer p {
+		font-size: 16px;
+	}
+	.titleContainer h1 {
+		font-size: 24px;
+	}
+	.titleContainer a {
+		font-size: 18px;
+	}
+	.titleContainer div {
+		padding: 25px 25px;
+		margin: 0px 30px;
+	}
+}
+
+@media (max-width: 600px) {
+	.carouselContainer {
+		margin: 0px 0px;
+		width: 100%;
+		border: 1px solid red;
+	}
+	.carousel .item {
+	    padding: 10px 10px;
+	}
+	.quoteContainer h3 {
+		font-size: 14px;
+	}
+	.quoteContainer p {
+		font-size: 14px;
+	}
+	.titleContainer h1 {
+		font-size: 24px;
+	}
+	.titleContainer a {
+		font-size: 18px;
+	}
+	.titleContainer div {
+		padding: 25px 25px;
+		margin: 0px 0px;
+	}
+}
+
+
+/*.quoteContainer.active {
+  	animation: slide-out 0.5s forwards;
+    -webkit-animation: slide-out 0.5s forwards;
+}
+
+@keyframes slide-in {
+    100% { transform: translateX(0%); }
+}
+
+@-webkit-keyframes slide-in {
+    100% { -webkit-transform: translateX(0%); }
+}
+    
+@keyframes slide-out {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+}
+
+@-webkit-keyframes slide-out {
+    0% { -webkit-transform: translateX(0%); }
+    100% { -webkit-transform: translateX(-100%); }
+}
+*/
+
+
+
 /** Contact Page Styling**/
 .contactHeader {
 	text-align: center;
