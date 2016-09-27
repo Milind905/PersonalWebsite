@@ -1,15 +1,39 @@
-<div id="contact" class="contactHeader" ng-controller="ContactCtrl as contact">
-	<h1>Say Hey!</h1>
-	<p>Get in touch by email or through any of the social sites below</p>
-</div>
-
-<div class="contactRow">
-	<div class="contactBox" ng-repeat="connection in contact.connections">
-		<h4>{{connection.subtitle}}</h4>
-		<a href="{{connection.link}}">
-			<div class="contactBackground">
-				<i class="fa {{connection.iconClass}}"></i>
+<div id="contact" class="contactContainer" ng-controller="ContactCtrl as contact">
+		<h1>Get In Touch!</h1>
+		<div class="contactTextContainer">
+			<div class="leftContact col-lg-5">
+				<p>If you have any questions, suggestions, or just want to have a chat, feel free to message me! You can fill out the box here, send me an email, or message me on social media.</p>
+				<div ng-repeat="media in contact.socialMedia" class="mediaIcons">
+					<a id="{{media.id}}" class="mediaIcon" href="{{media.link}}"><i class="fa {{media.icon}}"></i></a>
+				</div>
 			</div>
-		</a>
+			
+			<div class="rightContact col-lg-offset-1 col-lg-6">
+				<form class="form-horizontal">
+				  
+				  <div class="form-group">
+				    <div class="col-lg-6">
+				      <input type="text" class="form-control" id="inputName" placeholder="Name">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <div class="col-lg-6">
+				      <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <div class="col-lg-12">
+				      <input type="text" class="form-control" id="inputSubject" placeholder="Subject">
+				    </div>
+				  </div>
+				  <textarea class="form-control" rows="5" placeholder="Message"></textarea>
+				  <div class="buttonCenter">
+					  <button type="submit" class="btn btn-default">Submit</button>
+				  </div>
+
+				</form>
+			</div>
+
+		</div>
 	</div>
 </div>

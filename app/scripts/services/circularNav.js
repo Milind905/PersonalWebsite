@@ -15,6 +15,7 @@ angular.module('personalWebsite')
 	}
 
 	circularNav.options = {
+		animation: true,
 	    animationEasing: "easeInOutCirc",
 	    animationSteps: 30,
 	    segmentStrokeColor : "#1C1C1C",
@@ -26,7 +27,7 @@ angular.module('personalWebsite')
 	    percentageInnerCutout : 75,
 	    onAnimationComplete: function () {
 	    	changeNavLabel(circularNav.sectionSelected);
-	    	//this.showTooltip(this.segments, true);
+	    	this.showTooltip(this.segments, true);
 	    }
 	};
 

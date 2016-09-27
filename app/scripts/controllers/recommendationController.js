@@ -46,6 +46,16 @@ angular.module('personalWebsite')
 		}
 		self.slides[self.activeSlide].active = true;
 	}
+
+	self.loadHighResImages = function() {
+		console.log("Loading High Res Image...") // Confirm if this works on server')";
+		
+		var imgDefer = document.getElementById('recommendation');
+		imgDefer.style.backgroundImage = "url('app/images/mountRainerHighRes.jpg')";
+	}
+
+	self.loadHighResImages();
+
 	/*self.animateSlides = function() {
 		$("#slide0")
 		.animate(

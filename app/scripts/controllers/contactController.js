@@ -2,25 +2,17 @@ angular.module('personalWebsite')
 .controller('ContactCtrl', function(){
 	var self = this;
 
-	self.connections = [{
-		title: 'LinkedIn',
-		iconClass: 'fa-linkedin-square',
-		subtitle: 'Connect',
-		link: "https://ca.linkedin.com/in/mshah905"
+	self.socialMedia = [{
+		id: "mediaGitHub",
+		icon: "fa-github-square",
+		link: "https://www.linkedin.com/in/milindNshah"
 	}, {
-		title: 'Facebook',
-		iconClass: 'fa-facebook-square',
-		subtitle: 'Befriend',
-		link: "https://www.facebook.com/milind905"
+		id: "mediaLinkedIn",
+		icon: "fa-linkedin-square",
+		link: "https://github.com/milindNshah"
 	}, {
-		title: 'Github',
-		iconClass: 'fa-github-square',
-		subtitle: 'Checkout',
-		link: "https://github.com/Milind905"
-	}, {
-		title: 'Email',
-		iconClass: 'fa-envelope',
-		subtitle: 'mnshah@uwaterloo.ca',
+		id: "mediaEmail",
+		icon: "fa-envelope",
 		link: "mailto:mnshah@uwaterloo.ca"
 	}];
 });
