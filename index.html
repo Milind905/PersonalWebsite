@@ -5,8 +5,15 @@
   </head>
 
   <body class="bodyBackground">
-    <ng-include src="'/app/views/navbar.html'"></ng-include>
-    <div class="bodyContainer" ui-view></div>
+    <div class="firstContainer">
+      <ng-include src="'/app/views/navbar.html'"></ng-include>
+      <ng-include src="'/app/views/index.html'"></ng-include>
+    </div>
+    <div class="bodyContainer">
+      <ng-include src="'/app/views/about.html'"></ng-include>
+      <ng-include src="'/app/views/resume.html'"></ng-include>
+      <ng-include src="'/app/views/recommendation.html'"></ng-include>
+    </div>
 
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/app/scripts/angularApp.js"></script>
@@ -16,16 +23,15 @@
     <link rel="stylesheet" href="/app/styles/style.css">
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="/app/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/bower_components/animate.css/animate.min.css">
     <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
-
-    <!-- Routing Modules -->
-    <script src="/app/scripts/router.js"></script>
 
    	<!-- Controllers -->
     <script src="/app/scripts/controllers/navController.js"></script>
    	<script src="/app/scripts/controllers/indexController.js"></script>
     <script src="/app/scripts/controllers/aboutController.js"></script>
     <script src="/app/scripts/controllers/resumeController.js"></script>
+    <script src="/app/scripts/controllers/recommendationController.js"></script>
     <script src="/app/scripts/controllers/contactController.js"></script>
 
     <!-- Directives -->
@@ -33,6 +39,7 @@
 
     <!-- Services -->
     <script src="/app/scripts/services/circularNav.js"></script>
+    <script src="/app/scripts/services/resumeContent.js"></script>
 
   </body>
 </html>

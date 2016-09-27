@@ -1,14 +1,14 @@
-<div class="contactHeader">
+<div id="contact" class="contactHeader" ng-controller="ContactCtrl as contact">
 	<h1>Say Hey!</h1>
 	<p>Get in touch by email or through any of the social sites below</p>
 </div>
 
 <div class="contactRow">
-	<div class="contactBox" ng-repeat="contact in contact.connections">
-		<h4>{{contact.subtitle}}</h4>
-		<a href="{{contact.link}}">
+	<div class="contactBox" ng-repeat="connection in contact.connections">
+		<h4>{{connection.subtitle}}</h4>
+		<a href="{{connection.link}}">
 			<div class="contactBackground">
-				<i class="fa {{contact.iconClass}}"></i>
+				<i class="fa {{connection.iconClass}}"></i>
 			</div>
 		</a>
 	</div>
