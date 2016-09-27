@@ -53,7 +53,7 @@ angular.module('personalWebsite')
 	    	value: 1,
 	    	color: circularNav.colors.grey,
 	    	highlight: circularNav.colors.greyHighlight,
-	    	label: "Projects"
+	    	label: "Hobbies"
 	    }
 	];
 
@@ -157,7 +157,7 @@ angular.module('personalWebsite')
     circularNav.calculateCanvasCSS = function(windowWidth) {
     	var deferred = $q.defer();
 		
-		self.canvasSize = windowWidth*7/24;
+		self.canvasSize = windowWidth*5/24;
 		var textCanvas = document.getElementById("textCanvas");
 		textCanvas.getContext('2d').clearRect(0, 0, textCanvas.width, textCanvas.height);
 		textCanvas.style.position = "absolute";

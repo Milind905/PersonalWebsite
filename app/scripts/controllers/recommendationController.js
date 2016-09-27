@@ -12,13 +12,13 @@ angular.module('personalWebsite')
 		active: true
 	}, {
 		quote: "I was very impressed with Milind's ability to pick up new technologies and utilize them effectively in solving various problems he was assigned this semester. He demonstrated consistency in his ability to break down problems and tackle them efficiently.",
-		by: "Nael Shawwa",
+		by: "Nael El Shawwa",
 		position: "VP Engineering",
 		company: "FlashStock",
 		active: false
 	}, {
 		quote: "It has been an excellent experience working with Milind. He is not afraid to speak his mind and offer his professional opinion. In some situations, he would present an idea that he knew would require a lot more work, but would make the product better. Milind has also been there to make sure that all technical aspects are taken care of, even for other projects. It has been an absolute pleasure to work with Milind and I would highly recommend hiring him.",
-		by: "Josh Granek",
+		by: "Joshua Granek",
 		position: "Defence Scientist",
 		company: "Department of National Defence",
 		active: false

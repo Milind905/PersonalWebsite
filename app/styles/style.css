@@ -46,6 +46,11 @@ colors{
 	src: url("../fonts/Audiowide-Regular.ttf");
 }
 
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+
 .bodyBackground {
 	background: #1C1C1C no-repeat fixed;
 	font: 14px "Lucida-Grande", "Helvetica-Neue", Helvetica, Arial, sans-serif;
@@ -58,7 +63,8 @@ colors{
 	width: 100%;
 	top: 0;
 
-	background: url("../images/mysteriousNight.jpg") no-repeat center center;
+	background: url("../images/mountRainierNightLowRes.jpg") no-repeat center center fixed;
+	/*background: url("../images/mountRainierNight.jpg") no-repeat center center;*/
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -123,6 +129,7 @@ colors{
 	padding-left: 50px;
 	padding-right: 50px;
 	height: 100vh;
+	background: rgba(0, 0, 0, 0.5);
 	
 	display: flex;
 	flex-direction: column;
@@ -131,7 +138,7 @@ colors{
 }
 
 .name h1 {
-	font-size: 120px;
+	font-size: 90px;
 	text-align: center;
 	margin-top: 0;
 	margin-bottom: 0;
@@ -146,7 +153,7 @@ colors{
 }
 
 .homeSubHeading h1 {
-	font-size: 40px;
+	font-size: 30px;
 	color: white;
 	margin-top: 0px;
 	margin-bottom: 0px;
@@ -261,7 +268,7 @@ colors{
 
 .resumeContainer {
 	margin: 0;
-	margin-bottom: 50px;
+	margin-bottom: 100px;
 	width: 100%;
 	height: auto;
 }
@@ -274,14 +281,14 @@ colors{
 .resumeDownload {
 	width: 100%;
 	margin-top: 5vw;
-	margin-bottom: 5vw;
+	margin-bottom: 10vw;
 	text-align: center;
 }
 
 .resumeDownload a{
 	color: #FFFFFF;
 	border: 2px solid #FF6B0F;
-	padding: 1.5vw 3vw;
+	padding: 1vw 2.5vw;
 	border-radius: 0px;
 	font-family: "Helvetica-Neue-Thin";
 	font-size: 1.5vw;
@@ -314,7 +321,7 @@ colors{
 
 .hexagonContainer {
 	width: 1230px;
-	height: 500px;
+	height: 400px;
 	position: relative;
 	margin: 0 auto;
 }
@@ -357,12 +364,12 @@ colors{
 	background: #67D941;
 	top: 0px;
 	left: 0px;
-	padding-top: 15px;
+	padding-top: 0px;
 }
 
 #dond {
 	background: #FAD543;
-	top: 100px;
+	top: 0px;
 	left: 310px;
 	padding-top: 0px;
 }
@@ -371,12 +378,12 @@ colors{
 	background: #0FA3FF;
 	top: 0px;
 	left: 620px;
-	padding-top: 15px;
+	padding-top: 0px;
 }
 
 #intentional {
 	background: #F46600;
-	top: 100px;
+	top: 0px;
 	left: 930px;
 	padding-top: 0px;
 }
@@ -406,10 +413,11 @@ colors{
 }
 
 .jobInfo {
-	width: 270px;
+	width: 260px;
 	font-size: 14px;
 	text-align: left;
-	margin: 30px 10px;
+	margin: 30px 15px;
+	padding: 0px 0px 0px 30px;
 }
 
 /* TODO: Replace with JavaScript */
@@ -424,7 +432,7 @@ colors{
 	}
 	#scotiabank {
 		left: 0px;
-		padding-top: 30px;
+		padding-top: 0px;
 	}
 	#dond {
 		left: 385px;
@@ -432,7 +440,7 @@ colors{
 	}
 	#flashstock {
 		left: 770px;
-		padding-top: 30px;
+		padding-top: 0px;
 	}
 	#intentional {
 		left: 1155px;
@@ -456,7 +464,8 @@ colors{
 	.jobInfo {
 		width: 330px;
 		font-size: 18px;
-		margin: 30px 22.5px;
+		margin: 30px 15px;
+		padding: 0px 0px 0px 30px;
 	}
 }
 
@@ -469,7 +478,7 @@ colors{
 	}
 	#scotiabank {
 		left: 0px;
-		padding-top: 20px;
+		padding-top: 0px;
 	}
 	#dond {
 		left: 245px;
@@ -477,7 +486,7 @@ colors{
 	}
 	#flashstock {
 		left: 490px;
-		padding-top: 20px;
+		padding-top: 0px;
 	}
 	#intentional {
 		left: 735px;
@@ -499,9 +508,10 @@ colors{
 		margin-top: 80px;
 	}
 	.jobInfo {
-		width: 215px;
+		width: 205px;
 		font-size: 12px;
 		margin: 25px 10px;
+		padding: 0px 0px 0px 25px;
 	}
 }
 
@@ -521,7 +531,7 @@ colors{
 	#scotiabank {
 		top: 0px;
 		left: 0px;
-		padding-top: 20px;
+		padding-top: 0px;
 	}
 	#dond {
 		top: 0px;
@@ -531,12 +541,12 @@ colors{
 	#flashstock {
 		top: 200px;
 		left: 0px;
-		padding-top: 20px; /* This padding causes extra padding on back side too*/
+		padding-top: 0px;
 	}
 	#intentional {
 		top: 200px;
 		left: calc(100%/2);
-		padding-top: 20px;
+		padding-top: 0px;
 	}
 	.jobTitle {
 		width: 70%;
@@ -555,9 +565,11 @@ colors{
 	}
 	.jobInfo {
 		width: 90%;
+		height: 90%;
 		margin-top: 10px;
 		font-size: 12px;
 		margin: 5% 0;
+		overflow-y: scroll;
 	}
 }
 
@@ -577,7 +589,7 @@ colors{
 	#scotiabank {
 		top: 0px;
 		left: 0px;
-		padding-top: 20px;
+		padding-top: 0px;
 	}
 	#dond {
 		top: 0px;
@@ -587,12 +599,12 @@ colors{
 	#flashstock {
 		top: 200px;
 		left: 0px;
-		padding-top: 20px;
+		padding-top: 0px;
 	}
 	#intentional {
 		top: 200px;
 		left: calc(100%/2);
-		padding-top: 20px;
+		padding-top: 0px;
 	}
 	.jobTitle {
 		width: 90%;
@@ -610,9 +622,11 @@ colors{
 		font-size: 20px;
 	}
 	.jobInfo {
-		width: 90%;
-		margin: 10px;
+		width: 100%;
+		height: 95%;
+		padding: 0px 20px;
 		font-size: 10px;
+		overflow-y: scroll;
 	}
 }
 
@@ -670,21 +684,23 @@ colors{
 
 .envCircle {
 	width: 100px;
-	margin: 15px 12.5px 30px 12.5px;
+	height: 150px;
+	margin: 15px 12.5px 15px 12.5px;
 	float: none;
 	display:inline-block;
-	text-align: center;
+	vertical-align: bottom;
 }
 
 .envCircle img{
-	width: 100px;
-	height: 100px;
+	width: 80px;
+	height: 80px;
 	margin-bottom: 15px;
 }
 
 .envCircle span{
 	font-size: 18px;
 	color: #0FA3FF;
+	text-align: center;
 }
 
 @media (max-width: 950px) {
@@ -772,10 +788,12 @@ colors{
 	.universityContainer {
 		width: auto;
 		margin-top: 0px;
+		margin-bottom: 30px;
 		text-align: center;
 	}
 	.coursesContainer {
 		width: auto;
+		margin: 0 auto;
 	}
 	.universityContainer h1, .coursesContainer h1 {
 		font-size: 30px;
@@ -833,7 +851,6 @@ colors{
 
 .titleContainer div { 
 	margin: 0px 50px;
-	background: rgba(163, 163, 163, 0.5);
 	display: inline-block;
 	padding: 30px 35px;
 }
@@ -841,7 +858,7 @@ colors{
 .titleContainer a {
 	color: #1C1C1C;
 	font-family: "Helvetica-Neue-Thin";
-	font-size: 24px;
+	font-size: 48px;
 	text-decoration: none;
 }
 
@@ -868,9 +885,9 @@ colors{
 .quoteContainer p {
 	color: #0FA3FF;
 	font-size: 20px;
+	font-weight: bold;
 	text-align: right;
 	margin-bottom: 50px;
-	font-style: italic;
 }
 
 @media(min-width: 1800px) {
@@ -884,7 +901,7 @@ colors{
 		font-size: 48px;
 	}
 	.titleContainer a {
-		font-size: 36px;
+		font-size: 60px;
 	}
 }
 
@@ -899,7 +916,7 @@ colors{
 		font-size: 24px;
 	}
 	.titleContainer a {
-		font-size: 18px;
+		font-size: 32px;
 	}
 	.titleContainer div {
 		padding: 25px 25px;
@@ -911,7 +928,6 @@ colors{
 	.carouselContainer {
 		margin: 0px 0px;
 		width: 100%;
-		border: 1px solid red;
 	}
 	.carousel .item {
 	    padding: 10px 10px;
@@ -926,7 +942,7 @@ colors{
 		font-size: 24px;
 	}
 	.titleContainer a {
-		font-size: 18px;
+		font-size: 28px;
 	}
 	.titleContainer div {
 		padding: 25px 25px;

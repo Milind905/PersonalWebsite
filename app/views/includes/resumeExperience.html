@@ -7,7 +7,7 @@
                 <p class="jobDate">{{job.date}}</p>
                 <h4 class="jobPosition">{{job.position}}</h4>
             </div>
-            <div class="back">
+            <div class="back" id="back{{job.id}}">
                 <ul class="jobInfo">
                     <li ng-repeat="info in job.info">{{info}}</li>
                 </ul>
