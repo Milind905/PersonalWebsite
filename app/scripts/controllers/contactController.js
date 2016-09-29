@@ -15,4 +15,5 @@ angular.module('personalWebsite')
 		icon: "fa-envelope",
 		link: "mailto:mnshah@uwaterloo.ca"
 	}];
+
 });

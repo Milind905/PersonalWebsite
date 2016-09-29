@@ -11,10 +11,14 @@ angular.module('personalWebsite')
 		self.timeStamp = 0;
 
 		self.loadHighResImages = function() {
-			console.log("Loading High Res Image...") // Confirm if this works on server
+			var downloadingImage = new Image();
+			var imageSrc = "app/images/mountRainierNightHighRes.jpg";
 
-			var imgDefer = document.getElementsByClassName('firstContainer');
-			imgDefer[0].style.backgroundImage = "url('app/images/mountRainierNightHighRes.jpg')";
+			downloadingImage.onload = function(){
+				var imgDefer = document.getElementsByClassName('firstContainer');
+				imgDefer[0].style.backgroundImage = "url('"+imageSrc+"')";
+			};
+			downloadingImage.src = imageSrc;
 		}
  
 		//TODO: Some kind of animation? Maybe cube rotating?
@@ -36,7 +40,6 @@ angular.module('personalWebsite')
 
 		$window.addEventListener('resize', function(e){
 			if((e.timeStamp - self.timeStamp) > 300) {
-				console.log("here");
 				circularNav.resizeCanvas($window.innerWidth);
 				self.timeStamp = e.timeStamp;
 			}

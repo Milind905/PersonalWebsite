@@ -1001,6 +1001,10 @@ colors{
 	overflow: hidden;
 }
 
+.leftContact {
+	border: 1px solid red;
+}
+
 .buttonCenter {
 	text-align: center;
 }

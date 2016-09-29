@@ -48,10 +48,13 @@ angular.module('personalWebsite')
 	}
 
 	self.loadHighResImages = function() {
-		console.log("Loading High Res Image...") // Confirm if this works on server')";
-		
-		var imgDefer = document.getElementById('recommendation');
-		imgDefer.style.backgroundImage = "url('app/images/mountRainerHighRes.jpg')";
+		var downloadingImage = new Image();
+		var imageSrc = "app/images/mountRainerHighRes.jpg";
+		downloadingImage.onload = function(){
+			var imgDefer = document.getElementById('recommendation');
+			imgDefer.style.backgroundImage = "url('"+imageSrc+"')";
+		};
+		downloadingImage.src = imageSrc;
 	}
 
 	self.loadHighResImages();
