@@ -15,8 +15,10 @@ angular.module('personalWebsite')
 			var imageSrc = "app/images/mountRainierNightHighRes.jpg";
 
 			downloadingImage.onload = function(){
-				var imgDefer = document.getElementsByClassName('firstContainer');
-				imgDefer[0].style.backgroundImage = "url('"+imageSrc+"')";
+				setTimeout(function(){
+					var imgDefer = document.getElementsByClassName('firstContainer');
+					imgDefer[0].style.backgroundImage = "url('"+imageSrc+"')";
+			    }, 1000);				
 			};
 			downloadingImage.src = imageSrc;
 		}

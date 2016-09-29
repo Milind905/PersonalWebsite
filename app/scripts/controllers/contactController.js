@@ -16,4 +16,18 @@ angular.module('personalWebsite')
 		link: "mailto:mnshah@uwaterloo.ca"
 	}];
 
+	/*KLUDGE CRUISE, yeah lets use angular, jquery, AND javascript...*/
+	self.submitForm = function() {
+		if (self.userForm.$valid) {
+			/*console.log(self.fullName);
+			console.log(self.email);
+			console.log(self.subject);
+			console.log(self.message);*/
+			$('#emailSentModal').modal('show');
+			setTimeout(function(){
+		        $('#emailSentModal').modal('hide');
+		    }, 1500);
+		}
+	};
+
 });

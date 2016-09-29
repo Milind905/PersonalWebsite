@@ -1002,8 +1002,10 @@ colors{
 }
 
 .leftContact {
-	border: 1px solid red;
+	overflow: hidden;
 }
+
+.rightContact {}
 
 .buttonCenter {
 	text-align: center;
@@ -1013,10 +1015,14 @@ colors{
 	margin-top: 20px;
 }
 
+.mediaIconsRow {
+	text-align: center;
+}
+
 .mediaIcons {
-	float: left;
+	display: inline-block;
 	font-size: 48px;
-	margin: 20px 20px 20px 0px;
+	margin: 20px 40px 20px 0px;
 }
 
 .mediaIcon {
