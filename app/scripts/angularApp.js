@@ -1,1 +1,1 @@
-var app = angular.module('personalWebsite', ['ui.router']);
+var app = angular.module('personalWebsite', ['ui.router', 'ngTouch']);

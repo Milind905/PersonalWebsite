@@ -25,10 +25,6 @@ colors{
 	font-family: "FuturaPT-Light";
 	src: url("../fonts/FuturaPTLight.otf");
 }
-@font-face {
-	font-family: "FuturaPT-Medium";
-	src: url("../fonts/FuturaPTMedium.otf");
-}
 
 ::-webkit-scrollbar {
     width: 0px;  /* remove scrollbar space */

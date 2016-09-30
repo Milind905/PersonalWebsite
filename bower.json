@@ -21,7 +21,8 @@
     "angular-ui-router": "~0.2.15",
     "bootstrap": "~3.3.5",
     "Chart.js": "~1.0.2",
-    "animate.css": "~3.5.2"
+    "animate.css": "~3.5.2",
+    "angular-touch": "1.4.7"
   },
   "main": "angularApp.js",
   "homepage": "index.ejs"

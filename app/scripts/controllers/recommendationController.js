@@ -57,6 +57,8 @@ angular.module('personalWebsite')
 		downloadingImage.src = imageSrc;
 	}
 
+	
+
 	self.loadHighResImages();
 
 	/*self.animateSlides = function() {
