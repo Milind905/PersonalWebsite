@@ -54,7 +54,7 @@ angular.module('personalWebsite')
 	    	value: 1,
 	    	color: circularNav.colors.grey,
 	    	highlight: circularNav.colors.greyHighlight,
-	    	label: "Hobbies"
+	    	label: "Projects"
 	    }
 	];
 

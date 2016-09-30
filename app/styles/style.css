@@ -1045,16 +1045,16 @@ colors{
 	margin-top: 50px !important;
 }
 
-.tempContainer h1 {
+.tempContainer h2 {
 	color: #0FA3FF;
-	font-size: 80px;
+	font-size: 40px;
 	font-family: "Helvetica-Neue-Thin";
-	margin-bottom: 40px;
+	margin-bottom: 25px;
 }
 
-.tempContainer h2 {
+.tempContainer h3 {
 	color: #B5B5B5;
-	font-size: 30px;
+	font-size: 20px;
 	font-family: "Helvetica-Neue-Thin";
 	margin-bottom: 0px;
 	margin-top: 10px;

@@ -11,7 +11,7 @@
 			</div>
 			
 			<div class="rightContact col-md-offset-1 col-md-6">
-				<form class="form-horizontal" name="contact.userForm" ng-submit="contact.submitForm()" novalidate>
+				<form class="form-horizontal" id="userForm" name="contact.userForm" ng-submit="contact.submitForm()" novalidate>
 			        <div class="form-group" ng-class="{ 'has-error' : contact.userForm.name.$invalid && !contact.userForm.name.$pristine }">
 			        	<div class="col-md-12">
 			        		<label>Name *</label>
