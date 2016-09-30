@@ -22,28 +22,12 @@ colors{
 	src: url("../fonts/LucidaGrande-Regular.ttf");
 }
 @font-face {
-	font-family: "Roboto-Thin";
-	src: url("../fonts/Roboto-Thin.ttf");
+	font-family: "FuturaPT-Light";
+	src: url("../fonts/FuturaPTLight.otf");
 }
 @font-face {
-	font-family: "Roboto";
-	src: url("../fonts/Roboto-Regular.ttf");
-}
-@font-face {
-	font-family: "Roboto-Medium";
-	src: url("../fonts/Roboto-Medium.ttf");
-}
-@font-face {
-	font-family: "Source-Sans-Pro-Light";
-	src: url("../fonts/SourceSansPro-Light.otf");
-}
-@font-face {
-	font-family: "Source-Sans-Pro";
-	src: url("../fonts/SourceSansPro-Regular.otf");
-}
-@font-face {
-	font-family: "Audiowide";
-	src: url("../fonts/Audiowide-Regular.ttf");
+	font-family: "FuturaPT-Medium";
+	src: url("../fonts/FuturaPTMedium.otf");
 }
 
 ::-webkit-scrollbar {
@@ -59,12 +43,11 @@ colors{
 
 .firstContainer {
 	position: absolute;
-	height: 100vh;
+	height: 100vh; /* TODO: Figure out why height: 100% doesn't work */
 	width: 100%;
 	top: 0;
 
 	background: url("../images/mountRainierNightLowRes.jpg") no-repeat center center fixed;
-	/*background: url("../images/mountRainierNight.jpg") no-repeat center center;*/
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -126,9 +109,7 @@ colors{
 /*** Home Page Styling ***/
 #home {
 	font-family: "Helvetica-Neue-Thin";
-	padding-left: 50px;
-	padding-right: 50px;
-	height: 100vh;
+	height: 100%;
 	background: rgba(0, 0, 0, 0.5);
 	
 	display: flex;
@@ -138,26 +119,31 @@ colors{
 }
 
 .name h1 {
-	font-size: 90px;
-	text-align: center;
-	margin-top: 0;
-	margin-bottom: 0;
+	font-size: 10vh;
+	margin: 0;
+	padding: 0;
 }
-
 .name #first {
 	color: white;
 }
-
 .name #last {
 	color: #0FA3FF;
 }
 
-.homeSubHeading h1 {
-	font-size: 30px;
+.homeSubHeading h2 {
+	font-size: 4vh;
 	color: white;
-	margin-top: 0px;
-	margin-bottom: 0px;
-	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+@media (max-width: 500px) {
+	.name h1 {
+		font-size: 6vh;
+	}
+	.homeSubHeading h2 {
+		font-size: 3vh;
+	}
 }
 
 
@@ -165,21 +151,20 @@ colors{
 /*** About Page Styling ***/
 #about {
 	margin-top: 100px;
-	margin-bottom: 50px;
+	margin-bottom: 100px;
+	overflow: hidden;	
 }
 
 .aboutDescription {
 	font-family: "Helvetica-Neue-Thin";
-	margin-left: 20%;
-	margin-right: 20%;
 	text-align: justify;
 }
 
-.aboutDescription h1 {
+.aboutDescription h2 {
 	font-size: 40px;
 	color: #0FA3FF;
 	text-align: center;
-	margin-bottom: 50px;
+	margin-bottom: 25px;
 }
 
 .aboutDescription p {
@@ -191,17 +176,24 @@ colors{
 	color: #0FA3FF;
 }
 
+@media (max-width: 500px) {
+	#about {
+		margin-top: 50px;
+	}
+	.aboutDescription h2 {
+		font-size: 25px;
+	}
+	.aboutDescription p {
+		font-size: 12px;
+		color: #B5B5B5;
+	}
+}
+
+/* Command Prompt Styling, not implemented yet */
 .main-about-container {
 	width: 700px;
 	margin-left: 100px;
 	float: left;
-}
-
-@media (max-width: 500px) {
-	.aboutDescription {
-		margin-left: 10%;
-		margin-right: 10%;
-	}
 }
 
 .command-prompt-help {
@@ -255,10 +247,6 @@ colors{
 
 
 /*** Resume Page Styling ***/
-#resume {
-	padding-top: 50px;
-}
-
 .resumeNav {
 	margin: 0px;
 	width: 100%;
@@ -819,6 +807,7 @@ colors{
 	width: 100%;
 	margin-bottom: 100px;
 	font-family: "Helvetica-Neue-Thin";
+
 	background: url("../images/mountRainerLowRes.jpg") no-repeat center center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -827,42 +816,42 @@ colors{
 }
 
 .opacityContainer {
-	background: rgba(0, 0, 0, 0.4);
+	background: rgba(0, 0, 0, 0.5);
 }
 
 .carouselContainer {
-	width: 80%;
 	height: auto;
-	margin: 0 10%;
+	float: none !important;
+	padding: 0px !important;
+	padding-top: 10px !important;
 }
 
 .titleContainer {
 	width: auto;
 	height: auto;
-	text-align: center;
 }
 
-.titleContainer h1 {
+.titleContainer h2 {
 	font-size: 36px;
+	margin-top: 0;
+	margin-bottom: 0;
 	text-align: center;
 	color: #0FA3FF;
-	display: inline-block;
 }
 
-.titleContainer div { 
-	margin: 0px 50px;
-	display: inline-block;
-	padding: 30px 35px;
+.arrowContainer {
+	text-align: center;
+	background: rgba(365, 365, 365, 0.3);
 }
 
-.titleContainer a {
+.arrowContainer a {
 	color: #1C1C1C;
 	font-family: "Helvetica-Neue-Thin";
-	font-size: 48px;
+	font-size: 36px;
 	text-decoration: none;
 }
 
-.titleContainer div:hover a{
+.arrowContainer:hover a{
 	color: #0FA3FF;
 	text-decoration: none;
 }
@@ -891,46 +880,39 @@ colors{
 }
 
 @media(min-width: 1800px) {
+	.titleContainer h2, .arrowContainer a {
+		font-size: 48px;
+	}
 	.quoteContainer h3 {
 		font-size: 22px;
 	}
 	.quoteContainer p {
 		font-size: 30px;
 	}
-	.titleContainer h1 {
-		font-size: 48px;
-	}
-	.titleContainer a {
-		font-size: 60px;
-	}
 }
 
 @media (max-width: 950px) {
+	.titleContainer h2, .arrowContainer a{
+		font-size: 24px;
+	}	
 	.quoteContainer h3 {
 		font-size: 16px;
 	}
 	.quoteContainer p {
 		font-size: 16px;
-	}
-	.titleContainer h1 {
-		font-size: 24px;
-	}
-	.titleContainer a {
-		font-size: 32px;
-	}
-	.titleContainer div {
-		padding: 25px 25px;
-		margin: 0px 30px;
-	}
+	}	
 }
 
 @media (max-width: 600px) {
 	.carouselContainer {
-		margin: 0px 0px;
-		width: 100%;
+		margin: 0px !important;
+		width: 100% !important;
 	}
 	.carousel .item {
 	    padding: 10px 10px;
+	}
+	.titleContainer h2, .arrowContainer a {
+		font-size: 20px;
 	}
 	.quoteContainer h3 {
 		font-size: 14px;
@@ -938,19 +920,8 @@ colors{
 	.quoteContainer p {
 		font-size: 14px;
 	}
-	.titleContainer h1 {
-		font-size: 24px;
-	}
-	.titleContainer a {
-		font-size: 28px;
-	}
-	.titleContainer div {
-		padding: 25px 25px;
-		margin: 0px 0px;
-	}
 }
-
-
+/* Failed animation experiments */
 /*.quoteContainer.active {
   	animation: slide-out 0.5s forwards;
     -webkit-animation: slide-out 0.5s forwards;
@@ -987,11 +958,10 @@ colors{
 	font-size: 40px;
 	color: #0FA3FF;
 	text-align: center;
-	margin-bottom: 50px;
+	margin-bottom: 25px;
 }
 
 .contactTextContainer {
-	font-size: 18px;
 	color: #B5B5B5;
 	margin-left: 10%;
 	margin-right: 10%;
@@ -1003,16 +973,35 @@ colors{
 
 .leftContact {
 	overflow: hidden;
+	font-size: 24px;
 }
 
-.rightContact {}
-
-.buttonCenter {
-	text-align: center;
+.rightContact {
+	font-size: 18px;
 }
 
-.contactContainer button{
-	margin-top: 20px;
+.formButton {
+	text-align: right;
+}
+
+.formButton input{
+	background-color: #0FA3FF;
+	color: #FFFFFF;
+	border: 2px solid #0FA3FF;
+	padding: 15px 30px;
+	border-radius: 0px;
+	text-decoration: none;
+
+	font-family: "FuturaPT-Light";
+	font-weight: 300;
+	font-style: normal;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+
+	opacity: 1;
+    transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
 }
 
 .mediaIconsRow {
@@ -1021,7 +1010,7 @@ colors{
 
 .mediaIcons {
 	display: inline-block;
-	font-size: 48px;
+	font-size: 60px;
 	margin: 20px 40px 20px 0px;
 }
 
@@ -1029,25 +1018,22 @@ colors{
 	color: #B5B5B5;
 }
 
-#mediaGitHub:hover {
-	color: #F46600;
+.mediaIcon:hover {
+	color: #0FA3FF;
 }
 
-#mediaLinkedIn:hover {
-	color: #0077B5;
+@media (max-width: 500px) {
+	.leftContact {
+		overflow: hidden;
+		font-size: 16px;
+	}
+	.rightContact {
+		font-size: 16px;
+	}
+	.mediaIcons {
+		font-size: 30px;
+	}
 }
-
-#mediaEmail:hover {
-	color: #67D941;
-}
-
-
-
-
-
-
-
-
 
 
 

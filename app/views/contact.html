@@ -1,7 +1,7 @@
 <div id="contact" class="contactContainer" ng-controller="ContactCtrl as contact">
 		<h1>Get In Touch!</h1>
 		<div class="contactTextContainer">
-			<div class="leftContact col-lg-5">
+			<div class="leftContact col-md-5">
 				<p>If you have any questions, suggestions, or just want to have a chat, feel free to message me! You can fill out the box here, send me an email, or message me on social media by clicking on one of the icons below.</p>
 				<div class="mediaIconsRow">
 				<div ng-repeat="media in contact.socialMedia" class="mediaIcons">
@@ -10,36 +10,40 @@
 				</div>
 			</div>
 			
-			<div class="rightContact col-lg-offset-1 col-lg-6">
+			<div class="rightContact col-md-offset-1 col-md-6">
 				<form class="form-horizontal" name="contact.userForm" ng-submit="contact.submitForm()" novalidate>
 			        <div class="form-group" ng-class="{ 'has-error' : contact.userForm.name.$invalid && !contact.userForm.name.$pristine }">
-			        	<div class="col-lg-8">
+			        	<div class="col-md-12">
+			        		<label>Name *</label>
 			            	<input type="text" name="name" class="form-control" ng-model="contact.fullName" placeholder="Your Name" required>
 			            	<p ng-show="contact.userForm.name.$invalid && !contact.userForm.name.$pristine" class="help-block">Your name is required.</p>
 			        	</div>
 			        </div>
 
 			        <div class="form-group" ng-class="{ 'has-error' : contact.userForm.email.$invalid && !contact.userForm.email.$pristine }">
-					    <div class="col-lg-8">
+					    <div class="col-md-12">
+					    	<label>Email *</label>
 			            	<input type="email" name="email" class="form-control" ng-model="contact.email" placeholder="Your Email" required>
 			            	<p ng-show="contact.userForm.email.$invalid && !contact.userForm.email.$pristine" class="help-block">Enter a valid email address.</p>
 			        	</div>
 			        </div>
 
 					<div class="form-group">
-						<div class="col-lg-12">
+						<div class="col-md-12">
+					    	<label>Subject</label>
 					  		<input type="text" name="subject" class="form-control" ng-model="contact.subject" placeholder="Subject">
 						</div>
 					</div>
 					
 					<div class="form-group">
-						<div class="col-lg-12">
-							<textarea name="message" class="form-control" rows="8" ng-model="contact.message" placeholder="Message"></textarea>
+						<div class="col-md-12">
+					    	<label>Message</label>
+							<textarea name="message" class="form-control" rows="8" ng-model="contact.message" placeholder="Your Message"></textarea>
 						</div>
 					</div>
 
-				  	<div class="buttonCenter">
-			  	        <button type="submit" class="btn btn-default" ng-disabled="contact.userForm.$invalid">Send Message</button>
+				  	<div class="formButton">
+			  	        <input type="submit" class="btn" ng-disabled="contact.userForm.$invalid"></input>
 				  	</div>
     			</form>
 			</div>
