@@ -34,8 +34,8 @@
 				id = "slide{{$index}}"
 				ng-repeat="slide in rec.slides"
 				ng-class="{'active': slide.active }">
-					<h3>"{{slide.quote}}"</h3>
-					<p>- {{slide.by}}, {{slide.position}}</p>
+					<p class="quoteContent">"{{slide.quote}}"</p>
+					<p class="quoteAuthor">- {{slide.by}}, {{slide.position}}</p>
 				</div>
 	      	</div>
 	    </div>

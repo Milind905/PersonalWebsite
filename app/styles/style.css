@@ -2,7 +2,6 @@
 colors{
 	blue: #0FA3FF;
 	orange: #FF6B0F;
-	red: ;
 	white: #FFFFFF;
 	grey: #B5B5B5;
 	background-grey: #1C1C1C;
@@ -18,10 +17,6 @@ colors{
     src: url("../fonts/HelveticaNeue-Thin.otf");
 }
 @font-face {
-	font-family: "Lucida-Grande";
-	src: url("../fonts/LucidaGrande-Regular.ttf");
-}
-@font-face {
 	font-family: "FuturaPT-Light";
 	src: url("../fonts/FuturaPTLight.otf");
 }
@@ -33,15 +28,12 @@ colors{
 
 .bodyBackground {
 	background: #1C1C1C no-repeat fixed;
-	font: 14px "Lucida-Grande", "Helvetica-Neue", Helvetica, Arial, sans-serif;
-	position: relative;
+	font-family: "Helvetica-Neue-Thin", "Helvetica-Neue", Helvetica, Arial, sans-serif;
 }
 
 .firstContainer {
-	position: absolute;
 	height: 100vh; /* TODO: Figure out why height: 100% doesn't work */
 	width: 100%;
-	top: 0;
 
 	background: url("../images/mountRainierNightLowRes.jpg") no-repeat center center fixed;
 	-webkit-background-size: cover;
@@ -50,9 +42,57 @@ colors{
 	background-size: cover;
 }
 
-.bodyContainer {
-	position: absolute;
-	top: 100vh;
+h1 {
+	font-size: 70px;
+	font-family: "Helvetica-Neue-Thin";
+	color: #0FA3FF;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	line-height: 1.2;
+}
+
+h2 {
+	font-size: 40px;
+	font-family: "Helvetica-Neue-Thin";
+	color: #0FA3FF;
+	text-align: center;
+	margin-top: 0px;
+	margin-bottom: 25px;
+	line-height: 1.2;
+}
+
+h3 {
+	font-size: 30px;
+	color: white;
+	font-family: "Helvetica-Neue-Thin";
+	color: white;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	line-height: 1.2;
+}
+
+p, label{
+	font-size: 18px;
+	font-family: "Helvetica-Neue-Thin";
+	color: #B5B5B5;
+	line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+	h1 {
+		font-size: 45px; /* Possibly change */
+	}
+	h2 {
+		font-size: 24px;
+	}
+	h3 {
+		font-size: 20px;
+	}
+	p, label {
+		font-size: 16px;
+	}
 }
 
 
@@ -68,7 +108,7 @@ colors{
 
 #navDiv li a{
 	text-decoration: none;
-	font-size: 16px;
+	font-size: 18px;
 	font-family: "Helvetica-Neue-Thin";
 	color: #FFFFFF;
 }
@@ -114,32 +154,11 @@ colors{
 	justify-content: center;
 }
 
-.name h1 {
-	font-size: 10vh;
-	margin: 0;
-	padding: 0;
-}
 .name #first {
 	color: white;
 }
 .name #last {
 	color: #0FA3FF;
-}
-
-.homeSubHeading h2 {
-	font-size: 4vh;
-	color: white;
-	margin: 0;
-	padding: 0;
-}
-
-@media (max-width: 500px) {
-	.name h1 {
-		font-size: 6vh;
-	}
-	.homeSubHeading h2 {
-		font-size: 3vh;
-	}
 }
 
 
@@ -148,40 +167,54 @@ colors{
 #about {
 	margin-top: 100px;
 	margin-bottom: 100px;
-	overflow: hidden;	
+	overflow: hidden;
+}
+
+.mainAboutContainer {
+	padding: 0;
 }
 
 .aboutDescription {
-	font-family: "Helvetica-Neue-Thin";
-	text-align: justify;
+	text-align: right;
 }
 
 .aboutDescription h2 {
-	font-size: 40px;
-	color: #0FA3FF;
-	text-align: center;
-	margin-bottom: 25px;
-}
-
-.aboutDescription p {
-	font-size: 18px;
-	color: #B5B5B5;
+	text-align: right;
 }
 
 .aboutDescription span {
 	color: #0FA3FF;
 }
 
+.aboutPicture {
+	width: 300px;
+	height: 450px;
+	margin: 0 auto;
+
+	background: url("../images/me.jpg") no-repeat top;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+@media (max-width: 1000px) {
+	.aboutDescription {
+		text-align: left;
+		margin-bottom: 50px;
+	}
+	.aboutDescription h2 {
+		text-align: center;
+	}
+}
+
 @media (max-width: 500px) {
 	#about {
 		margin-top: 50px;
+		margin-bottom: 50px;
 	}
-	.aboutDescription h2 {
-		font-size: 25px;
-	}
-	.aboutDescription p {
-		font-size: 12px;
-		color: #B5B5B5;
+	.aboutPictureContainer {
+		padding: 0;
 	}
 }
 
@@ -241,568 +274,11 @@ colors{
 }
 
 
-
-/*** Resume Page Styling ***/
-.resumeNav {
-	margin: 0px;
-	width: 100%;
-	height: auto;
-	text-align: center;
-}
-
-.resumeContainer {
-	margin: 0;
-	margin-bottom: 100px;
-	width: 100%;
-	height: auto;
-}
-
-#resumeNavContainer {
-	margin: 0 auto;
-	position: relative;
-}
-
-.resumeDownload {
-	width: 100%;
-	margin-top: 5vw;
-	margin-bottom: 10vw;
-	text-align: center;
-}
-
-.resumeDownload a{
-	color: #FFFFFF;
-	border: 2px solid #FF6B0F;
-	padding: 1vw 2.5vw;
-	border-radius: 0px;
-	font-family: "Helvetica-Neue-Thin";
-	font-size: 1.5vw;
-	font-weight: lighter;
-	text-decoration: none;
-}
-
-.resumeDownload a:hover {
-	background-color: #FF6B0F;
-	color: #FFFFFF;
-}
-
-@media (max-width: 750px) {
-	.resumeDownload {
-		margin-top: 40px;
-		margin-bottom: 40px;
-	}
-
-	.resumeDownload a{
-		padding: 10px 15px;
-		font-size: 14px;
-	}
-}
-
-.sectionContainer {
-	width: auto;
-	height: auto; 
-	margin: 0 auto;
-}
-
-.hexagonContainer {
-	width: 1230px;
-	height: 400px;
-	position: relative;
-	margin: 0 auto;
-}
-
-.hexagon {
-	text-align: center;
-	perspective: 1000;
-	position: absolute;
-	width: 300px;
-	height: 400px;
-}
-
-.hexagon:hover .flipper {
-	transform: rotateY(180deg);
-}
-
-.flipper {
-	transition: 0.6s;
-	transform-style: preserve-3d;
-	position: relative;
-}
-
-.front, .back {
-	width: 300px;
-	height: 400px;
-	backface-visibility: hidden;
-	position: absolute;
-}
-
-.front {
-	z-index: 2;
-	transform: rotateY(0deg);
-}
-
-.back {
-	transform: rotateY(180deg);
-}
-
-#scotiabank {
-	background: #67D941;
-	top: 0px;
-	left: 0px;
-	padding-top: 0px;
-}
-
-#dond {
-	background: #FAD543;
-	top: 0px;
-	left: 310px;
-	padding-top: 0px;
-}
-
-#flashstock {
-	background: #0FA3FF;
-	top: 0px;
-	left: 620px;
-	padding-top: 0px;
-}
-
-#intentional {
-	background: #F46600;
-	top: 0px;
-	left: 930px;
-	padding-top: 0px;
-}
-
-.jobTitle {
-	width: 225px;
-	margin: 0 auto;
-	font-size: 30px;
-	font-family: "Helvetica-Neue-Thin";
-	margin-top: 100px;
-}
-
-.jobDate {
-	width: 225px;
-	margin: 0 auto;
-	font-size: 15px;
-	font-family: "Helvetica-Neue";
-	margin-top: 15px;
-}
-
-.jobPosition {
-	width: 225px;
-	margin: 0 auto;
-	font-size: 26px;
-	font-family: "Helvetica-Neue-Thin";
-	margin-top: 80px;
-}
-
-.jobInfo {
-	width: 260px;
-	font-size: 14px;
-	text-align: left;
-	margin: 30px 15px;
-	padding: 0px 0px 0px 30px;
-}
-
-/* TODO: Replace with JavaScript */
-@media (min-width: 1600px) {
-	.hexagonContainer {
-		width: 1530px;
-		height: 600px;
-	}
-	.hexagon, .front, .back {
-		width: 375px;
-		height: 500px;
-	}
-	#scotiabank {
-		left: 0px;
-		padding-top: 0px;
-	}
-	#dond {
-		left: 385px;
-		padding-top: 0px;
-	}
-	#flashstock {
-		left: 770px;
-		padding-top: 0px;
-	}
-	#intentional {
-		left: 1155px;
-		padding-top: 0px;
-	}
-	.jobTitle {
-		width: 280px;
-		margin-top: 120px;
-		font-size: 36px;
-	}
-	.jobDate {
-		width: 280px;
-		margin-top: 30px;
-		font-size: 18px;
-	}
-	.jobPosition {
-		width: 280px;
-		margin-top: 80px;
-		font-size: 32px;
-	}
-	.jobInfo {
-		width: 330px;
-		font-size: 18px;
-		margin: 30px 15px;
-		padding: 0px 0px 0px 30px;
-	}
-}
-
-@media (max-width: 1300px) {
-	.hexagonContainer {
-		width: 970px;
-	}
-	.hexagon, .front, .back {
-		width: 235px;
-	}
-	#scotiabank {
-		left: 0px;
-		padding-top: 0px;
-	}
-	#dond {
-		left: 245px;
-		padding-top: 0px;
-	}
-	#flashstock {
-		left: 490px;
-		padding-top: 0px;
-	}
-	#intentional {
-		left: 735px;
-		padding-top: 0px;
-	}
-	.jobTitle {
-		width: 190px;
-		font-size: 26px;
-		margin-top: 100px;
-	}
-	.jobDate {
-		width: 190px;
-		font-size: 13px;
-		margin-top: 15px;
-	}
-	.jobPosition {
-		width: 190px;
-		font-size: 22px;
-		margin-top: 80px;
-	}
-	.jobInfo {
-		width: 205px;
-		font-size: 12px;
-		margin: 25px 10px;
-		padding: 0px 0px 0px 25px;
-	}
-}
-
-@media (max-width: 1000px) {
-	.hexagonContainer {
-		width: 100%;
-		height: 400px;
-	}
-	.hexagon{
-		width: calc((100%/2));
-		height: 200px;
-	}
-	.front, .back{
-		width: 100%;
-		height: 200px;
-	}
-	#scotiabank {
-		top: 0px;
-		left: 0px;
-		padding-top: 0px;
-	}
-	#dond {
-		top: 0px;
-		left: calc(100%/2);
-		padding-top: 0px;
-	}
-	#flashstock {
-		top: 200px;
-		left: 0px;
-		padding-top: 0px;
-	}
-	#intentional {
-		top: 200px;
-		left: calc(100%/2);
-		padding-top: 0px;
-	}
-	.jobTitle {
-		width: 70%;
-		margin-top: 40px;
-		font-size: 28px;
-	}
-	.jobDate {
-		width: 70%;
-		margin-top: 10px;
-		font-size: 14px;
-	}
-	.jobPosition {
-		width: 70%;
-		margin-top: 20px;
-		font-size: 24px;
-	}
-	.jobInfo {
-		width: 90%;
-		height: 90%;
-		margin-top: 10px;
-		font-size: 12px;
-		margin: 5% 0;
-		overflow-y: scroll;
-	}
-}
-
-@media (max-width: 700px) {
-	.hexagonContainer {
-		width: 100%;
-		height: 400px;
-	}
-	.hexagon{
-		width: calc((100%/2));
-		height: 200px;
-	}
-	.front, .back{
-		width: 100%;
-		height: 200px;
-	}
-	#scotiabank {
-		top: 0px;
-		left: 0px;
-		padding-top: 0px;
-	}
-	#dond {
-		top: 0px;
-		left: calc(100%/2);
-		padding-top: 0px;
-	}
-	#flashstock {
-		top: 200px;
-		left: 0px;
-		padding-top: 0px;
-	}
-	#intentional {
-		top: 200px;
-		left: calc(100%/2);
-		padding-top: 0px;
-	}
-	.jobTitle {
-		width: 90%;
-		margin-top: 30px;
-		font-size: 24px;
-	}
-	.jobDate {
-		width: 90%;
-		margin-top: 20px;
-		font-size: 12px;
-	}
-	.jobPosition {
-		width: 90%;
-		margin-top: 30px;
-		font-size: 20px;
-	}
-	.jobInfo {
-		width: 100%;
-		height: 95%;
-		padding: 0px 20px;
-		font-size: 10px;
-		overflow-y: scroll;
-	}
-}
-
-.skillContainer {
-	width: auto;
-	height: auto;
-	text-align: center;
-}
-
-.computerLanguages {
-	height: auto;
-	width: auto;
-	display: inline-block;
-	color: #B5B5B5;
-	font-family: "Helvetica-Neue-Thin";
-	text-align: left;
-	vertical-align: top;
-	margin-right: 50px;
-}
-
-.environments {
-	height: auto;
-	width: 500px;
-	display: inline-block;
-	color: #B5B5B5;
-	font-family: "Helvetica-Neue-Thin";
-	vertical-align: top;
-}
-
-.computerLanguages h4, .environments h4 {
-	margin: 25px 15px;
-	color: #0FA3FF;
-	font-size: 28px;
-}
-
-.languageRow {
-	width: auto;
-	font-size: 18px;
-	margin: 3px auto;
-}
-
-.languageCircles {
-	width: auto;
-	float: right;
-}
-
-.languageRow i{
-	margin: 0 2px;
-	color: #0FA3FF;
-}
-
-.languageRow .unfilled {
-	color: #B5B5B5;
-}
-
-.envCircle {
-	width: 100px;
-	height: 150px;
-	margin: 15px 12.5px 15px 12.5px;
-	float: none;
-	display:inline-block;
-	vertical-align: bottom;
-}
-
-.envCircle img{
-	width: 80px;
-	height: 80px;
-	margin-bottom: 15px;
-}
-
-.envCircle span{
-	font-size: 18px;
-	color: #0FA3FF;
-	text-align: center;
-}
-
-@media (max-width: 950px) {
-	.computerLanguages {
-		width: auto;
-		margin-right: 0px;
-	}
-	.environments {
-		width: auto;
-	}
-	.computerLanguages h4, .environments h4 {
-		font-size: 24px;
-	}
-	.languageRow {
-		font-size: 14px;
-	}
-	.envCircle {
-		width: 50px;
-	}
-	.envCircle img{
-		width: 50px;
-		height: 50px;
-	}
-	.envCircle span{
-		font-size: 12px;
-	}
-}
-
-.eduContainer {
-	width: auto;
-	height: auto;
-	text-align: center;
-	position: relative;
-}
-
-.universityContainer {
-	width: 350px;
-	height: auto;
-	display: inline-block;
-	color: #0FA3FF;
-	font-family: "Helvetica-Neue-Thin";
-	text-align: left;
-	vertical-align: middle; /* TODO: This doesn't work, temp solution below */
-	margin-top: 125px;
-}
-
-.coursesContainer {
-	width: 600px;
-	height: auto;
-	display: inline-block;
-	color: #B5B5B5;
-	font-family: "Helvetica-Neue-Thin";
-	vertical-align: top;
-}
-
-.universityContainer h1, .coursesContainer h1{
-	font-size: 50px;
-	color: #B5B5B5;
-}
-
-.coursesContainer h4{
-	padding-top: 30px;
-}
-
-.courseBox {
-	width: 120px;
-	height: 150px;
-	margin: 20px 15px;
-	text-align: center;
-	float: left;
-}
-
-.courseBox i {
-	color: #B5B5B5;
-	margin-bottom: 5px;
-	font-size: 100px;
-}
-
-.courseBox span {
-	color: #0FA3FF;
-	font-size: 18px;
-}
-
-@media (max-width: 950px) {
-	.universityContainer {
-		width: auto;
-		margin-top: 0px;
-		margin-bottom: 30px;
-		text-align: center;
-	}
-	.coursesContainer {
-		width: auto;
-		margin: 0 auto;
-	}
-	.universityContainer h1, .coursesContainer h1 {
-		font-size: 30px;
-	}
-	.courseBox {
-		width: 75px;
-		height: 130px;
-		margin: 10px 15px;
-	}
-	.courseBox i {
-		font-size: 60px;
-	}
-	.courseBox span {
-		font-size: 14px;
-	}	
-}
-
-
-
 /** Recommendation Page Styling **/
 .recContainer {
 	height: auto;
 	width: 100%;
 	margin-bottom: 100px;
-	font-family: "Helvetica-Neue-Thin";
 
 	background: url("../images/mountRainerLowRes.jpg") no-repeat center center;
 	-webkit-background-size: cover;
@@ -828,22 +304,21 @@ colors{
 }
 
 .titleContainer h2 {
-	font-size: 36px;
-	margin-top: 0;
+	margin-top: 10px;
 	margin-bottom: 0;
-	text-align: center;
-	color: #0FA3FF;
 }
 
 .arrowContainer {
 	text-align: center;
 	background: rgba(365, 365, 365, 0.3);
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 .arrowContainer a {
 	color: #1C1C1C;
 	font-family: "Helvetica-Neue-Thin";
-	font-size: 36px;
+	font-size: 40px;
 	text-decoration: none;
 }
 
@@ -859,17 +334,13 @@ colors{
     font-family: "Helvetica-Neue-Thin";
 }
 
-.quoteContainer h3 {
-	color: #B5B5B5;
-	font-size: 20px;
+.quoteContent {
 	font-style: italic;
-	text-align: center;
 	padding-right: 20px;
 }
 
-.quoteContainer p {
+.quoteAuthor {
 	color: #0FA3FF;
-	font-size: 20px;
 	font-weight: bold;
 	text-align: right;
 	margin-bottom: 50px;
@@ -879,10 +350,10 @@ colors{
 	.titleContainer h2, .arrowContainer a {
 		font-size: 48px;
 	}
-	.quoteContainer h3 {
+	.quoteContent {
 		font-size: 22px;
 	}
-	.quoteContainer p {
+	.quoteAuthor {
 		font-size: 30px;
 	}
 }
@@ -890,12 +361,6 @@ colors{
 @media (max-width: 950px) {
 	.titleContainer h2, .arrowContainer a{
 		font-size: 24px;
-	}	
-	.quoteContainer h3 {
-		font-size: 16px;
-	}
-	.quoteContainer p {
-		font-size: 16px;
 	}	
 }
 
@@ -907,14 +372,14 @@ colors{
 	.carousel .item {
 	    padding: 10px 10px;
 	}
-	.titleContainer h2, .arrowContainer a {
-		font-size: 20px;
+	.arrowContainer a {
+		font-size: 25px;
 	}
-	.quoteContainer h3 {
-		font-size: 14px;
-	}
-	.quoteContainer p {
-		font-size: 14px;
+}
+
+@media (max-width: 500px) {
+	.recContainer {
+		margin-bottom: 50px;
 	}
 }
 /* Failed animation experiments */
@@ -947,57 +412,17 @@ colors{
 /** Contact Page Styling**/
 .contactContainer {
 	margin-bottom: 100px;
-	font-family: "Helvetica-Neue-Thin";
-}
-
-.contactContainer h1 {
-	font-size: 40px;
-	color: #0FA3FF;
-	text-align: center;
-	margin-bottom: 25px;
+	overflow: hidden;
 }
 
 .contactTextContainer {
 	color: #B5B5B5;
-	margin-left: 10%;
-	margin-right: 10%;
-	text-align: justify;
-	height: auto;
-	width: auto;
 	overflow: hidden;
+	padding: 0;
 }
 
 .leftContact {
 	overflow: hidden;
-	font-size: 24px;
-}
-
-.rightContact {
-	font-size: 18px;
-}
-
-.formButton {
-	text-align: right;
-}
-
-.formButton input{
-	background-color: #0FA3FF;
-	color: #FFFFFF;
-	border: 2px solid #0FA3FF;
-	padding: 15px 30px;
-	border-radius: 0px;
-	text-decoration: none;
-
-	font-family: "FuturaPT-Light";
-	font-weight: 300;
-	font-style: normal;
-	text-transform: uppercase;
-	letter-spacing: 3px;
-
-	opacity: 1;
-    transition: opacity .25s ease-in-out;
-    -moz-transition: opacity .25s ease-in-out;
-    -webkit-transition: opacity .25s ease-in-out;
 }
 
 .mediaIconsRow {
@@ -1018,14 +443,26 @@ colors{
 	color: #0FA3FF;
 }
 
-@media (max-width: 500px) {
-	.leftContact {
-		overflow: hidden;
-		font-size: 16px;
-	}
-	.rightContact {
-		font-size: 16px;
-	}
+.formButton {
+	text-align: right;
+}
+
+.formButton input{
+	background-color: #0FA3FF;
+	color: #FFFFFF;
+	border: 2px solid #0FA3FF;
+	padding: 15px 30px;
+	border-radius: 0px;
+	text-decoration: none;
+
+	font-family: "FuturaPT-Light";
+	font-weight: 300;
+	font-style: normal;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+
+@media (max-width: 600px) {
 	.mediaIcons {
 		font-size: 30px;
 	}
@@ -1033,36 +470,3 @@ colors{
 
 
 
-
-.tempContainer {
-	margin-top: 100px;
-	margin-left: 100px;
-	margin-right: 50px;
-	margin-bottom: 50px;
-}
-
-.tempProjects {
-	margin-top: 50px !important;
-}
-
-.tempContainer h2 {
-	color: #0FA3FF;
-	font-size: 40px;
-	font-family: "Helvetica-Neue-Thin";
-	margin-bottom: 25px;
-}
-
-.tempContainer h3 {
-	color: #B5B5B5;
-	font-size: 20px;
-	font-family: "Helvetica-Neue-Thin";
-	margin-bottom: 0px;
-	margin-top: 10px;
-}
-
-@media (max-width: 600px){
-	.tempContainer {
-		margin-left: 30px;
-		margin-right: 30px;
-	}
-}

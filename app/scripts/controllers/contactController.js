@@ -19,10 +19,11 @@ angular.module('personalWebsite')
 	/*KLUDGE CRUISE, yeah lets use angular, jquery, AND javascript...*/
 	self.submitForm = function() {
 		if (self.userForm.$valid) {
-			$('#userForm')[0].reset();
 			$('#emailSentModal').modal('show');
 			setTimeout(function(){
 		        $('#emailSentModal').modal('hide');
+    			$('#userForm')[0].reset();
+		        // self.userform.mySubmit.$setValidity("what", false);
 		    }, 1500);
 		}
 	};
