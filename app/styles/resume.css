@@ -568,3 +568,139 @@
 		margin-right: 30px;
 	}
 }
+
+
+
+/** Old Recommendation Page Styling **/
+/*.recContainer {
+	height: auto;
+	width: 100%;
+	margin-bottom: 100px;
+
+	background: url("../images/mountRainerLowRes.jpg") no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.opacityContainer {
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.carouselContainer {
+	height: auto;
+	float: none !important;
+	padding: 0px !important;
+	padding-top: 10px !important;
+}
+
+.titleContainer {
+	width: auto;
+	height: auto;
+}
+
+.titleContainer h2 {
+	margin-top: 10px;
+	margin-bottom: 0;
+}
+
+.arrowContainer {
+	text-align: center;
+	background: rgba(365, 365, 365, 0.3);
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.arrowContainer a {
+	color: #1C1C1C;
+	font-family: "Helvetica-Neue-Thin";
+	font-size: 40px;
+	text-decoration: none;
+}
+
+.arrowContainer:hover a{
+	color: #0FA3FF;
+	text-decoration: none;
+}
+
+.carousel .item {
+	height: 250px;
+    width: 100%;
+    padding: 10px 30px;
+    font-family: "Helvetica-Neue-Thin";
+}
+
+.quoteContent {
+	font-style: italic;
+	padding-right: 20px;
+}
+
+.quoteAuthor {
+	color: #0FA3FF;
+	font-weight: bold;
+	text-align: right;
+	margin-bottom: 50px;
+}
+
+@media(min-width: 1800px) {
+	.titleContainer h2, .arrowContainer a {
+		font-size: 48px;
+	}
+	.quoteContent {
+		font-size: 22px;
+	}
+	.quoteAuthor {
+		font-size: 30px;
+	}
+}
+
+@media (max-width: 950px) {
+	.titleContainer h2, .arrowContainer a{
+		font-size: 24px;
+	}	
+}
+
+@media (max-width: 600px) {
+	.carouselContainer {
+		margin: 0px !important;
+		width: 100% !important;
+	}
+	.carousel .item {
+	    padding: 10px 10px;
+	}
+	.arrowContainer a {
+		font-size: 25px;
+	}
+}
+
+@media (max-width: 500px) {
+	.recContainer {
+		margin-bottom: 50px;
+	}
+}
+*//* Failed animation experiments */
+/*.quoteContainer.active {
+  	animation: slide-out 0.5s forwards;
+    -webkit-animation: slide-out 0.5s forwards;
+}
+
+@keyframes slide-in {
+    100% { transform: translateX(0%); }
+}
+
+@-webkit-keyframes slide-in {
+    100% { -webkit-transform: translateX(0%); }
+}
+    
+@keyframes slide-out {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+}
+
+@-webkit-keyframes slide-out {
+    0% { -webkit-transform: translateX(0%); }
+    100% { -webkit-transform: translateX(-100%); }
+}
+*/
+
