@@ -73,7 +73,7 @@ h3 {
 	line-height: 1.2;
 }
 
-p, label{
+p, a, label{
 	font-size: 18px;
 	font-family: "Helvetica-Neue-Thin";
 	color: #B5B5B5;
@@ -90,7 +90,7 @@ p, label{
 	h3 {
 		font-size: 20px;
 	}
-	p, label {
+	p, a, label {
 		font-size: 16px;
 	}
 }
@@ -108,8 +108,6 @@ p, label{
 
 #navDiv li a{
 	text-decoration: none;
-	font-size: 18px;
-	font-family: "Helvetica-Neue-Thin";
 	color: #FFFFFF;
 }
 
@@ -137,6 +135,32 @@ p, label{
 	background-color: #0FA3FF;
 	position: absolute;
 	bottom: 0px;
+}
+
+.navbar-toggle {
+	border-color: #B5B5B5;
+}
+
+.navbar-toggle:hover{
+	border-color: #0FA3FF;
+	background-color: #0FA3FF;
+}
+
+.navbar-toggle:hover .icon-bar{
+	background-color: #1C1C1C;
+}
+
+.icon-bar {
+	background-color: #B5B5B5;
+}
+
+@media (max-width: 768px){
+	.navUnderline {
+		display: none;
+	}
+	.navbar-collapse {
+		margin-right: 0px;	
+	}
 }
 
 
@@ -188,10 +212,11 @@ p, label{
 
 .aboutPicture {
 	width: 300px;
-	height: 450px;
+	height: 400px;
 	margin: 0 auto;
 
-	background: url("../images/me.jpg") no-repeat top;
+	background: url("../images/meV2.jpg") no-repeat top;
+	/* for me.jpg, width = 300px, height = 450px */
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -200,7 +225,7 @@ p, label{
 
 @media (max-width: 1000px) {
 	.aboutDescription {
-		text-align: left;
+		text-align: center;
 		margin-bottom: 50px;
 	}
 	.aboutDescription h2 {
@@ -208,7 +233,7 @@ p, label{
 	}
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
 	#about {
 		margin-top: 50px;
 		margin-bottom: 50px;
@@ -219,7 +244,7 @@ p, label{
 }
 
 /* Command Prompt Styling, not implemented yet */
-.main-about-container {
+/*.main-about-container {
 	width: 700px;
 	margin-left: 100px;
 	float: left;
@@ -237,7 +262,7 @@ p, label{
 	margin: 0 auto;
 	margin-top: 50px;
 	background-color: #000;
-	/* scroll contain overflow */
+	/* scroll contain overflow 
 }
 
 .input-command-container {
@@ -250,7 +275,7 @@ p, label{
 }
 
 .input-command-container input[type="text"] {
-	/* change width to fill rest of div */
+	/* change width to fill rest of div 
 	width: 95%;
 	max-height: 50px;
 	background-color: #000;
@@ -271,11 +296,59 @@ p, label{
 		width: 100%;
 		margin: 0 auto;
 	}
-}
-
+} */
 
 /** Recommendation Page Styling **/
-.recContainer {
+#recommendation {
+	height: auto;
+	width: 100%;
+	margin-bottom: 100px;
+
+	background: url("../images/mountRainerLowRes.jpg") no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.opacityContainer {
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.quoteContainer {
+	height: auto;
+	float: none !important;
+	padding: 0px !important;
+	padding-top: 25px !important;
+	padding-bottom: 25px !important;
+}
+
+.quoteDiv {
+	padding: 15px;
+}
+
+.quoteText {
+	font-style: italic;
+	text-align: justify;
+	margin-bottom: 0px;
+}
+
+.quoteAuthor {
+	color: #0FA3FF;
+	font-weight: bold;
+	text-align: right;
+}
+
+@media (max-width: 600px) {
+	#recommendation {
+		margin-bottom: 50px;
+	}
+	.quoteText {
+		text-align: left;
+	}
+}
+/** Old Recommendation Page Styling **/
+/*.recContainer {
 	height: auto;
 	width: 100%;
 	margin-bottom: 100px;
@@ -382,7 +455,7 @@ p, label{
 		margin-bottom: 50px;
 	}
 }
-/* Failed animation experiments */
+*//* Failed animation experiments */
 /*.quoteContainer.active {
   	animation: slide-out 0.5s forwards;
     -webkit-animation: slide-out 0.5s forwards;
@@ -423,6 +496,7 @@ p, label{
 
 .leftContact {
 	overflow: hidden;
+	text-align: justify;
 }
 
 .mediaIconsRow {
@@ -432,7 +506,7 @@ p, label{
 .mediaIcons {
 	display: inline-block;
 	font-size: 60px;
-	margin: 20px 40px 20px 0px;
+	margin: 20px;
 }
 
 .mediaIcon {
@@ -464,9 +538,13 @@ p, label{
 
 @media (max-width: 600px) {
 	.mediaIcons {
-		font-size: 30px;
+		font-size: 45px;
+	}
+	.leftContact {
+		text-align: left;
 	}
 }
+
 
 
 

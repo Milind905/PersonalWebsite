@@ -1,4 +1,19 @@
 
+<div id="recommendation" ng-controller="RecCtrl as rec">
+<div class="opacityContainer">
+	<div class="quoteContainer col-md-offset-1 col-md-10">
+		<h2>Recommendations</h2>
+		<div class="quoteDiv" ng-repeat="slide in rec.slides">
+			<p class="quoteText">"{{slide.quote}}"</p>
+			<p class="quoteAuthor">- {{slide.by}}, {{slide.position}}</p>
+		</div>
+	</div>
+
+</div>
+</div>
+
+
+<!-- 
 <div id="recommendation" class="recContainer" ng-controller="RecCtrl as rec">
 	<div class="opacityContainer">
 	<div class="carouselContainer col-xs-offset-1 col-xs-10" ng-swipe-left="rec.nextActive()"" ng-swipe-right="rec.prevActive()">
@@ -42,4 +57,4 @@
 
 	</div>
 	</div>
-</div>
+</div> -->
