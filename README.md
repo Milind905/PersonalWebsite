@@ -1,4 +1,4 @@
 # PersonalWebsite
 Visit <a href="http://milind-shah.com/">milind-shah.com</a>  
-*Please note that this site is still under construction and may not be pleasant for all resolutions.  
+*This site is best viewed on computers/laptops/tablets. The mobile experience is currently being worked on.
 
