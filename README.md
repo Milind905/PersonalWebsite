@@ -1,4 +1,4 @@
 # PersonalWebsite
-Visit <a href="http://milind-shah.com/">milind-shah.com</a>  
+Incomplete
 *This site is best viewed on computers/laptops/tablets. The mobile experience is currently being worked on.
 
